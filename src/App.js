@@ -1,31 +1,35 @@
-import { Canvas } from "@react-three/fiber";
-import { useGLTF, Stage, PresentationControls } from "@react-three/drei";
-
-function Model(props) {
-  const { scene } = useGLTF("/bmw.glb");
-  return <primitive object={scene} {...props} />;
-}
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import About from "./components/about/About";
+import Blog from "./components/blog/Blog";
+import Work from "./components/work/Work";
 
 function App() {
+  const navigate = useNavigate();
+
   return (
-    <Canvas
-      dpr={[1, 2]}
-      shadows
-      camera={{ fov: 45 }}
-      style={{ position: "absolute" }}
-    >
-      <color attach="background" args={["#101010"]} />
-      <PresentationControls
-        speed={1.5}
-        global
-        zoom={0.5}
-        polar={[-0.1, Math.PI / 4]}
-      >
-        <Stage environment={null}>
-          <Model scale={0.01} />
-        </Stage>
-      </PresentationControls>
-    </Canvas>
+    <Router>
+      <div className="app-container">
+        <nav className="navbar">
+          <ul>
+            <li>
+              <button onClick={() => navigate("/about")}>About</button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/blog")}>Blog</button>
+            </li>
+            <li>
+              <button onClick={() => navigate("/work")}>Work</button>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/work" element={<Work />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
