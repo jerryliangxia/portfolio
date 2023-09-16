@@ -38,7 +38,22 @@
 }
 
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%;
+  z-index: 1;
+}
+
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin: 0 10px;
+}
+
+.navbar ul li button {
+  padding: 10px;
+  margin: 10px;
 }

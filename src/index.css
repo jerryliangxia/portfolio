@@ -18,17 +18,15 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding: 20px; /* Adjust as needed */
-}
-
-.info-block {
-  padding: 20px;
+  justify-content: top;
+  min-height: 100vh;
+  padding: 60px 20px 20px 20px; /* Adjust the first value as needed */
+  width: 45%;
+  margin: auto;
 }
 
 .navbar {
-  position: fixed;
   top: 0;
-  width: 100%;
+  z-index: 1;
+  align-self: flex-start;
 }
