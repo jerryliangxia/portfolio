@@ -30,3 +30,7 @@ code {
   z-index: 1;
   align-self: flex-start;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

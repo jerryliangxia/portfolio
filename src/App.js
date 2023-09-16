@@ -4,7 +4,7 @@ import Blog from "./components/blog/Blog";
 import BlogPost from "./components/blog/BlogPost";
 import Work from "./components/work/Work";
 import Navbar from "./components/navbar/navbar";
-import { Theme } from "@radix-ui/themes";
+import { Theme, Flex } from "@radix-ui/themes";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       radius="full"
     >
       <Router>
-        <div className="app-container">
+        <Flex gap="4" className="app-container" justify="start">
           <Navbar />
           <Routes>
             <Route path="/about" element={<About />} />
@@ -24,7 +24,7 @@ function App() {
             <Route path="/blog/:blogName" element={<BlogPost />} />
             <Route path="/work" element={<Work />} />
           </Routes>
-        </div>
+        </Flex>
       </Router>
     </Theme>
   );

@@ -11,6 +11,12 @@ import {
 } from "@radix-ui/themes";
 import frontMatter from "front-matter";
 
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return date.toLocaleDateString(undefined, options);
+}
+
 function Blog() {
   const [postsData, setPostsData] = useState([]);
 
@@ -20,22 +26,35 @@ function Blog() {
       const response = await fetch(module.default);
       const text = await response.text();
       const { attributes, _ } = frontMatter(text);
-      return { link, title: attributes.title };
+      return {
+        link,
+        title: attributes.title,
+        publishedAt: formatDate(attributes.publishedAt),
+        summary: attributes.summary,
+      };
     });
 
     Promise.all(fetchPosts).then(setPostsData);
   }, []);
 
   return (
-    <Flex gap="3" direction="column">
-      <Heading>Here's my blog.</Heading>
-      <Flex gap="2" direction="column">
-        {postsData.map(({ link, title }) => (
-          <RadixLink key={link}>
-            <Card>
-              <Link to={`/blog${link}`}>{title}</Link>
-            </Card>
-          </RadixLink>
+    <Flex gap="4" direction="column" style={{ width: "100%" }}>
+      <Heading>Read my blog:</Heading>
+      <Flex gap="3" direction="column">
+        {postsData.map(({ link, title, publishedAt, summary }) => (
+          <Flex gap="1" direction="column">
+            <RadixLink key={link}>
+              <Link
+                to={`/blog${link}`}
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <Text size="4">{title}</Text>
+              </Link>
+            </RadixLink>
+            <Text size="2" color="gray">
+              {publishedAt}
+            </Text>
+          </Flex>
         ))}
       </Flex>
     </Flex>

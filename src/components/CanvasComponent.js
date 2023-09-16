@@ -35,7 +35,7 @@ function CanvasComponent({
           zoom={controls.zoom}
           polar={controls.polar}
         >
-          <Stage intensity={intensity}>
+          <Stage intensity={intensity} shadows={false}>
             <Model
               modelPath={modelPath}
               rotationSpeed={rotationSpeed}
