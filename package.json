@@ -17,6 +17,7 @@
     "react-scripts": "5.0.1",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^3.0.1",
+    "styled-components": "^6.0.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

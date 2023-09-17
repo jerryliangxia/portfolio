@@ -3,7 +3,7 @@ import { useGLTF, Stage, PresentationControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
 function Model({ modelPath, scale, rotationSpeed, ...props }) {
-  const { scene } = useGLTF(modelPath);
+  const { scene } = useGLTF(`models${modelPath}`);
   useFrame(({ clock }) => {
     scene.rotation.y = clock.getElapsedTime() * rotationSpeed;
   });

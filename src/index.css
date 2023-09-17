@@ -27,7 +27,7 @@ code {
 
 @media (max-width: 600px) {
   .app-container {
-    width: 80%;
+    width: 100%;
   }
 }
 

@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import About from "./components/about/About";
+import About from "./components/home/Home";
 import Blog from "./components/blog/Blog";
 import BlogPost from "./components/blog/BlogPost";
-import Navbar from "./components/navbar/navbar";
+import Nav from "./components/nav/Nav";
 import { Theme, Flex } from "@radix-ui/themes";
 
 function App() {
   return (
     <Theme
-      accentColor="cyan"
+      accentColor="gray"
       grayColor="gray"
       panelBackground="solid"
       scaling="100%"
@@ -16,9 +16,9 @@ function App() {
     >
       <Router>
         <Flex gap="4" className="app-container" justify="start">
-          <Navbar />
+          <Nav />
           <Routes>
-            <Route path="/about" element={<About />} />
+            <Route path="/" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:blogName" element={<BlogPost />} />
           </Routes>

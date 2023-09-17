@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { posts } from "../../posts";
-import { Flex, Heading, Text, Link as RadixLink } from "@radix-ui/themes";
+import { Flex, Heading } from "@radix-ui/themes";
 import frontMatter from "front-matter";
+import BlogsPerYear from "./BlogsPerYear";
 
 function formatDate(dateString) {
   const date = new Date(dateString);
   const options = { year: "numeric", month: "long", day: "numeric" };
   return date.toLocaleDateString(undefined, options);
+}
+
+function formatDateMMDD(dateString) {
+  const date = new Date(dateString);
+  const month = date.getMonth() + 1; // getMonth() returns a zero-based value (0-11)
+  const day = date.getDate();
+  return `${month.toString().padStart(2, "0")}/${day
+    .toString()
+    .padStart(2, "0")}`; // Format as MM/DD
 }
 
 function Blog() {
@@ -18,11 +27,12 @@ function Blog() {
       const module = await import(`../../posts${link}`);
       const response = await fetch(module.default);
       const text = await response.text();
-      const { attributes, _ } = frontMatter(text);
+      const { attributes } = frontMatter(text);
       return {
         link,
         title: attributes.title,
         publishedAt: formatDate(attributes.publishedAt),
+        publishedAtMMDD: formatDateMMDD(attributes.publishedAt),
         summary: attributes.summary,
       };
     });
@@ -34,6 +44,15 @@ function Blog() {
       .then(setPostsData);
   }, []);
 
+  const postsByYear = postsData.reduce((acc, post) => {
+    const year = new Date(post.publishedAt).getFullYear();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(post);
+    return acc;
+  }, {});
+
   return (
     <Flex
       gap="6"
@@ -41,22 +60,14 @@ function Blog() {
       style={{ width: "100%", paddingBottom: "5vh" }}
     >
       <Heading>Read my blog:</Heading>
-      <Flex gap="3" direction="column">
-        {postsData.map(({ link, title, publishedAt, summary }) => (
-          <Flex gap="1" direction="column">
-            <RadixLink key={link}>
-              <Link
-                to={`/blog${link}`}
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                <Text size="4">{title}</Text>
-              </Link>
-            </RadixLink>
-            <Text size="2" color="gray">
-              {publishedAt}
-            </Text>
-          </Flex>
-        ))}
+      <Flex direction="column">
+        {Object.entries(postsByYear)
+          .sort((a, b) => b[0] - a[0])
+          .map(([year, posts]) => (
+            <React.Fragment key={year}>
+              <BlogsPerYear posts={posts} year={year} />
+            </React.Fragment>
+          ))}
       </Flex>
     </Flex>
   );

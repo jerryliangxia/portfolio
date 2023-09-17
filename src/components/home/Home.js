@@ -5,7 +5,7 @@ import InfoBlock from "./InfoBlock";
 import Contact from "./Contact";
 import { basicData, jobExperience, work } from "./Data";
 
-function About() {
+function Home() {
   const sectionFlexGap = "6";
   const innerSectionFlexGap = "3";
 
@@ -106,4 +106,4 @@ function About() {
   );
 }
 
-export default About;
+export default Home;
