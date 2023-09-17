@@ -10,6 +10,7 @@ import {
   Card,
   Code,
   Heading,
+  Blockquote,
 } from "@radix-ui/themes";
 import rehypeRaw from "rehype-raw";
 import frontMatter from "front-matter";
@@ -45,7 +46,11 @@ function BlogPost() {
   }, [blogName]);
 
   return (
-    <Flex gap="3" direction="column" style={{ width: "100%" }}>
+    <Flex
+      gap="3"
+      direction="column"
+      style={{ width: "100%", paddingBottom: "5vh" }}
+    >
       <Heading size="6">{title}</Heading>
       <Text size="4">{publishedAt}</Text>
       <ReactMarkdown
@@ -53,13 +58,6 @@ function BlogPost() {
         remarkPlugins={[gfm]}
         rehypePlugins={[rehypeRaw]}
         components={{
-          ol: ({ node, ...props }) => (
-            <Flex
-              direction="column"
-              style={{ marginTop: 0, marginBottom: 0 }}
-              {...props}
-            />
-          ),
           h1: ({ node, ...props }) => (
             <Text
               as="h1"
@@ -141,6 +139,26 @@ function BlogPost() {
               </Code>
             );
           },
+          img: ({ node, ...props }) => {
+            const isMobile = window.innerWidth <= 600;
+            const width = isMobile ? "100%" : node.properties.width || "50%";
+            const height = isMobile ? "auto" : "auto";
+            return (
+              <img
+                {...props}
+                style={{
+                  display: "block",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  width: width,
+                  height: height,
+                }}
+              />
+            );
+          },
+          blockquote: ({ node, ...props }) => (
+            <Blockquote color="gray" {...props} />
+          ),
         }}
       ></ReactMarkdown>
     </Flex>

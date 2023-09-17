@@ -2,8 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/about/About";
 import Blog from "./components/blog/Blog";
 import BlogPost from "./components/blog/BlogPost";
-import Work from "./components/work/Work";
-import Navbar from "./components/navbar/navbar";
+import Navbar from "./components/navbar/Navbar";
 import { Theme, Flex } from "@radix-ui/themes";
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:blogName" element={<BlogPost />} />
-            <Route path="/work" element={<Work />} />
           </Routes>
         </Flex>
       </Router>

@@ -1,86 +1,107 @@
 import React from "react";
 import CanvasComponent from "../CanvasComponent";
-import {
-  Flex,
-  Heading,
-  Text,
-  Strong,
-  Link as RadixLink,
-} from "@radix-ui/themes";
-import { Link } from "react-router-dom";
+import { Flex, Heading, Text } from "@radix-ui/themes";
+import InfoBlock from "./InfoBlock";
+import Contact from "./Contact";
+import { basicData, jobExperience, work } from "./Data";
 
 function About() {
+  const sectionFlexGap = "6";
+  const innerSectionFlexGap = "3";
+
   return (
-    <Flex gap="3" direction="column">
-      <Heading>Hi! I'm Jerry.</Heading>
-      <CanvasComponent
-        modelPath="/spiderman.glb"
-        rotationSpeed={0.5}
-        camera={{ fov: 45 }}
-        dpr={[1, 2]}
-        controls={{ speed: 1.5, zoom: 0.5, polar: [-0.1, Math.PI / 4] }}
-        scale={0.1}
-        intensity={0.1}
-        style={{ width: "100%", height: "25vh" }}
-      />
-      <Text as="p">
-        I'm a <Strong>software engineering</Strong> student at McGill, about to
-        enter full-time work at Unity. I hobby in 3D Modelling, game development
-        and other forms of art. Here on my website you'll see a collection of 3D
-        models I made this past summer. element.
-      </Text>
-      <Flex gap="3" direction="row">
-        <CanvasComponent
-          modelPath="/bug_emoji.glb"
-          rotationSpeed={0.0}
-          camera={{ fov: 12.25 }}
-          dpr={[1, 2]}
-          controls={{ speed: 1.5, zoom: 0.5, polar: [-0.1, Math.PI / 4] }}
-          scale={0.01}
-          intensity={0.01}
-          style={{ width: "50%", height: "100%" }}
-        />
-        <Flex gap="3" align="start" direction="column">
-          <Text as="p">
-            <Strong>Here are the tools I've used:</Strong>
+    <Flex gap="8" direction="column">
+      <Heading>{basicData.name}</Heading>
+      <section>
+        <Flex gap="1" direction="column">
+          <Text as="p">About</Text>
+          <Text as="p" color="gray">
+            {basicData.about}
           </Text>
-          <Flex gap="3" align="start" direction="column">
-            <RadixLink>
-              <Link
-                target="_blank"
-                to="https://www.blender.org/"
-                style={{ textDecoration: "none" }}
-              >
-                <Text color="white" size="2">
-                  Blender
-                </Text>
-              </Link>
-            </RadixLink>
-            <RadixLink>
-              <Link
-                target="_blank"
-                to="https://cascadeur.com/"
-                style={{ textDecoration: "none" }}
-              >
-                <Text color="white" size="2">
-                  Cascadeur
-                </Text>
-              </Link>
-            </RadixLink>
-            <RadixLink>
-              <Link
-                target="_blank"
-                to="https://unity.com/"
-                style={{ textDecoration: "none" }}
-              >
-                <Text color="white" size="2">
-                  Unity
-                </Text>
-              </Link>
-            </RadixLink>
+        </Flex>
+      </section>
+      <section>
+        <Flex justify="center" direction="row">
+          <CanvasComponent
+            modelPath="/spiderman.glb"
+            style={{ width: "32%" }}
+          />
+          <CanvasComponent
+            modelPath="/bug_emoji.glb"
+            intensity={0.1}
+            style={{ width: "32%" }}
+          />
+          <CanvasComponent
+            modelPath="/female_warrior.glb"
+            intensity={0.1}
+            style={{ width: "32%" }}
+          />
+        </Flex>
+      </section>
+      <section>
+        <Flex gap={sectionFlexGap} direction="column">
+          <Text as="p">Work Experience</Text>
+          <InfoBlock
+            leftText={jobExperience.unity.leftText}
+            rightTitle={jobExperience.unity.rightTitle}
+            rightSubtitle={jobExperience.unity.rightSubtitle}
+            rightText={jobExperience.unity.rightText}
+          />
+          <InfoBlock
+            leftText={jobExperience.gameloft.leftText}
+            rightTitle={jobExperience.gameloft.rightTitle}
+            rightSubtitle={jobExperience.gameloft.rightSubtitle}
+            rightText={jobExperience.gameloft.rightText}
+          />
+        </Flex>
+      </section>
+      <section>
+        <Flex gap={sectionFlexGap} direction="column">
+          <Text as="p">Work</Text>
+          <InfoBlock
+            leftText={work.lightspeed.leftText}
+            rightTitle={work.lightspeed.rightTitle}
+            rightText={work.lightspeed.rightText}
+          />
+          <InfoBlock
+            leftText={work.blenderContest.leftText}
+            rightTitle={work.blenderContest.rightTitle}
+            rightText={work.blenderContest.rightText}
+          />
+          <InfoBlock
+            leftText={work.modeling.leftText}
+            rightTitle={work.modeling.rightTitle}
+            rightText={work.modeling.rightText}
+          />
+        </Flex>
+      </section>
+      <section>
+        <Flex gap={innerSectionFlexGap} align="start" direction="column">
+          <Text as="h3">Languages:</Text>
+          <Text as="p" color="gray">
+            Java, Python, C, C\#, C++, Kotlin, OCaml, Bash, CLI, HTML/CSS,
+            JavaScript/TypeScript, React, Git.
+          </Text>
+          <Text as="h3">3D Tools I've used:</Text>
+          <Flex gap="4" align="start" direction="row">
+            <img
+              src="/images/about/blender.png"
+              style={{ width: "10%", objectFit: "contain" }}
+            />
+            <img
+              src="/images/about/unity.png"
+              style={{ width: "7.5%", objectFit: "contain" }}
+            />
+            <img
+              src="/images/about/cascadeur.png"
+              style={{ width: "8.5%", objectFit: "contain" }}
+            />
           </Flex>
         </Flex>
-      </Flex>
+      </section>
+      <section>
+        <Contact />
+      </section>
     </Flex>
   );
 }

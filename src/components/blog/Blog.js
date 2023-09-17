@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { posts } from "../../posts";
-import {
-  Flex,
-  Heading,
-  Text,
-  Strong,
-  Link as RadixLink,
-  Card,
-} from "@radix-ui/themes";
+import { Flex, Heading, Text, Link as RadixLink } from "@radix-ui/themes";
 import frontMatter from "front-matter";
 
 function formatDate(dateString) {
@@ -34,11 +27,19 @@ function Blog() {
       };
     });
 
-    Promise.all(fetchPosts).then(setPostsData);
+    Promise.all(fetchPosts)
+      .then((data) =>
+        data.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+      )
+      .then(setPostsData);
   }, []);
 
   return (
-    <Flex gap="4" direction="column" style={{ width: "100%" }}>
+    <Flex
+      gap="6"
+      direction="column"
+      style={{ width: "100%", paddingBottom: "5vh" }}
+    >
       <Heading>Read my blog:</Heading>
       <Flex gap="3" direction="column">
         {postsData.map(({ link, title, publishedAt, summary }) => (

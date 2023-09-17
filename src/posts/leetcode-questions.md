@@ -8,8 +8,6 @@ summary: "LeetCode problems I found nice"
 
 These are a list of questions I've come across that have helped me better my LeetCoding skills.
 
----
-
 <br/>
 Some good questions to start with (I'd recommend in order):
 

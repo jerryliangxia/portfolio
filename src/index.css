@@ -25,6 +25,12 @@ code {
   margin: auto;
 }
 
+@media (max-width: 600px) {
+  .app-container {
+    width: 80%;
+  }
+}
+
 .navbar {
   top: 0;
   z-index: 1;

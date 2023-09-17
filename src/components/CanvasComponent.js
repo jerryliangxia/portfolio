@@ -12,12 +12,13 @@ function Model({ modelPath, scale, rotationSpeed, ...props }) {
 
 function CanvasComponent({
   modelPath,
-  rotationSpeed,
-  camera,
-  dpr,
-  controls,
-  scale,
-  intensity,
+  rotationSpeed = 0.5,
+  camera = { fov: 45 },
+  dpr = [1, 2],
+  controls = { speed: 1.5, zoom: 0.5, polar: [-0.1, Math.PI / 4] },
+  scale = 0.1,
+  intensity = 1,
+  shadows = true,
   style,
 }) {
   return (
@@ -27,15 +28,16 @@ function CanvasComponent({
         position: "relative",
       }}
     >
-      <Canvas dpr={dpr} camera={camera}>
+      <Canvas dpr={dpr} camera={camera} shadows>
         <color attach="background" args={["#181818"]} />
         <PresentationControls
           speed={controls.speed}
           global
+          shadows
           zoom={controls.zoom}
           polar={controls.polar}
         >
-          <Stage intensity={intensity} shadows={false}>
+          <Stage shadows={shadows} intensity={intensity}>
             <Model
               modelPath={modelPath}
               rotationSpeed={rotationSpeed}
