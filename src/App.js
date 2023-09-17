@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/about/About";
 import Blog from "./components/blog/Blog";
 import BlogPost from "./components/blog/BlogPost";
-import Navbar from "./components/navbar/Navbar";
+import Navbar from "./components/navbar/navbar";
 import { Theme, Flex } from "@radix-ui/themes";
 
 function App() {
