@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, Stage, PresentationControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
@@ -5,7 +6,7 @@ import { useFrame } from "@react-three/fiber";
 function Model({ modelPath, scale, rotationSpeed, ...props }) {
   const { scene } = useGLTF(`models${modelPath}`);
   useFrame(({ clock }) => {
-    scene.rotation.y = clock.getElapsedTime() * rotationSpeed;
+    scene.rotation.y = -clock.getElapsedTime() * rotationSpeed;
   });
   return <primitive object={scene} scale={scale} {...props} />;
 }
@@ -26,6 +27,7 @@ function CanvasComponent({
       style={{
         ...style,
         position: "relative",
+        overflow: "hidden",
       }}
     >
       <Canvas dpr={dpr} camera={camera} shadows>

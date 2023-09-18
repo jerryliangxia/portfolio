@@ -15,7 +15,7 @@ function App() {
       radius="full"
     >
       <Router>
-        <Flex gap="4" className="app-container" justify="start">
+        <Flex gap="4" className="app-container" align="start">
           <Nav />
           <Routes>
             <Route path="/" element={<About />} />

@@ -21,20 +21,16 @@ function Home() {
         </Flex>
       </section>
       <section>
-        <Flex justify="center" direction="row">
+        <Flex justify="center" direction="row" style={{ overflow: "hidden" }}>
           <CanvasComponent
             modelPath="/spiderman.glb"
-            style={{ width: "32%" }}
+            intensity={0.1}
+            style={{ maxWidth: "40%" }}
           />
           <CanvasComponent
-            modelPath="/bug_emoji.glb"
-            intensity={0.1}
-            style={{ width: "32%" }}
-          />
-          <CanvasComponent
-            modelPath="/female_warrior.glb"
-            intensity={0.1}
-            style={{ width: "32%" }}
+            modelPath="/spiderman_hand.glb"
+            intensity={0}
+            style={{ maxWidth: "20%" }}
           />
         </Flex>
       </section>
