@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { Flex, Text } from "@radix-ui/themes";
 
 function BlogsPerYear({ posts, year }) {
+  const isMobile = window.innerWidth <= 600;
+  const yearGapSize = isMobile ? "2" : "1";
+
   return (
-    <Flex direction="row">
+    <Flex direction="row" gap={yearGapSize}>
       <Text size="2" color="gray" style={{ width: "10%" }}>
         {year}
       </Text>

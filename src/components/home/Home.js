@@ -25,7 +25,7 @@ function Home() {
           <CanvasComponent
             modelPath="/spiderman.glb"
             intensity={0.1}
-            style={{ maxWidth: "70%" }}
+            style={{ maxWidth: "40%" }}
           />
           <CanvasComponent
             modelPath="/spiderman_hand.glb"
