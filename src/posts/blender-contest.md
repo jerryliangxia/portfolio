@@ -1,5 +1,5 @@
 ---
-title: "Blender 2023 Boss Fight Contest"
+title: "Blender 2023 Boss Fight Challenge"
 publishedAt: "2023-09-16"
 summary: "My first Blender animation process."
 ---

@@ -25,12 +25,12 @@ function Home() {
           <CanvasComponent
             modelPath="/spiderman.glb"
             intensity={0.1}
-            style={{ maxWidth: "40%" }}
+            style={{ maxWidth: "70%" }}
           />
           <CanvasComponent
             modelPath="/spiderman_hand.glb"
             intensity={0}
-            style={{ maxWidth: "20%" }}
+            style={{ maxWidth: "30%" }}
           />
         </Flex>
       </section>
