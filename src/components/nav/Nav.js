@@ -20,6 +20,13 @@ function Nav() {
             </Text>
           </Link>
         </Button>
+        <Button variant="ghost">
+          <Link to="/3d" style={{ textDecoration: "none" }}>
+            <Text color="white" size="2">
+              3D
+            </Text>
+          </Link>
+        </Button>
       </Flex>
     </Theme>
   );

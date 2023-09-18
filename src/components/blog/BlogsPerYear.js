@@ -22,7 +22,7 @@ function BlogsPerYear({ posts, year }) {
               style={{
                 borderTop: "1px solid rgba(128, 128, 128, 0.2)",
                 padding: "8px",
-                transition: "background-color 0.3s ease", // Add this line
+                transition: "background-color 0.3s ease",
               }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.backgroundColor =

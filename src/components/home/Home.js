@@ -4,6 +4,7 @@ import { Flex, Heading, Text } from "@radix-ui/themes";
 import InfoBlock from "./InfoBlock";
 import Contact from "./Contact";
 import { basicData, jobExperience, work } from "./Data";
+import { AnimatePresence, motion } from "framer-motion";
 
 function Home() {
   const sectionFlexGap = "6";
@@ -23,12 +24,12 @@ function Home() {
       <section>
         <Flex justify="center" direction="row" style={{ overflow: "hidden" }}>
           <CanvasComponent
-            modelPath="/spiderman.glb"
+            modelPath="spiderman.glb"
             intensity={0.1}
             style={{ maxWidth: "40%" }}
           />
           <CanvasComponent
-            modelPath="/spiderman_hand.glb"
+            modelPath="spiderman_hand.glb"
             intensity={0}
             style={{ maxWidth: "30%" }}
           />
