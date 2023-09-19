@@ -40,3 +40,39 @@ code {
 ::-webkit-scrollbar {
   display: none;
 }
+
+.corner-border-button {
+  --s: 20px; /* the size on the corner */
+  --t: 2px; /* the thickness of the border */
+  --g: 0px; /* the gap between the border and image */
+
+  padding: calc(var(--g) + var(--t));
+
+  outline: var(--t) solid #ffff; /* the color here */
+  outline-offset: calc(-1 * var(--t));
+  -webkit-mask: conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0 /
+      calc(100% - var(--s)) calc(100% - var(--s)),
+    linear-gradient(#000 0 0) content-box;
+  mask: conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0 /
+      calc(100% - var(--s)) calc(100% - var(--s)),
+    linear-gradient(#000 0 0) content-box;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+@media (max-width: 600px) {
+  .flexContainer {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 601px) {
+  .flexContainer {
+    flex-direction: row;
+  }
+}

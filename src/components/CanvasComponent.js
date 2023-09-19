@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, Stage, PresentationControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";

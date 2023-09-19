@@ -1,6 +1,5 @@
-import { useState } from "react";
 import SpidermanShowcase from "./3dComponents/SpidermanShowcase";
-import { Button, Flex, Text, Theme } from "@radix-ui/themes";
+import { Flex } from "@radix-ui/themes";
 
 function ThreeD() {
   return (

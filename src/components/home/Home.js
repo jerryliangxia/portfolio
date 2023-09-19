@@ -4,7 +4,6 @@ import { Flex, Heading, Text } from "@radix-ui/themes";
 import InfoBlock from "./InfoBlock";
 import Contact from "./Contact";
 import { basicData, jobExperience, work } from "./Data";
-import { AnimatePresence, motion } from "framer-motion";
 
 function Home() {
   const sectionFlexGap = "6";

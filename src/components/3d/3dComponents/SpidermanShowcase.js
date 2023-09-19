@@ -7,8 +7,8 @@ import { AnimatePresence, motion } from "framer-motion";
 function SpidermanShowcase() {
   const [count, setCount] = useState(0);
   return (
-    <Flex align="center" gap="5" direction="row">
-      <div style={{ height: "40vh", width: "100%" }}>
+    <Flex className="flexContainer" align="center" gap="5">
+      <div style={{ height: "50vh", width: "100%" }}>
         <AnimatePresence mode="wait">
           <motion.div
             key={count}
@@ -44,4 +44,3 @@ function SpidermanShowcase() {
 }
 
 export default SpidermanShowcase;
-// No code needs to be inserted here
