@@ -14,6 +14,7 @@ import {
 } from "@radix-ui/themes";
 import rehypeRaw from "rehype-raw";
 import frontMatter from "front-matter";
+import ReactPlayer from "react-player";
 
 function formatDate(dateString) {
   const date = new Date(dateString);
@@ -159,6 +160,13 @@ function BlogPost() {
           blockquote: ({ node, ...props }) => (
             <Blockquote color="gray" {...props} />
           ),
+          iframe: ({ node, ...props }) => {
+            const { src } = node.properties;
+            if (ReactPlayer.canPlay(src)) {
+              return <ReactPlayer url={src} width="100%" />;
+            }
+            return <iframe {...props} />;
+          },
         }}
       ></ReactMarkdown>
     </Flex>

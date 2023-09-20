@@ -1,6 +1,6 @@
 import React from "react";
 import CanvasComponent from "../CanvasComponent";
-import { Flex, Heading, Text } from "@radix-ui/themes";
+import { Flex, Heading, Text, Link as RadixLink } from "@radix-ui/themes";
 import InfoBlock from "./InfoBlock";
 import Contact from "./Contact";
 import { basicData, jobExperience, work } from "./Data";
@@ -97,6 +97,53 @@ function Home() {
       </section>
       <section>
         <Contact />
+      </section>
+      <section style={{ paddingBottom: "5vh" }}>
+        <Flex gap={innerSectionFlexGap} align="start" direction="column">
+          <Text as="h3">You can also find me here:</Text>
+          <Flex gap="4" align="start" direction="row">
+            <Flex gap="2" align="start" direction="row">
+              <img
+                src="/images/about/sketchfab.png"
+                style={{ width: "10%", objectFit: "contain" }}
+              />
+              <RadixLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.youtube.com/channel/UCItBzMg2Cw_xx8nSPjKWh1A"
+              >
+                jerrylxia
+              </RadixLink>
+            </Flex>
+            <Flex gap="2" align="start" direction="row">
+              <img
+                src="/images/about/behance.png"
+                style={{ width: "10%", objectFit: "contain" }}
+              />
+              <RadixLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.behance.net/jerryxia?tracking_source=search_users|jerry%20xia"
+              >
+                jerryxia6
+              </RadixLink>
+            </Flex>
+            <Flex gap="2" align="start" direction="row">
+              {" "}
+              <img
+                src="/images/about/youtube-2.png"
+                style={{ width: "10%", objectFit: "contain" }}
+              />
+              <RadixLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.youtube.com/channel/UCItBzMg2Cw_xx8nSPjKWh1A"
+              >
+                jerryxia4483
+              </RadixLink>
+            </Flex>
+          </Flex>
+        </Flex>
       </section>
     </Flex>
   );

@@ -26,8 +26,12 @@ I then decided on how I should make the player obtain a score. I decided on crea
 
 <img src="/images/lightspeed-game/1.png" width="100%">
 
-This was it. Other than that, I added a logarithmic curve that increased the difficulty as the player progressed, and got sound effects made for my game. I added in some non-copyright music, spent a long time figuring out scenes, persisting music and a game over, pause and main menu. Here's a screen cap of some gameplay:
+This was it. Other than that, I added a logarithmic scale for game difficulty, and got some pretty nice sound effects made for my game. I added in some non-copyright music, spent a long time figuring out scenes, persisting music, and a main menu. Here's a screen cap of some gameplay:
 
 <img src="/gifs/lightspeed-game/final_demo.gif" width="100%">
+
+And a v1.0 demo here:
+
+<iframe width="100%" height="315" src="https://www.youtube.com/watch?v=km58fM1ZCsM"frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
 
 You can play the final product [itch.io](https://jerrylxia.itch.io/lightspeed). Hope it's worth your time!

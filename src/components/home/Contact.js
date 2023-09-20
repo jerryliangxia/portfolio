@@ -29,7 +29,7 @@ function ContactInfo({ site, username, href }) {
 }
 function Contact() {
   return (
-    <Flex gap="4" direction="column" style={{ paddingBottom: "5vh" }}>
+    <Flex gap="4" direction="column">
       <Text as="p">Contact</Text>
       <ContactInfo
         site="Github"
