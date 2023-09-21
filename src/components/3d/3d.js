@@ -7,9 +7,11 @@ function ThreeD() {
     <Flex align="center" gap="4" direction="column">
       <SpidermanShowcase />
       <CanvasComponent
-        modelPath="bug_emoji.glb"
-        intensity={0.1}
-        style={{ maxWidth: "100%", height: "25vh" }}
+        modelPath="spiderman_hand_showcase.glb"
+        intensity={0}
+        scale={1}
+        camera={{ fov: 90 }}
+        style={{ maxWidth: "100%", height: "50vh" }}
       />
     </Flex>
   );

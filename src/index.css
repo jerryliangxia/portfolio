@@ -76,3 +76,7 @@ code {
     flex-direction: row;
   }
 }
+
+.link-hover:hover {
+  text-decoration-color: white;
+}

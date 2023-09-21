@@ -28,7 +28,7 @@ function Home() {
           <CanvasComponent
             modelPath="spiderman_hand.glb"
             intensity={0}
-            style={{ maxWidth: "30%" }}
+            style={{ maxWidth: "20%" }}
           />
         </Flex>
       </section>
@@ -56,16 +56,22 @@ function Home() {
             leftText={work.lightspeed.leftText}
             rightTitle={work.lightspeed.rightTitle}
             rightText={work.lightspeed.rightText}
+            isLink={true}
+            href="https://jerrylxia.itch.io/lightspeed"
           />
           <InfoBlock
             leftText={work.blenderContest.leftText}
             rightTitle={work.blenderContest.rightTitle}
             rightText={work.blenderContest.rightText}
+            isLink={true}
+            href="https://www.youtube.com/watch?v=RK-2gIuRXNw"
           />
           <InfoBlock
             leftText={work.modeling.leftText}
             rightTitle={work.modeling.rightTitle}
             rightText={work.modeling.rightText}
+            isLink={true}
+            href="https://sketchfab.com/jerrylxia"
           />
         </Flex>
       </section>
