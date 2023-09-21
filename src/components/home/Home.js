@@ -3,12 +3,10 @@ import CanvasComponent from "../CanvasComponent";
 import { Flex, Heading, Text, Link as RadixLink } from "@radix-ui/themes";
 import InfoBlock from "./InfoBlock";
 import Contact from "./Contact";
-import { basicData, jobExperience, work } from "./Data";
+import SpecialContact from "./SpecialContact";
+import { basicData, jobExperience, work, flexGaps } from "../Data";
 
 function Home() {
-  const sectionFlexGap = "6";
-  const innerSectionFlexGap = "3";
-
   return (
     <Flex gap="8" direction="column">
       <Heading>{basicData.name}</Heading>
@@ -21,7 +19,7 @@ function Home() {
         </Flex>
       </section>
       <section>
-        <Flex justify="center" direction="row" style={{ overflow: "hidden" }}>
+        <Flex justify="center" direction="row">
           <CanvasComponent
             modelPath="spiderman.glb"
             intensity={0.1}
@@ -35,7 +33,7 @@ function Home() {
         </Flex>
       </section>
       <section>
-        <Flex gap={sectionFlexGap} direction="column">
+        <Flex gap={flexGaps.sectionFlexGap} direction="column">
           <Text as="p">Work Experience</Text>
           <InfoBlock
             leftText={jobExperience.unity.leftText}
@@ -52,7 +50,7 @@ function Home() {
         </Flex>
       </section>
       <section>
-        <Flex gap={sectionFlexGap} direction="column">
+        <Flex gap={flexGaps.sectionFlexGap} direction="column">
           <Text as="p">Work</Text>
           <InfoBlock
             leftText={work.lightspeed.leftText}
@@ -72,13 +70,25 @@ function Home() {
         </Flex>
       </section>
       <section>
-        <Flex gap={innerSectionFlexGap} align="start" direction="column">
-          <Text as="h3">Languages:</Text>
+        <Flex
+          gap={flexGaps.innerSectionFlexGap}
+          align="start"
+          direction="column"
+        >
+          <Text as="p">Languages</Text>
           <Text as="p" color="gray">
             Java, Python, C, C\#, C++, Kotlin, OCaml, Bash, CLI, HTML/CSS,
             JavaScript/TypeScript, React, Git.
           </Text>
-          <Text as="h3">3D Tools I've used:</Text>
+        </Flex>
+      </section>
+      <section>
+        <Flex
+          gap={flexGaps.innerSectionFlexGap}
+          align="start"
+          direction="column"
+        >
+          <Text as="p">3D Tools I've used: </Text>
           <Flex gap="4" align="start" direction="row">
             <img
               src="/images/about/blender.png"
@@ -99,51 +109,7 @@ function Home() {
         <Contact />
       </section>
       <section style={{ paddingBottom: "5vh" }}>
-        <Flex gap={innerSectionFlexGap} align="start" direction="column">
-          <Text as="h3">You can also find me here:</Text>
-          <Flex gap="4" align="start" direction="row">
-            <Flex gap="2" align="start" direction="row">
-              <img
-                src="/images/about/sketchfab.png"
-                style={{ width: "10%", objectFit: "contain" }}
-              />
-              <RadixLink
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.youtube.com/channel/UCItBzMg2Cw_xx8nSPjKWh1A"
-              >
-                jerrylxia
-              </RadixLink>
-            </Flex>
-            <Flex gap="2" align="start" direction="row">
-              <img
-                src="/images/about/behance.png"
-                style={{ width: "10%", objectFit: "contain" }}
-              />
-              <RadixLink
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.behance.net/jerryxia?tracking_source=search_users|jerry%20xia"
-              >
-                jerryxia6
-              </RadixLink>
-            </Flex>
-            <Flex gap="2" align="start" direction="row">
-              {" "}
-              <img
-                src="/images/about/youtube-2.png"
-                style={{ width: "10%", objectFit: "contain" }}
-              />
-              <RadixLink
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://www.youtube.com/channel/UCItBzMg2Cw_xx8nSPjKWh1A"
-              >
-                jerryxia4483
-              </RadixLink>
-            </Flex>
-          </Flex>
-        </Flex>
+        <SpecialContact />
       </section>
     </Flex>
   );

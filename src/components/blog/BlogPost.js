@@ -52,8 +52,8 @@ function BlogPost() {
       direction="column"
       style={{ width: "100%", paddingBottom: "5vh" }}
     >
-      <Heading size="6">{title}</Heading>
-      <Text size="4">{publishedAt}</Text>
+      <Text as="p">{title}</Text>
+      <Text as="p">{publishedAt}</Text>
       <ReactMarkdown
         children={post}
         remarkPlugins={[gfm]}

@@ -39,3 +39,8 @@ export const work = {
     rightText: "3D models made with Blender.",
   },
 };
+
+export const flexGaps = {
+  sectionFlexGap: "6",
+  innerSectionFlexGap: "3",
+};
