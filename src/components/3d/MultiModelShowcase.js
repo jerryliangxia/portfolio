@@ -3,9 +3,8 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { Stage, PresentationControls } from "@react-three/drei";
 
-export default function MultiModelShowcase({ count }) {
+export default function MultiModelShowcase({ count, modelsList }) {
   const ref = useRef();
-  const polyhedron = ["spiderman.glb", "spiderman_symbiote.glb"];
 
   function Model({ modelPath, scale = 0.2, rotationSpeed = 0.5, ...props }) {
     const { scene } = useGLTF(`models/${modelPath}`);
@@ -22,8 +21,8 @@ export default function MultiModelShowcase({ count }) {
       zoom={0.5}
       polar={[-0.1, Math.PI / 4]}
     >
-      <Stage shadows={false} intensity={count == 0 ? 0.1 : 10}>
-        <Model modelPath={polyhedron[count]} ref={ref} scale={1} />
+      <Stage shadows={false} intensity={count === 0 ? 0.1 : 0.8}>
+        <Model modelPath={modelsList[count]} ref={ref} scale={1} />
       </Stage>
     </PresentationControls>
   );

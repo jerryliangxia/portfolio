@@ -27,7 +27,10 @@ function SpidermanShowcase() {
               style={{ height: "100%", width: "100%" }}
             >
               <color attach="background" args={["#181818"]} />
-              <MultiModelShowcase count={count} />
+              <MultiModelShowcase
+                count={count}
+                modelsList={["spiderman.glb", "spiderman_symbiote.glb"]}
+              />
             </Canvas>
           </motion.div>
         </AnimatePresence>
