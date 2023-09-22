@@ -97,17 +97,17 @@ function Home() {
           <Text as="p">3D Tools I've used: </Text>
           <Flex gap="4" align="start" direction="row">
             <img
-              src="/images/about/blender.png"
+              src="./portfolio/images/about/blender.png"
               style={{ width: "10%", objectFit: "contain" }}
               alt=""
             />
             <img
-              src="/images/about/unity.png"
+              src="./portfolio/images/about/unity.png"
               style={{ width: "7.5%", objectFit: "contain" }}
               alt=""
             />
             <img
-              src="/images/about/cascadeur.png"
+              src="./portfolio/images/about/cascadeur.png"
               style={{ width: "8.5%", objectFit: "contain" }}
               alt=""
             />
