@@ -1,6 +1,6 @@
 import React from "react";
 import CanvasComponent from "../CanvasComponent";
-import { Flex, Heading, Text, Link as RadixLink } from "@radix-ui/themes";
+import { Flex, Heading, Text } from "@radix-ui/themes";
 import InfoBlock from "./InfoBlock";
 import Contact from "./Contact";
 import SpecialContact from "./SpecialContact";
@@ -99,14 +99,17 @@ function Home() {
             <img
               src="/images/about/blender.png"
               style={{ width: "10%", objectFit: "contain" }}
+              alt=""
             />
             <img
               src="/images/about/unity.png"
               style={{ width: "7.5%", objectFit: "contain" }}
+              alt=""
             />
             <img
               src="/images/about/cascadeur.png"
               style={{ width: "8.5%", objectFit: "contain" }}
+              alt=""
             />
           </Flex>
         </Flex>
