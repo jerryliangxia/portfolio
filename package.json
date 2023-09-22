@@ -1,7 +1,7 @@
 {
+  "homepage": "https://jerryliangxia.github.io/portfolio",
   "name": "client",
   "version": "0.1.0",
-  "homepage": "https://jerryliangxia.github.io/portfolio",
   "private": true,
   "dependencies": {
     "@radix-ui/themes": "^1.1.2",
