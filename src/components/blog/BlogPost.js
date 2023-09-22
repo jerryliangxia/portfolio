@@ -9,7 +9,6 @@ import {
   Text,
   Card,
   Code,
-  Heading,
   Blockquote,
 } from "@radix-ui/themes";
 import rehypeRaw from "rehype-raw";
@@ -87,7 +86,7 @@ function BlogPost() {
               {...props}
             />
           ),
-          a: ({ node, ...props }) => (
+          a: ({ node, children, ...props }) => (
             <RadixLink>
               <a
                 target="_blank"
@@ -99,7 +98,9 @@ function BlogPost() {
                   marginBottom: 0,
                 }}
                 {...props}
-              />
+              >
+                {children}
+              </a>
             </RadixLink>
           ),
           p: ({ node, ...props }) => (
@@ -154,6 +155,7 @@ function BlogPost() {
                   width: width,
                   height: height,
                 }}
+                alt=""
               />
             );
           },
@@ -165,7 +167,7 @@ function BlogPost() {
             if (ReactPlayer.canPlay(src)) {
               return <ReactPlayer url={src} width="100%" />;
             }
-            return <iframe {...props} />;
+            return <iframe title="Your unique title here" {...props} />;
           },
         }}
       ></ReactMarkdown>

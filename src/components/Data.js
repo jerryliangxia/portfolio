@@ -29,7 +29,7 @@ export const work = {
   },
   blenderContest: {
     leftText: "2023",
-    rightTitle: "Blender 2023 Boss Fight Challange",
+    rightTitle: "Blender 2023 Boss Fight Challenge",
     rightText:
       "Created using Blender and Cascadeur. Involves Blender NLA, Geometry Nodes, Rigify.",
   },

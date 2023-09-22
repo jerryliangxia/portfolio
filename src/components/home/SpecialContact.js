@@ -11,6 +11,7 @@ function SpecialContact() {
           <img
             src="/images/about/sketchfab.png"
             style={{ width: "20%", objectFit: "contain" }}
+            alt=""
           />
           <RadixLink
             target="_blank"
@@ -24,6 +25,7 @@ function SpecialContact() {
           <img
             src="/images/about/itchio.png"
             style={{ width: "20%", objectFit: "contain" }}
+            alt=""
           />
           <RadixLink
             target="_blank"
@@ -37,6 +39,7 @@ function SpecialContact() {
           <img
             src="/images/about/behance.png"
             style={{ width: "20%", objectFit: "contain" }}
+            alt=""
           />
           <RadixLink
             target="_blank"
@@ -50,6 +53,7 @@ function SpecialContact() {
           <img
             src="/images/about/youtube-2.png"
             style={{ width: "20%", objectFit: "contain" }}
+            alt=""
           />
           <RadixLink
             target="_blank"

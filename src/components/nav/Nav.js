@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Flex, Text, Theme } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 function Nav() {
   return (
