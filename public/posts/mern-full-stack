@@ -56,13 +56,13 @@ The basic gist of the application can be seen in the demo (via the GitHub link).
 Here's a Post:
 
 <p align="left">
-    <img src ="/images/creating-a-full-stack-application/zp.png" width="50%""/>
+    <img src ="../images/creating-a-full-stack-application/zp.png" width="50%""/>
 </p>
 
 And here's the Form:
 
 <p align="left">
-    <img src ="/images/creating-a-full-stack-application/form.png" width="50%"/>
+    <img src ="../images/creating-a-full-stack-application/form.png" width="50%"/>
 </p>
 
 Let's dive right into the database setup.
@@ -705,7 +705,7 @@ You can now close your servers and use your new application!
 Here's an example of what I had (again, GitHub is best to see the full working demo):
 
 <p align="center">
-    <img src ="/images/creating-a-full-stack-application/screencapture.png" width="100%"/>
+    <img src ="../images/creating-a-full-stack-application/screencapture.png" width="100%"/>
 </p>
 
 ### Update!
@@ -713,5 +713,5 @@ Here's an example of what I had (again, GitHub is best to see the full working d
 I've added a lot more to the site (so the link will definitely redirect you to something more interesting), here's a screen cap of it now, with a few other friends' posts:
 
 <p align="center">
-    <img src ="/images/creating-a-full-stack-application/final-result.png" width="100%"/>
+    <img src ="../images/creating-a-full-stack-application/final-result.png" width="100%"/>
 </p>
