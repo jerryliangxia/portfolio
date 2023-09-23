@@ -1,22 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.04d934bf.css",
-    "main.js": "/static/js/main.a91f044f.js",
+    "main.js": "/static/js/main.493a34b5.js",
     "static/js/787.c4e7f8f9.chunk.js": "/static/js/787.c4e7f8f9.chunk.js",
-    "static/media/mern-full-stack.md": "/static/media/mern-full-stack.fe577f2c7f502420b78c.md",
-    "static/media/leetcode-questions.md": "/static/media/leetcode-questions.bd3c13e8c6f4d6ecf90b.md",
-    "static/media/python-reference.md": "/static/media/python-reference.83c33ab8e8a2300b21f6.md",
-    "static/media/blender-contest.md": "/static/media/blender-contest.c0cf006218aea31b1e0f.md",
-    "static/media/first-game.md": "/static/media/first-game.4c8c95a77f58207d5e29.md",
-    "static/media/websites-ive-made.md": "/static/media/websites-ive-made.399b57cfbea9f46fa911.md",
-    "static/media/quick-game-made.md": "/static/media/quick-game-made.2105c874d758a753672e.md",
     "index.html": "/index.html",
     "main.04d934bf.css.map": "/static/css/main.04d934bf.css.map",
-    "main.a91f044f.js.map": "/static/js/main.a91f044f.js.map",
+    "main.493a34b5.js.map": "/static/js/main.493a34b5.js.map",
     "787.c4e7f8f9.chunk.js.map": "/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.04d934bf.css",
-    "static/js/main.a91f044f.js"
+    "static/js/main.493a34b5.js"
   ]
 }
