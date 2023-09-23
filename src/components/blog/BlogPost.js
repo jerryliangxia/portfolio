@@ -31,12 +31,20 @@ function BlogPost() {
     fetch(`../../../posts/${blogName}`)
       .then((response) => response.text())
       .then((text) => {
-        const { attributes, body } = frontMatter(text);
+        const { body } = frontMatter(text);
         setPost(body);
-        setTitle(attributes.title);
-        setDatePublished(formatDate(attributes.publishedAt));
       })
       .catch((error) => console.error("Error loading markdown file:", error));
+  }, [blogName]);
+
+  useEffect(() => {
+    fetch("/posts/posts.json")
+      .then((response) => response.json())
+      .then((posts) => {
+        const post = posts.find((post) => post.link === blogName);
+        setTitle(post.title);
+        setDatePublished(formatDate(post.publishedAt));
+      });
   }, [blogName]);
 
   return (
