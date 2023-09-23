@@ -10,11 +10,11 @@ function formatDate(dateString) {
 
 function formatDateMMDD(dateString) {
   const date = new Date(dateString);
-  const month = date.getMonth() + 1; // getMonth() returns a zero-based value (0-11)
+  const month = date.getMonth() + 1;
   const day = date.getDate();
   return `${month.toString().padStart(2, "0")}/${day
     .toString()
-    .padStart(2, "0")}`; // Format as MM/DD
+    .padStart(2, "0")}`;
 }
 
 function Blog() {
