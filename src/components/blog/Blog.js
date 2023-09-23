@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { posts } from "../../posts";
+// import { posts } from "posts";
 import { Flex, Heading } from "@radix-ui/themes";
 import frontMatter from "front-matter";
 import BlogsPerYear from "./BlogsPerYear";
@@ -23,25 +23,30 @@ function Blog() {
   const [postsData, setPostsData] = useState([]);
 
   useEffect(() => {
-    const fetchPosts = posts.map(async ({ link, module: postModule }) => {
-      const module = await import(`../../posts${link}`);
-      const response = await fetch(module.default);
-      const text = await response.text();
-      const { attributes } = frontMatter(text);
-      return {
-        link,
-        title: attributes.title,
-        publishedAt: formatDate(attributes.publishedAt),
-        publishedAtMMDD: formatDateMMDD(attributes.publishedAt),
-        summary: attributes.summary,
-      };
-    });
+    fetch("/posts/posts.json")
+      .then((response) => response.json())
+      .then((posts) => {
+        const fetchPosts = posts.map(async (link) => {
+          const response = await fetch(`/posts${link}.md`);
+          const text = await response.text();
+          const { attributes } = frontMatter(text);
+          return {
+            link,
+            title: attributes.title,
+            publishedAt: formatDate(attributes.publishedAt),
+            publishedAtMMDD: formatDateMMDD(attributes.publishedAt),
+            summary: attributes.summary,
+          };
+        });
 
-    Promise.all(fetchPosts)
-      .then((data) =>
-        data.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
-      )
-      .then(setPostsData);
+        Promise.all(fetchPosts)
+          .then((data) =>
+            data.sort(
+              (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+            )
+          )
+          .then(setPostsData);
+      });
   }, []);
 
   const postsByYear = postsData.reduce((acc, post) => {

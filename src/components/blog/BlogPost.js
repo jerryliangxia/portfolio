@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import { useParams } from "react-router-dom";
-import { posts } from "../../posts";
 import gfm from "remark-gfm";
 import {
   Flex,
@@ -10,6 +9,7 @@ import {
   Card,
   Code,
   Blockquote,
+  Heading,
 } from "@radix-ui/themes";
 import rehypeRaw from "rehype-raw";
 import frontMatter from "front-matter";
@@ -28,21 +28,15 @@ function BlogPost() {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    const match = posts.find((p) => p.link === `/${blogName}`);
-    if (match) {
-      import(`../../posts${match.link}`)
-        .then((module) => {
-          fetch(module.default)
-            .then((response) => response.text())
-            .then((text) => {
-              const { attributes, body } = frontMatter(text);
-              setPost(body);
-              setTitle(attributes.title);
-              setDatePublished(formatDate(attributes.publishedAt));
-            });
-        })
-        .catch((error) => console.error("Error loading markdown file:", error));
-    }
+    fetch(`/posts/${blogName}.md`)
+      .then((response) => response.text())
+      .then((text) => {
+        const { attributes, body } = frontMatter(text);
+        setPost(body);
+        setTitle(attributes.title);
+        setDatePublished(formatDate(attributes.publishedAt));
+      })
+      .catch((error) => console.error("Error loading markdown file:", error));
   }, [blogName]);
 
   return (
@@ -51,7 +45,7 @@ function BlogPost() {
       direction="column"
       style={{ width: "100%", paddingBottom: "5vh" }}
     >
-      <Text as="p">{title}</Text>
+      <Heading>{title}</Heading>
       <Text as="p">{publishedAt}</Text>
       <ReactMarkdown
         children={post}
