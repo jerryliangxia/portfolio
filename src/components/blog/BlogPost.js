@@ -28,7 +28,7 @@ function BlogPost() {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    fetch(`../../../_posts/${blogName}`)
+    fetch(`../../../posts/${blogName}`)
       .then((response) => response.text())
       .then((text) => {
         const { attributes, body } = frontMatter(text);

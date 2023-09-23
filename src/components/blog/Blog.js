@@ -22,7 +22,7 @@ function Blog() {
   const [postsData, setPostsData] = useState([]);
 
   useEffect(() => {
-    fetch("../../../_posts/posts.json")
+    fetch("../../../posts/posts.json")
       .then((response) => response.json())
       .then((posts) => {
         const fetchPosts = posts.map(async (link) => {
