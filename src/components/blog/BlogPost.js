@@ -38,7 +38,7 @@ function BlogPost() {
   }, [blogName]);
 
   useEffect(() => {
-    fetch("/posts/posts.json")
+    fetch("../../../posts/posts.json")
       .then((response) => response.json())
       .then((posts) => {
         const post = posts.find((post) => post.link === blogName);
