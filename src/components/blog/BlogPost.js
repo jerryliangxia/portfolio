@@ -28,7 +28,7 @@ function BlogPost() {
   const [post, setPost] = useState(null);
 
   useEffect(() => {
-    fetch(`posts/${blogName}`)
+    fetch(`../../../posts/${blogName}`)
       .then((response) => response.text())
       .then((text) => {
         const { body } = frontMatter(text);
@@ -39,7 +39,7 @@ function BlogPost() {
 
   useEffect(() => {
     console.log(blogName);
-    fetch("posts/posts.json")
+    fetch("../../../posts/posts.json")
       .then((response) => response.json())
       .then((posts) => {
         const post = posts.find((post) => post.link === "/" + blogName);
