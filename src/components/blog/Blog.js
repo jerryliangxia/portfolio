@@ -26,7 +26,7 @@ function Blog() {
       .then((response) => response.json())
       .then((posts) => {
         const fetchPosts = posts.map(async (link) => {
-          const response = await fetch(`/posts${link}.md`);
+          const response = await fetch(`/posts${link}.txt`);
           const text = await response.text();
           const { attributes } = frontMatter(text);
           return {
