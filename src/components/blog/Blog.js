@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { posts } from "posts";
 import { Flex, Heading } from "@radix-ui/themes";
 import frontMatter from "front-matter";
 import BlogsPerYear from "./BlogsPerYear";
@@ -23,7 +22,7 @@ function Blog() {
   const [postsData, setPostsData] = useState([]);
 
   useEffect(() => {
-    fetch("/posts/posts.json")
+    fetch("../../../posts/posts.json")
       .then((response) => response.json())
       .then((posts) => {
         const fetchPosts = posts.map(async (link) => {
