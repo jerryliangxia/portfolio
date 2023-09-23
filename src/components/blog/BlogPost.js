@@ -124,11 +124,11 @@ function BlogPost() {
           ),
           code: ({ node, inline, className, children, ...props }) => {
             return !inline ? (
-              <Card>
+              <Card style={{ overflowX: "auto" }}>
                 <Text
                   as="code"
-                  size="2"
-                  style={{ marginTop: 0, marginBottom: 0 }}
+                  size="1"
+                  style={{ whiteSpace: "pre-wrap" }}
                   {...props}
                 >
                   {children}
