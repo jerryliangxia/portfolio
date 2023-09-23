@@ -23,5 +23,15 @@
     "link": "/websites-ive-made",
     "title": "Websites I've Made",
     "publishedAt": "2022-02-16"
+  },
+  {
+    "link": "/python-reference",
+    "title": "Python Reference for Technical Interviews",
+    "publishedAt": "2022-09-10"
+  },
+  {
+    "link": "/leetcode-questions",
+    "title": "LeetCode Questions",
+    "publishedAt": "2022-09-19"
   }
 ]
