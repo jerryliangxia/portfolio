@@ -8,27 +8,27 @@ This past summer, I got used to a tool called [Blender](https://www.blender.org/
 
 On July 29, 2023, a YouTuber called [Pwnisher](https://www.youtube.com/@pwnisher) (former [Corridor Crew](https://www.youtube.com/@CorridorCrew) member) uploaded [this video](https://www.youtube.com/watch?v=tof8Pm-qpZw) entailing a Boss Fight challenge that would would involve only four rules:
 
-<img src="./gifs/blender-contest/0.png" width="100%"/>
+<img src="../gifs/blender-contest/0.png" width="100%"/>
 
 I thought I'd do a Spider-Man animation. I knew that I wanted to get the hang of animation first, and already had a sequence in mind: Peter's hand-web-swap swing from the PS4 game, released back in 2018. The process was simple with AI-assisted keyframing; I used [this model from Sketchfab](https://sketchfab.com/3d-models/spider-man-v2-read-caption-d33cd6afe5bd47e59ccda1c893a25b74), and after removing some bones I could import it into Cascadeur, lending me the ability to do this (relatively easily):
 
-<img src="./gifs/blender-contest/0_0.gif" width="100%"/>
+<img src="../gifs/blender-contest/0_0.gif" width="100%"/>
 
 The AI-assisted keyframing in Cascadeur allows so that other body parts move when you move one joint. This made the animation process fast, and after around 100 or so keyframes I had this (40s):
 
-<img src="./gifs/blender-contest/1.gif" width="100%"/>
+<img src="../gifs/blender-contest/1.gif" width="100%"/>
 
 I was now ready to import this into Blender. It took a while to reassign the armature to Blender's [Rigify](https://docs.blender.org/manual/en/2.81/addons/rigging/rigify.html) add-on, but the process was relatively straightforward:
 
-<img src="./gifs/blender-contest/0_0_1.gif" width="100%"/>
+<img src="../gifs/blender-contest/0_0_1.gif" width="100%"/>
 
 Once I was done this, I was ready to animate! I added a Bezier curve that Spider-Man could follow, used Blender's [NLA strips](https://docs.blender.org/manual/en/latest/editors/nla/strips.html) to split and scale (slow down) frames of the imported animation, and got the following result:
 
-<img src="./gifs/blender-contest/1_5.gif" width="100%"/>
+<img src="../gifs/blender-contest/1_5.gif" width="100%"/>
 
 After that, I added a simple portal effect using a particle system, and found it was pretty similar to that of Unity's. I decided to make the "boss" Oscorp Tower (a time-based decision), which emitted a portal of light into the sky (I wanted it to look like this [Avengers scene](https://www.youtube.com/watch?v=X9bNkQndkNw)). After playing around for a bit, adding a foreground, water and night sky, I got:
 
-<img src="./gifs/blender-contest/2.gif" width="100%"/>
+<img src="../gifs/blender-contest/2.gif" width="100%"/>
 
 I decided this didn't look good enough (asking for feedback my brother called the effect "cheap" lol) so I decided to learn Blender's [Geometry Nodes](https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/index.html) to make a better portal effect. This gave more of an impression that something evil was opening in the sky:
 
