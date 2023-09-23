@@ -30,10 +30,7 @@ const PSButton = () => {
         onClick={() => setCount((count + 1) % 2)}
       >
         <Flex direction="row" align="center" justify="center">
-          <img
-            src="./portfolio/images/3d/x.png"
-            style={{ width: "9%", align: "center" }}
-          />
+          <img src="images/3d/x.png" style={{ width: "9%", align: "center" }} />
           <Text size="5" style={{ width: "60%" }} align="center">
             <Strong>SWITCH SUITS</Strong>
           </Text>

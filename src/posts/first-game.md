@@ -4,7 +4,7 @@ publishedAt: "2023-08-20"
 summary: "Documenting the development of my first game."
 ---
 
-<img src="./portfolio/images/lightspeed-game/0_0.png" width="100%">
+<img src="images/lightspeed-game/0_0.png" width="100%">
 
 While working at Unity I attended several of their game dev nights, where I worked on a game called Lightspeed. You can play it here for free on [itch.io](https://jerrylxia.itch.io/lightspeed). This post is dedicated to my process while making the game.
 
@@ -20,15 +20,15 @@ My first game dev night was somewhere back in May; the second week after I joine
 
 Adding the projectile spitter (that's what I named it for a long time: `ProjectileSpitter`) was simple, and I got used to a lot of Unity's built-in functionalities like Colliders and RigidBodies. I found myself digging for a long time in scripts, while I in fact had to toggle a button on a Collider and what I wanted would work. After that came the scene changing, where I worked on persisting music, game over screens and menu screens. Here's the title screen, and a quick demo of things so far on [YouTube](https://www.youtube.com/watch?v=qSYpp_IxKGM).
 
-<img src="./portfolio/images/lightspeed-game/0_0_0.png" width="100%">
+<img src="images/lightspeed-game/0_0_0.png" width="100%">
 
 I then decided on how I should make the player obtain a score. I decided on creating 'levels', where the only way you could advance to the next level is by coming in close contact with outcoming planets. The closer you are, the more you progress to the next level.
 
-<img src="./portfolio/images/lightspeed-game/1.png" width="100%">
+<img src="images/lightspeed-game/1.png" width="100%">
 
 This was it. Other than that, I added a logarithmic scale for game difficulty, and got some pretty nice sound effects made for my game. I added in some non-copyright music, spent a long time figuring out scenes, persisting music, and a main menu. Here's a screen cap of some gameplay:
 
-<img src="./portfolio/gifs/lightspeed-game/final_demo.gif" width="100%">
+<img src="gifs/lightspeed-game/final_demo.gif" width="100%">
 
 And a v1.0 demo here:
 

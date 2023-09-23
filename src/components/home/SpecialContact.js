@@ -9,7 +9,7 @@ function SpecialContact() {
       <Flex gap="4" align="start" direction="row">
         <Flex gap="2" align="start" direction="row">
           <img
-            src="./portfolio/images/about/sketchfab.png"
+            src="images/about/sketchfab.png"
             style={{ width: "20%", objectFit: "contain" }}
             alt=""
           />
@@ -23,7 +23,7 @@ function SpecialContact() {
         </Flex>
         <Flex gap="2" align="start" direction="row">
           <img
-            src="./portfolio/images/about/itchio.png"
+            src="images/about/itchio.png"
             style={{ width: "20%", objectFit: "contain" }}
             alt=""
           />
@@ -37,7 +37,7 @@ function SpecialContact() {
         </Flex>
         <Flex gap="2" align="start" direction="row">
           <img
-            src="./portfolio/images/about/behance.png"
+            src="images/about/behance.png"
             style={{ width: "20%", objectFit: "contain" }}
             alt=""
           />
@@ -51,7 +51,7 @@ function SpecialContact() {
         </Flex>
         <Flex gap="2" align="start" direction="row">
           <img
-            src="./portfolio/images/about/youtube-2.png"
+            src="images/about/youtube-2.png"
             style={{ width: "20%", objectFit: "contain" }}
             alt=""
           />
