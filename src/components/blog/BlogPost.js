@@ -38,10 +38,11 @@ function BlogPost() {
   }, [blogName]);
 
   useEffect(() => {
+    console.log(blogName);
     fetch("../../../posts/posts.json")
       .then((response) => response.json())
       .then((posts) => {
-        const post = posts.find((post) => post.link === blogName);
+        const post = posts.find((post) => post.link === "/" + blogName);
         setTitle(post.title);
         setDatePublished(formatDate(post.publishedAt));
       });
