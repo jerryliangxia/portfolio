@@ -1,9 +1,27 @@
 [
-  "/blender-contest",
-  "/first-game",
-  "/leetcode-questions",
-  "/mern-full-stack",
-  "/python-reference",
-  "/quick-game-made",
-  "/websites-ive-made"
+  {
+    "link": "/blender-contest",
+    "title": "3D Boss Fight Challenge",
+    "publishedAt": "2023-09-16"
+  },
+  {
+    "link": "/first-game",
+    "title": "First Game Developed!",
+    "publishedAt": "2023-08-20"
+  },
+  {
+    "link": "/mern-full-stack",
+    "title": "Creating a Full Stack MERN Application",
+    "publishedAt": "2022-02-05"
+  },
+  {
+    "link": "/quick-game-made",
+    "title": "Quick 3D Adventure Game",
+    "publishedAt": "2023-09-20"
+  },
+  {
+    "link": "/websites-ive-made",
+    "title": "Websites I've Made",
+    "publishedAt": "2022-02-16"
+  }
 ]

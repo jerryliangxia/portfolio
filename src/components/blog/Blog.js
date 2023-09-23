@@ -22,33 +22,20 @@ function Blog() {
   const [postsData, setPostsData] = useState([]);
 
   useEffect(() => {
-    fetch("../../../posts/posts.json")
+    fetch("/posts/posts.json")
       .then((response) => response.json())
       .then((posts) => {
-        const fetchPosts = posts.map(async (link) => {
-          const response = await fetch(`/posts${link}`);
-          console.log("Response, Blog.js");
-          console.log(response);
-          const text = await response.text();
-          console.log("Text, Blog.js");
-          console.log(text);
-          const { attributes } = frontMatter(text);
-          return {
-            link,
-            title: attributes.title,
-            publishedAt: formatDate(attributes.publishedAt),
-            publishedAtMMDD: formatDateMMDD(attributes.publishedAt),
-            summary: attributes.summary,
-          };
-        });
+        const formattedPosts = posts.map((post) => ({
+          ...post,
+          publishedAt: formatDate(post.publishedAt),
+          publishedAtMMDD: formatDateMMDD(post.publishedAt),
+        }));
 
-        Promise.all(fetchPosts)
-          .then((data) =>
-            data.sort(
-              (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
-            )
+        setPostsData(
+          formattedPosts.sort(
+            (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
           )
-          .then(setPostsData);
+        );
       });
   }, []);
 
