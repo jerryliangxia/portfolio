@@ -22,12 +22,16 @@ function Blog() {
   const [postsData, setPostsData] = useState([]);
 
   useEffect(() => {
-    fetch("../../../posts/posts.json")
+    fetch("../../../_posts/posts.json")
       .then((response) => response.json())
       .then((posts) => {
         const fetchPosts = posts.map(async (link) => {
-          const response = await fetch(`/posts${link}.txt`);
+          const response = await fetch(`/posts${link}`);
+          console.log("Response, Blog.js");
+          console.log(response);
           const text = await response.text();
+          console.log("Text, Blog.js");
+          console.log(text);
           const { attributes } = frontMatter(text);
           return {
             link,
