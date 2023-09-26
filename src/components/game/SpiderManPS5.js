@@ -4,10 +4,10 @@ Command: npx gltfjsx@6.2.13 public/models/lp_spiderman_ps5.glb src/components/ga
 */
 
 import React, { useRef, useState, useEffect, useMemo } from "react";
-import { useFrame, useGraph } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { useGLTF, useAnimations } from "@react-three/drei";
 
-const MOVEMENT_SPEED = 0.008;
+const MOVEMENT_SPEED = 0.08;
 const ANIMATION_SPEED = 1.8; // Set this to the desired animation speed
 
 export function SpiderManPS5(...props) {
@@ -20,11 +20,25 @@ export function SpiderManPS5(...props) {
   const [animation, setAnimation] = useState("Idle");
 
   useEffect(() => {
-    actions[animation].reset().fadeIn(0.32).play().setDuration(ANIMATION_SPEED);
-    return () => actions[animation].fadeOut(0.32);
+    actions[animation]
+      .reset()
+      .fadeIn(0.5)
+      .play()
+      .setDuration(
+        animation === "Idle" ? ANIMATION_SPEED * 6 : ANIMATION_SPEED
+      );
+    return () => actions[animation].fadeOut(0.5);
   }, [animation]);
 
   useFrame(() => {
+    console.log(group);
+    // console.log("position:");
+    // console.log(props[0].position);
+    // console.log("distance (must be > 0.1):");
+    console.log(
+      "distance",
+      group.current.position.distanceTo(props[0].position)
+    );
     if (group.current.position.distanceTo(props[0].position) > 0.1) {
       const direction = group.current.position
         .clone()
@@ -33,9 +47,9 @@ export function SpiderManPS5(...props) {
         .multiplyScalar(MOVEMENT_SPEED);
       group.current.position.sub(direction);
       group.current.lookAt(props[0].position);
-      setAnimation("Walk");
+      // setAnimation("Walk");
     } else {
-      setAnimation("Idle");
+      // setAnimation("Idle");
     }
   });
 
