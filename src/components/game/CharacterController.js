@@ -1,5 +1,5 @@
 import React, { useRef, useMemo } from "react";
-import { CapsuleCollider, RigidBody } from "@react-three/rapier";
+import { CapsuleCollider, RigidBody, vec3 } from "@react-three/rapier";
 import SpiderManPS5 from "./SpiderManPS5";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF, useAnimations, useKeyboardControls } from "@react-three/drei";
@@ -55,6 +55,11 @@ function CharacterController() {
   });
   const character = useRef();
 
+  const resetPosition = () => {
+    rigidBody.current.setTranslation(vec3({ x: 0, y: 0, z: 0 }));
+    rigidBody.current.setLinvel(vec3({ x: 0, y: 0, z: 0 }));
+  };
+
   return (
     <group>
       <RigidBody
@@ -64,6 +69,11 @@ function CharacterController() {
         enabledRotations={[false, false, false]}
         onCollisionEnter={() => {
           isOnFloor.current = true;
+        }}
+        onIntersectionEnter={({ other }) => {
+          if (other.rigidBodyObject.name === "void") {
+            resetPosition();
+          }
         }}
       >
         <CapsuleCollider args={[0.8, 0.4]} position={[0, 1.2, 0]} />

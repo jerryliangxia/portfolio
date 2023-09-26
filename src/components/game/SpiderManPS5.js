@@ -25,24 +25,28 @@ export function SpiderManPS5(props) {
               geometry={nodes.Plane002.geometry}
               material={materials.White}
               skeleton={nodes.Plane002.skeleton}
+              castShadow
             />
             <skinnedMesh
               name="Plane002_1"
               geometry={nodes.Plane002_1.geometry}
               material={materials.Red}
               skeleton={nodes.Plane002_1.skeleton}
+              castShadow
             />
             <skinnedMesh
               name="Plane002_2"
               geometry={nodes.Plane002_2.geometry}
               material={materials.Blue}
               skeleton={nodes.Plane002_2.skeleton}
+              castShadow
             />
             <skinnedMesh
               name="Plane002_3"
               geometry={nodes.Plane002_3.geometry}
               material={materials.Black}
               skeleton={nodes.Plane002_3.skeleton}
+              castShadow
             />
           </group>
         </group>

@@ -7,7 +7,11 @@ import {
   MeshReflectorMaterial,
   Cylinder,
 } from "@react-three/drei";
-import { RigidBody, CylinderCollider } from "@react-three/rapier";
+import {
+  RigidBody,
+  CylinderCollider,
+  CuboidCollider,
+} from "@react-three/rapier";
 import CharacterController from "./CharacterController";
 
 function Experience() {
@@ -24,20 +28,23 @@ function Experience() {
       />
 
       {/* BACKGROUND */}
-      <mesh position={[0, -1.5, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-        <planeGeometry args={[50, 50]} />
-        <MeshReflectorMaterial
-          blur={[400, 400]}
-          resolution={1024}
-          mixBlur={1}
-          mixStrength={15}
-          depthScale={1}
-          minDepthThreshold={0.85}
-          color="#dbecfb"
-          metalness={0.6}
-          roughness={1}
-        />
-      </mesh>
+      <RigidBody colliders={false} type="fixed" name="void">
+        <mesh position={[0, -1.5, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          <planeGeometry args={[50, 50]} />
+          <MeshReflectorMaterial
+            blur={[400, 400]}
+            resolution={1024}
+            mixBlur={1}
+            mixStrength={15}
+            depthScale={1}
+            minDepthThreshold={0.85}
+            color="#dbecfb"
+            metalness={0.6}
+            roughness={1}
+          />
+        </mesh>
+        <CuboidCollider position={[0, -3.5, 0]} args={[50, 0.1, 50]} sensor />
+      </RigidBody>
 
       <group position-y={-1}>
         {/* STAGE */}
