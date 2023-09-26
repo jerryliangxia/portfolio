@@ -7,7 +7,7 @@ import { Controls } from "./Game";
 
 const JUMP_FORCE = 0.5;
 const MOVEMENT_SPEED = 0.1;
-const MAX_VEL = 3;
+const MAX_VEL = 1;
 
 function CharacterController() {
   const jumpPressed = useKeyboardControls((state) => state[Controls.jump]);
@@ -19,11 +19,13 @@ function CharacterController() {
   );
 
   const rigidBody = useRef();
+  const isOnFloor = useRef(false);
 
   useFrame(() => {
     const impulse = { x: 0, y: 0, z: 0 };
-    if (jumpPressed) {
+    if (jumpPressed && isOnFloor.current) {
       impulse.y += JUMP_FORCE;
+      isOnFloor.current = false;
     }
 
     const linvel = rigidBody.current.linvel();
@@ -60,6 +62,9 @@ function CharacterController() {
         colliders={false}
         scale={[0.5, 0.5, 0.5]}
         enabledRotations={[false, false, false]}
+        onCollisionEnter={() => {
+          isOnFloor.current = true;
+        }}
       >
         <CapsuleCollider args={[0.8, 0.4]} position={[0, 1.2, 0]} />
         <group ref={character}>
