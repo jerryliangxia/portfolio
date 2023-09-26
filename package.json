@@ -7,6 +7,7 @@
     "@radix-ui/themes": "^1.1.2",
     "@react-three/drei": "^9.83.9",
     "@react-three/fiber": "^8.14.1",
+    "@react-three/rapier": "^1.1.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
