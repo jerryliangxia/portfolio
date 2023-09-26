@@ -30,7 +30,11 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:blogName" element={<BlogPost />} />
               <Route path="/3d" element={<ThreeD />} />
-              <Route path="/game" element={<Game />} />
+              <Route
+                path="/game"
+                element={<Game />}
+                style={{ height: "100vh" }}
+              />
             </Routes>
           </motion.div>
         </Flex>
