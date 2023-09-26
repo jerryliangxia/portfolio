@@ -5,7 +5,7 @@ import Experience from "./Experience";
 function Game() {
   return (
     <>
-      <Canvas shadows camera={{ position: [8, 8, 8], fov: 30 }}>
+      <Canvas shadows camera={{ position: [2, 8, -4], fov: 20 }}>
         <color attach="background" args={["#ececec"]} />
         <Experience />
       </Canvas>
