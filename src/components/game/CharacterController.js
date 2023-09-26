@@ -5,6 +5,8 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF, useAnimations, useKeyboardControls } from "@react-three/drei";
 import { Controls } from "./Game";
 
+import * as THREE from "three";
+
 const JUMP_FORCE = 0.5;
 const MOVEMENT_SPEED = 0.1;
 const MAX_VEL = 1;
@@ -21,7 +23,7 @@ function CharacterController() {
   const rigidBody = useRef();
   const isOnFloor = useRef(false);
 
-  useFrame(() => {
+  useFrame((state) => {
     const impulse = { x: 0, y: 0, z: 0 };
     if (jumpPressed && isOnFloor.current) {
       impulse.y += JUMP_FORCE;
@@ -52,6 +54,22 @@ function CharacterController() {
       const angle = Math.atan2(linvel.x, linvel.z);
       character.current.rotation.y = angle;
     }
+
+    // CAMERA FOLLOW
+    const characterWorldPosition = character.current.getWorldPosition(
+      new THREE.Vector3()
+    );
+
+    state.camera.position.x = characterWorldPosition.x;
+    state.camera.position.z = characterWorldPosition.z + 14;
+
+    const targetLookAt = new THREE.Vector3(
+      characterWorldPosition.x,
+      0,
+      characterWorldPosition.z
+    );
+
+    state.camera.lookAt(targetLookAt);
   });
   const character = useRef();
 
