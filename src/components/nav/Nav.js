@@ -27,6 +27,13 @@ function Nav() {
             </Text>
           </Link>
         </Button>
+        <Button variant="ghost">
+          <Link to="/game" style={{ textDecoration: "none" }}>
+            <Text color="white" size="2">
+              Game
+            </Text>
+          </Link>
+        </Button>
       </Flex>
     </Theme>
   );

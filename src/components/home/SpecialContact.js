@@ -21,7 +21,12 @@ function SpecialContact() {
             Sketchfab
           </RadixLink>
         </Flex>
-        <Flex gap="2" align="start" direction="row">
+        <Flex
+          gap="2"
+          align="start"
+          direction="row"
+          style={{ alignItems: "flex-start" }}
+        >
           <img
             src="images/about/itchio.png"
             style={{ width: "20%", objectFit: "contain" }}
