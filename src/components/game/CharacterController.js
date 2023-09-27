@@ -31,7 +31,7 @@ function CharacterController() {
   const rigidBody = useRef();
   const isOnFloor = useRef(false);
 
-  useFrame((state) => {
+  useFrame((state, delta) => {
     const impulse = { x: 0, y: 0, z: 0 };
     if (jumpPressed && isOnFloor.current) {
       impulse.y += JUMP_FORCE;
@@ -79,6 +79,16 @@ function CharacterController() {
       new THREE.Vector3()
     );
 
+    const targetCameraPosition = new THREE.Vector3(
+      characterWorldPosition.x,
+      0,
+      characterWorldPosition.z + 14
+    );
+
+    // Move the camera upon entering
+    targetCameraPosition.y = 1;
+    state.camera.position.lerp(targetCameraPosition, delta * 2);
+
     state.camera.position.x = characterWorldPosition.x;
     state.camera.position.z = characterWorldPosition.z + 14;
 
@@ -88,7 +98,18 @@ function CharacterController() {
       characterWorldPosition.z
     );
 
-    state.camera.lookAt(targetLookAt);
+    const direction = new THREE.Vector3();
+    state.camera.getWorldDirection(direction);
+
+    const position = new THREE.Vector3();
+    state.camera.getWorldPosition(position);
+
+    const currentLookAt = position.clone().add(direction);
+    const lerpedLookAt = new THREE.Vector3();
+
+    lerpedLookAt.lerpVectors(currentLookAt, targetLookAt, delta * 2);
+
+    state.camera.lookAt(lerpedLookAt);
   });
   const character = useRef();
 

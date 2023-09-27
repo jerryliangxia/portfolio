@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  OrbitControls,
   Environment,
   ContactShadows,
   useCursor,
@@ -23,7 +22,6 @@ function Experience() {
 
   return (
     <>
-      <OrbitControls />
       {/* LIGHTS */}
       <Environment preset="sunset" />
       <directionalLight
