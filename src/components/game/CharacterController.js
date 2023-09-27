@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from "react";
+import React, { useRef, useState, useMemo } from "react";
 import { CapsuleCollider, RigidBody, vec3 } from "@react-three/rapier";
 import SpiderManPS5 from "./SpiderManPS5";
 import { useFrame } from "@react-three/fiber";
@@ -9,9 +9,11 @@ import * as THREE from "three";
 
 const JUMP_FORCE = 0.5;
 const MOVEMENT_SPEED = 0.1;
-const MAX_VEL = 1;
+const MAX_VEL = 3;
+const RUN_VEL = 1.5;
 
 function CharacterController() {
+  const [characterState, setCharacterState] = useState("Idle");
   const jumpPressed = useKeyboardControls((state) => state[Controls.jump]);
   const leftPressed = useKeyboardControls((state) => state[Controls.left]);
   const rightPressed = useKeyboardControls((state) => state[Controls.right]);
@@ -55,6 +57,16 @@ function CharacterController() {
       character.current.rotation.y = angle;
     }
 
+    if (Math.abs(linvel.x) > RUN_VEL || Math.abs(linvel.z) > RUN_VEL) {
+      if (characterState !== "Run") {
+        setCharacterState("Run");
+      } else {
+        if (characterState !== "Idle") {
+          setCharacterState("Idle");
+        }
+      }
+    }
+
     // CAMERA FOLLOW
     const characterWorldPosition = character.current.getWorldPosition(
       new THREE.Vector3()
@@ -96,7 +108,7 @@ function CharacterController() {
       >
         <CapsuleCollider args={[0.8, 0.4]} position={[0, 1.2, 0]} />
         <group ref={character}>
-          <SpiderManPS5 />
+          <SpiderManPS5 characterState={characterState} />
         </group>
       </RigidBody>
     </group>

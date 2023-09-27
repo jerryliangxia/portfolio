@@ -27,8 +27,8 @@ function Game() {
         camera={{ position: [0, 6, 14], fov: 42 }}
         style={{ height: "100vh" }}
       >
-        <color attach="background" args={["#dbecfb"]} />
-        <fog attach="fog" args={["#dbecfb", 30, 40]} />
+        <color attach="background" args={["#e3daf7"]} />
+        {/* <fog attach="fog" args={["#dbecfb", 30, 40]} /> */}
         <Suspense>
           <Physics debug>
             <Experience />

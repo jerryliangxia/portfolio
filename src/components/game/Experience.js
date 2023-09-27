@@ -19,34 +19,33 @@ function Experience() {
     <>
       <OrbitControls />
       {/* LIGHTS */}
-      <ambientLight intensity={1} />
+      <Environment preset="sunset" />
       <directionalLight
         position={[5, 5, 5]}
-        intensity={0.8}
+        intensity={0.3}
         castShadow
         color={"#9e69da"}
       />
 
       {/* BACKGROUND */}
-      <RigidBody colliders={false} type="fixed" name="void">
-        <mesh position={[0, -1.5, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-          <planeGeometry args={[50, 50]} />
-          <MeshReflectorMaterial
-            blur={[400, 400]}
-            resolution={1024}
-            mixBlur={1}
-            mixStrength={15}
-            depthScale={1}
-            minDepthThreshold={0.85}
-            color="#dbecfb"
-            metalness={0.6}
-            roughness={1}
-          />
-        </mesh>
-        <CuboidCollider position={[0, -3.5, 0]} args={[50, 0.1, 50]} sensor />
-      </RigidBody>
 
       <group position-y={-1}>
+        <RigidBody colliders={false} type="fixed" name="void">
+          <mesh position={[0, -0.9, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+            <planeGeometry args={[50, 50]} />
+            <meshBasicMaterial color="#e3daf7" toneMapped={false} />
+          </mesh>
+          <CuboidCollider position={[0, -3.5, 0]} args={[50, 0.1, 50]} sensor />
+        </RigidBody>
+        <ContactShadows
+          frames={1}
+          position={[0, -0.88, 0]}
+          scale={80}
+          opacity={0.42}
+          far={50}
+          blur={0.8}
+          color={"#aa9acd"}
+        />
         {/* STAGE */}
         <RigidBody
           colliders={false}
