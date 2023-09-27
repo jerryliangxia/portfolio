@@ -30,7 +30,7 @@ function Game() {
         <color attach="background" args={["#e3daf7"]} />
         {/* <fog attach="fog" args={["#dbecfb", 30, 40]} /> */}
         <Suspense>
-          <Physics debug>
+          <Physics>
             <Experience />
           </Physics>
         </Suspense>

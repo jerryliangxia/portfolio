@@ -13,8 +13,14 @@ import {
   CuboidCollider,
 } from "@react-three/rapier";
 import CharacterController from "./CharacterController";
+import { useGameStore } from "./Store";
 
 function Experience() {
+  const startGame = useGameStore((state) => state.startGame);
+  const { level } = useGameStore((state) => ({
+    level: state.level,
+  }));
+
   return (
     <>
       <OrbitControls />

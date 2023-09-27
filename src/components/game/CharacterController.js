@@ -4,6 +4,7 @@ import SpiderManPS5 from "./SpiderManPS5";
 import { useFrame } from "@react-three/fiber";
 import { useGLTF, useAnimations, useKeyboardControls } from "@react-three/drei";
 import { Controls } from "./Game";
+import { useGameStore } from "./Store";
 
 import * as THREE from "three";
 
@@ -13,7 +14,12 @@ const MAX_VEL = 3;
 const RUN_VEL = 1.5;
 
 function CharacterController() {
-  const [characterState, setCharacterState] = useState("Idle");
+  const { characterState, setCharacterState } = useGameStore((state) => ({
+    character: state.characterState,
+    setCharacterState: state.setCharacterState,
+    gameState: state.gameState,
+  }));
+
   const jumpPressed = useKeyboardControls((state) => state[Controls.jump]);
   const leftPressed = useKeyboardControls((state) => state[Controls.left]);
   const rightPressed = useKeyboardControls((state) => state[Controls.right]);
@@ -52,19 +58,20 @@ function CharacterController() {
     }
 
     rigidBody.current.applyImpulse(impulse, true);
-    if (changeRotation) {
-      const angle = Math.atan2(linvel.x, linvel.z);
-      character.current.rotation.y = angle;
-    }
 
     if (Math.abs(linvel.x) > RUN_VEL || Math.abs(linvel.z) > RUN_VEL) {
       if (characterState !== "Run") {
         setCharacterState("Run");
-      } else {
-        if (characterState !== "Idle") {
-          setCharacterState("Idle");
-        }
       }
+    } else {
+      if (characterState !== "Idle") {
+        setCharacterState("Idle");
+      }
+    }
+
+    if (changeRotation) {
+      const angle = Math.atan2(linvel.x, linvel.z);
+      character.current.rotation.y = angle;
     }
 
     // CAMERA FOLLOW
@@ -108,7 +115,7 @@ function CharacterController() {
       >
         <CapsuleCollider args={[0.8, 0.4]} position={[0, 1.2, 0]} />
         <group ref={character}>
-          <SpiderManPS5 characterState={characterState} />
+          <SpiderManPS5 />
         </group>
       </RigidBody>
     </group>

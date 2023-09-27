@@ -5,14 +5,15 @@ Command: npx gltfjsx@6.2.13 public/models/animated_spiderman_ps5.glb
 
 import React, { useRef, useState, useEffect } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
+import { useGameStore } from "./Store";
 
-export function SpiderManPS5({ characterState, ...props }) {
+export function SpiderManPS5(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
     "models/animated_spiderman_ps5.glb"
   );
+  const characterState = useGameStore((state) => state.characterState);
   const { actions } = useAnimations(animations, group);
-  console.log(actions);
 
   useEffect(() => {
     actions[characterState].reset().fadeIn(0.2).play();

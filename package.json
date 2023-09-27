@@ -25,7 +25,8 @@
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^3.0.1",
     "styled-components": "^6.0.8",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zustand": "^4.4.1"
   },
   "scripts": {
     "start": "GENERATE_SOURCEMAP=false react-scripts start",
