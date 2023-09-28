@@ -28,7 +28,7 @@ function Nav() {
           </Link>
         </Button>
         <Button variant="ghost">
-          <Link to="/game" target="_blank" style={{ textDecoration: "none" }}>
+          <Link to="/game" style={{ textDecoration: "none" }}>
             <Text color="white" size="2">
               Game
             </Text>
