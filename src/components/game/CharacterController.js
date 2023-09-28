@@ -1,8 +1,8 @@
-import React, { useRef, useState, useMemo } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { CapsuleCollider, RigidBody, vec3 } from "@react-three/rapier";
 import SpiderManPS5 from "./SpiderManPS5";
 import { useFrame } from "@react-three/fiber";
-import { useGLTF, useAnimations, useKeyboardControls } from "@react-three/drei";
+import { useKeyboardControls } from "@react-three/drei";
 import { Controls } from "./Game";
 import { useGameStore } from "./Store";
 
@@ -12,6 +12,7 @@ const JUMP_FORCE = 0.5;
 const MOVEMENT_SPEED = 0.1;
 const MAX_VEL = 3;
 const RUN_VEL = 1.5;
+const CAMERA_DISTANCE = 4;
 
 function CharacterController() {
   const { characterState, setCharacterState } = useGameStore((state) => ({
@@ -19,6 +20,16 @@ function CharacterController() {
     setCharacterState: state.setCharacterState,
     gameState: state.gameState,
   }));
+  const [isColliding, setIsColliding] = useState(false);
+
+  useEffect(() => {
+    setCharacterState("Land");
+    const timer = setTimeout(() => {
+      setCharacterState("Idle");
+    }, 1000); // Replace 1000 with the duration of the "Land" animation in milliseconds
+
+    return () => clearTimeout(timer); // Clean up the timer when the component unmounts
+  }, []);
 
   const jumpPressed = useKeyboardControls((state) => state[Controls.jump]);
   const leftPressed = useKeyboardControls((state) => state[Controls.left]);
@@ -33,10 +44,16 @@ function CharacterController() {
 
   useFrame((state, delta) => {
     const impulse = { x: 0, y: 0, z: 0 };
-    if (jumpPressed && isOnFloor.current) {
-      impulse.y += JUMP_FORCE;
-      isOnFloor.current = false;
-    }
+    // if (jumpPressed && isOnFloor.current) {
+    //   impulse.y += JUMP_FORCE;
+    //   setCharacterState("Jump"); // Trigger the "Jump" animation
+    //   setTimeout(() => {
+    //     isOnFloor.current = false; // Set isOnFloor to false after a delay
+    //   }, 1);
+    // }
+    // if (!jumpPressed && isOnFloor.current) {
+    //   setCharacterState("Idle");
+    // }
 
     const linvel = rigidBody.current.linvel();
     let changeRotation = false;
@@ -69,7 +86,7 @@ function CharacterController() {
       }
     }
 
-    if (changeRotation) {
+    if (changeRotation && !isColliding) {
       const angle = Math.atan2(linvel.x, linvel.z);
       character.current.rotation.y = angle;
     }
@@ -82,7 +99,7 @@ function CharacterController() {
     const targetCameraPosition = new THREE.Vector3(
       characterWorldPosition.x,
       0,
-      characterWorldPosition.z + 14
+      characterWorldPosition.z + CAMERA_DISTANCE
     );
 
     // Move the camera upon entering
@@ -90,7 +107,7 @@ function CharacterController() {
     state.camera.position.lerp(targetCameraPosition, delta * 2);
 
     state.camera.position.x = characterWorldPosition.x;
-    state.camera.position.z = characterWorldPosition.z + 14;
+    state.camera.position.z = characterWorldPosition.z + CAMERA_DISTANCE;
 
     const targetLookAt = new THREE.Vector3(
       characterWorldPosition.x,
@@ -111,6 +128,7 @@ function CharacterController() {
 
     state.camera.lookAt(lerpedLookAt);
   });
+
   const character = useRef();
 
   const resetPosition = () => {
@@ -125,8 +143,14 @@ function CharacterController() {
         colliders={false}
         scale={[0.5, 0.5, 0.5]}
         enabledRotations={[false, false, false]}
-        onCollisionEnter={() => {
+        onCollisionEnter={({ other }) => {
+          if (other.rigidBodyObject.name !== "ground") {
+            setIsColliding(true);
+          }
           isOnFloor.current = true;
+        }}
+        onCollisionExit={() => {
+          setIsColliding(false);
         }}
         onIntersectionEnter={({ other }) => {
           if (other.rigidBodyObject.name === "void") {

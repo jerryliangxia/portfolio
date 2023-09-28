@@ -11,6 +11,7 @@ export const Controls = {
   right: "right",
   jump: "jump",
 };
+
 // Equivalent of App.js for this page
 function Game() {
   const map = useMemo(() => [
@@ -24,11 +25,11 @@ function Game() {
     <KeyboardControls map={map}>
       <Canvas
         shadows
-        camera={{ position: [0, 6, 14], fov: 42 }}
+        camera={{ position: [0, 6, 4], fov: 42 }}
         style={{ height: "100vh" }}
       >
-        <color attach="background" args={["#e3daf7"]} />
-        {/* <fog attach="fog" args={["#dbecfb", 30, 40]} /> */}
+        <color attach="background" args={["#181818"]} />
+        <fog attach="fog" args={["#181818", 0, 140]} />
         <Suspense>
           <Physics>
             <Experience />
