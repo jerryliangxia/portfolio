@@ -3,6 +3,7 @@ import { Physics } from "@react-three/rapier";
 import { Canvas } from "@react-three/fiber";
 import Experience from "./Experience";
 import { KeyboardControls } from "@react-three/drei";
+import { motion } from "framer-motion";
 
 export const Controls = {
   forward: "forward",
@@ -23,19 +24,25 @@ function Game() {
   ]);
   return (
     <KeyboardControls map={map}>
-      <Canvas
-        shadows
-        camera={{ position: [0, 6, 4], fov: 42 }}
-        style={{ height: "100vh" }}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
       >
-        <color attach="background" args={["#181818"]} />
-        <fog attach="fog" args={["#181818", 0, 140]} />
-        <Suspense>
-          <Physics>
-            <Experience />
-          </Physics>
-        </Suspense>
-      </Canvas>
+        <Canvas
+          shadows
+          camera={{ position: [0, 6, 4], fov: 42 }}
+          style={{ height: "100vh" }}
+        >
+          <color attach="background" args={["#181818"]} />
+          <fog attach="fog" args={["#181818", 0, 140]} />
+          <Suspense>
+            <Physics>
+              <Experience />
+            </Physics>
+          </Suspense>
+        </Canvas>
+      </motion.div>
     </KeyboardControls>
   );
 }
