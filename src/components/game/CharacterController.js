@@ -8,7 +8,7 @@ import { useGameStore } from "./Store";
 
 import * as THREE from "three";
 
-const JUMP_FORCE = 0.5;
+// const JUMP_FORCE = 0.5;
 const MOVEMENT_SPEED = 0.1;
 const MAX_VEL = 3;
 const RUN_VEL = 1.5;

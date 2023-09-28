@@ -59,8 +59,8 @@ function Experience() {
         {/* OBJECT/WALL COLLIDERS */}
         <RigidBody colliders={false} type="fixed" position-y={-0.5}>
           {/* MB RIGHT WALLS */}
-          <CuboidCollider position={[4.2, 0.75, -2.2]} args={[0.1, 0.1, 1.7]} />
-          <CuboidCollider position={[4.2, 0.75, 2.2]} args={[0.1, 0.1, 1.7]} />
+          <CuboidCollider position={[4.1, 0.75, -2.2]} args={[0.1, 0.1, 1.7]} />
+          <CuboidCollider position={[4.1, 0.75, 2.2]} args={[0.1, 0.1, 1.7]} />
           {/* MB LEFT WALLS */}
           <CuboidCollider
             position={[-4.1, 0.75, -2.2]}
@@ -68,17 +68,17 @@ function Experience() {
           />
           <CuboidCollider position={[-4.1, 0.75, 2.2]} args={[0.1, 0.1, 1.7]} />
           {/* MB TOP WALL */}
-          <CuboidCollider position={[0, 0.75, -4.2]} args={[4, 0.1, 0.1]} />
+          <CuboidCollider position={[0, 0.75, -3.9]} args={[4, 0.1, 0.1]} />
           {/* MB BOTTOM WALL */}
           <CuboidCollider position={[0, 0.75, 4.2]} args={[4, 0.1, 0.1]} />
           {/* LB LEFT WALL */}
           <CuboidCollider position={[-15.5, 0.75, 0]} args={[0.1, 0.1, 4]} />
           {/* LB RIGHT WALLS */}
           <CuboidCollider
-            position={[-7.2, 0.75, -2.2]}
+            position={[-7.3, 0.75, -2.2]}
             args={[0.1, 0.1, 1.7]}
           />
-          <CuboidCollider position={[-7.2, 0.75, 2.2]} args={[0.1, 0.1, 1.7]} />
+          <CuboidCollider position={[-7.3, 0.75, 2.2]} args={[0.1, 0.1, 1.7]} />
           {/* LB TOP WALL */}
           <CuboidCollider position={[-11.5, 0.75, -4.2]} args={[4, 0.1, 0.1]} />
           {/* LB BOTTOM WALL */}
@@ -88,9 +88,9 @@ function Experience() {
           <CuboidCollider position={[7.2, 0.75, -2.2]} args={[0.1, 0.1, 1.7]} />
           <CuboidCollider position={[7.2, 0.75, 2.2]} args={[0.1, 0.1, 1.7]} />
           {/* RB RIGHT WALL */}
-          <CuboidCollider position={[15.5, 0.75, 0]} args={[0.1, 0.1, 4]} />
+          <CuboidCollider position={[15.4, 0.75, 0]} args={[0.1, 0.1, 4]} />
           {/* RB TOP WALL */}
-          <CuboidCollider position={[11.5, 0.75, -4.2]} args={[4, 0.1, 0.1]} />
+          <CuboidCollider position={[11.5, 0.75, -3.9]} args={[4, 0.1, 0.1]} />
           {/* RB BOTTOM WALL */}
           <CuboidCollider position={[11.5, 0.75, 4.2]} args={[4, 0.1, 0.1]} />
 
@@ -125,7 +125,7 @@ function Experience() {
           {/* RB SMALL VENTS */}
           <CuboidCollider
             position={[14.8, 0.75, -3.24]}
-            args={[0.2, 0.1, 0.2]}
+            args={[0.1, 0.1, 0.1]}
           />
           <CuboidCollider position={[14.45, 0.75, 1]} args={[0.2, 0.1, 0.2]} />
           <CuboidCollider position={[14.45, 0.75, 3]} args={[0.2, 0.1, 0.2]} />
