@@ -20,14 +20,6 @@ function ThreeD() {
         src="images/3d/ps5_full_suit/portrait.png"
         style={{ width: "100%" }}
       />
-      <Flex direction="row" gap="2">
-        <img
-          src="images/3d/ps5_full_suit/portrait.png"
-          style={{ width: "33%" }}
-        />
-        <img src="images/3d/ps5_full_suit/90.png" style={{ width: "33%" }} />
-        <img src="images/3d/ps5_full_suit/180.png" style={{ width: "33%" }} />
-      </Flex>
       <Divider />
       <Text size="3" color="gray">
         Click to enlarge photos
@@ -48,6 +40,17 @@ function ThreeD() {
           ></path>
         </svg>
       </Text>
+      <Flex direction="row" gap="2">
+        <div style={{ width: "33%" }}>
+          <ImagePopup src="images/3d/ps5_full_suit/portrait.png" />
+        </div>
+        <div style={{ width: "33%" }}>
+          <ImagePopup src="images/3d/ps5_full_suit/90.png" />
+        </div>
+        <div style={{ width: "33%" }}>
+          <ImagePopup src="images/3d/ps5_full_suit/180.png" />
+        </div>
+      </Flex>
       <ImagePopup src="images/3d/ps5_full_suit/dual_180.png" />
       <ImagePopup src="images/3d/ps5_full_suit/shader_editor.png" />
       <ImagePopup src="images/3d/normal_mask.png" />
