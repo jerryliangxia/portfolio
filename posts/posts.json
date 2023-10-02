@@ -1,5 +1,10 @@
 [
   {
+    "link": "/threejs-game",
+    "title": "Making a Three.js Spider-Man Game",
+    "publishedAt": "2023-09-30"
+  },
+  {
     "link": "/blender-contest",
     "title": "3D Boss Fight Challenge",
     "publishedAt": "2023-09-16"
