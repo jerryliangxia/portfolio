@@ -6,13 +6,13 @@ summary: "Documenting the development of a Three.js game."
 
 This past week I've had a blast making a Spider-Man game with Three.js. The tools I used include:
 
-- [Blender](https://www.blender.org/) (for modelling)
+- [Blender](https://www.blender.org/) (for modeling)
 - React Three [Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction), [DREI](https://github.com/pmndrs/drei), and [Rapier](https://github.com/pmndrs/react-three-rapier) (coding)
 - [Mixamo](https://www.mixamo.com/#/) (for importing animations)
 
 I got some inspiration for a quick Three.js game from Andy Chung's [self-portrait](https://andychung.me/self-portrait), which involved a WASD-based movement system with some simple animations. For my game I knew I wanted something similar, and decided to model Insomniac Games' newest Spider-Man model, the Advanced Suit 2.0.
 
-I started everything by modelling a low-poly model. I found a good [reference](https://sketchfab.com/3d-models/marvel-spider-man-ps4-for-blender-517d2274e86f4a4ebe14d8cdb1ab32f6) of the character from the 2018 game, and got started. Once I was in a good place, I colored it in by using different materials (with only varying colors);
+I started everything by modeling a low-poly model. I found a good [reference](https://sketchfab.com/3d-models/marvel-spider-man-ps4-for-blender-517d2274e86f4a4ebe14d8cdb1ab32f6) of the character from the 2018 game, and got started. Once I was in a good place, I colored it in by using different materials (with only varying colors);
 
 <img src="../images/threejs-game/colors.png" width="100%">
 

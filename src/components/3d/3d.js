@@ -17,8 +17,9 @@ function ThreeD() {
       <SpidermanShowcase />
       <Divider />
       <img
-        src="images/3d/ps5_full_suit/portrait.png"
+        src="images/3d/ps5_full_suit/portrait_annotated.png"
         style={{ width: "100%" }}
+        alt=""
       />
       <Divider />
       <Text size="3" color="gray">
@@ -42,7 +43,10 @@ function ThreeD() {
       </Text>
       <Flex direction="row" gap="2">
         <div style={{ width: "33%" }}>
-          <ImagePopup src="images/3d/ps5_full_suit/portrait.png" />
+          <ImagePopup
+            src="images/3d/ps5_full_suit/portrait.png"
+            text="Portrait"
+          />
         </div>
         <div style={{ width: "33%" }}>
           <ImagePopup src="images/3d/ps5_full_suit/90.png" />
@@ -53,37 +57,33 @@ function ThreeD() {
       </Flex>
       <ImagePopup src="images/3d/ps5_full_suit/dual_180.png" />
       <ImagePopup src="images/3d/ps5_full_suit/shader_editor.png" />
-      <ImagePopup src="images/3d/normal_mask.png" />
+      <ImagePopup src="images/3d/normal_mask_annotated.png" />
       <CanvasComponent
         modelPath="spiderman_hand_showcase.glb"
         intensity={0}
         camera={{ fov: 22.5 }}
         style={{ maxWidth: "100%", height: "50vh" }}
       />
-      <ImagePopup src="images/3d/symbiote.png" />
+      <Text align="start" justify="end" size="1">
+        Finished September 21, 2023.
+      </Text>
+      <ImagePopup src="images/3d/symbiote_annotated.png" />
       <ImagePopup src="images/3d/symbiote_inner.png" />
       <Divider />
       <Text size="5">Timelapses</Text>
-      <YouTubeBlock
-        leftText="Left text"
-        rightTitle="Right title"
-        rightSubtitle="Right subtitle"
-        rightText="Right text"
-        youtubeId="jAWvmQtjtN4"
-      />
-      <YouTubeBlock
-        leftText="Left text"
-        rightTitle="Right title"
-        rightSubtitle="Right subtitle"
-        rightText="Right text"
-        youtubeId="HzNK5DMSaXI"
-      />
+      <YouTubeBlock youtubeId="jAWvmQtjtN4" />
+      <YouTubeBlock youtubeId="HzNK5DMSaXI" />
+      <YouTubeBlock youtubeId="ssFuIBbE0hQ" />
+      <Divider />
+      <Text size="5">Processes</Text>
+      <YouTubeBlock youtubeId="RK-2gIuRXNw" />
+      <Divider />
       <Text size="3">
         If you haven't already, check out the{" "}
         <Link style={{ textDecoration: "none", color: "#BBBBBB" }} to="/game">
           game
         </Link>{" "}
-        section of the website!
+        section of my website!
       </Text>
     </Flex>
   );

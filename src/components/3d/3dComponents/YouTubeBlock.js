@@ -1,25 +1,14 @@
 import React from "react";
-import { Flex, Text } from "@radix-ui/themes";
 
-function YouTubeBlock({
-  leftText,
-  rightTitle,
-  rightSubtitle,
-  rightText,
-  isLink = false,
-  href = "",
-  youtubeId, // Add youtubeId prop
-}) {
+function YouTubeBlock({ youtubeId }) {
   return (
     <>
-      <Flex gap="3" direction="row">
-        {/* ... existing code ... */}
-      </Flex>
       {youtubeId && (
         <div
           style={{ width: "100%", paddingTop: "56.25%", position: "relative" }}
         >
           <iframe
+            title={youtubeId}
             src={`https://www.youtube.com/embed/${youtubeId}`}
             style={{
               position: "absolute",

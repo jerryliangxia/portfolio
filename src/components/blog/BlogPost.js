@@ -13,7 +13,6 @@ import {
 } from "@radix-ui/themes";
 import rehypeRaw from "rehype-raw";
 import frontMatter from "front-matter";
-import ReactPlayer from "react-player";
 
 function formatDate(dateString) {
   const date = new Date(dateString);

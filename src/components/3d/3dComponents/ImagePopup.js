@@ -9,6 +9,7 @@ function ImagePopup({ src }) {
         src={src}
         style={{ width: "100%", cursor: "pointer" }} // Add cursor style here
         onClick={() => setIsOpen(true)}
+        alt=""
       />
       {isOpen && (
         <div
@@ -26,7 +27,7 @@ function ImagePopup({ src }) {
           }}
           onClick={() => setIsOpen(false)}
         >
-          <img src={src} style={{ maxWidth: "90%", maxHeight: "90%" }} />
+          <img src={src} style={{ maxWidth: "90%", maxHeight: "90%" }} alt="" />
         </div>
       )}
     </>
