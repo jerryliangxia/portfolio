@@ -3,12 +3,13 @@ import { Canvas } from "@react-three/fiber";
 import MultiModelShowcase from "../MultiModelShowcase";
 import { Button, Flex } from "@radix-ui/themes";
 import { AnimatePresence, motion } from "framer-motion";
+import PSButton from "./PSButton";
 
 function SpidermanShowcase() {
   const [count, setCount] = useState(0);
   return (
-    <Flex className="flexContainer" align="center" gap="5">
-      <div style={{ height: "50vh", width: "100%" }}>
+    <Flex className="flexContainer" align="center" gap="6" direction="column">
+      <div style={{ height: "40vh", width: "100%" }}>
         <AnimatePresence mode="wait">
           <motion.div
             key={count}
@@ -23,7 +24,7 @@ function SpidermanShowcase() {
           >
             <Canvas
               dpr={[1, 2]}
-              camera={{ fov: 45 }}
+              camera={{ fov: 22.5 }}
               style={{ height: "100%", width: "100%" }}
             >
               <color attach="background" args={["#181818"]} />
@@ -35,13 +36,17 @@ function SpidermanShowcase() {
           </motion.div>
         </AnimatePresence>
       </div>
-      <Button
-        color={count % 2 === 0 ? "red" : "black"}
+      <div
         onClick={() => setCount((count + 1) % 2)}
-        radius="small"
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
-        Toggle Suit
-      </Button>
+        <PSButton />
+      </div>
     </Flex>
   );
 }

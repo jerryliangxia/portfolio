@@ -1,7 +1,7 @@
 export const basicData = {
   name: "Jerry Xia",
   about:
-    "I'm a software engineering student at McGill, about to enter full-time work at Unity. I hobby in 3D design, game development and other forms of art.",
+    "I'm a software engineering student at McGill, passionate about 3D Modelling, game development, and other forms of art. Welcome to my website!",
 };
 
 export const jobExperience = {
@@ -10,14 +10,14 @@ export const jobExperience = {
     rightTitle: "Software Engineer at Unity Technologies",
     rightSubtitle: "Montréal, QC",
     rightText:
-      "Created a new service for developers to monitor game performance, resolved database concurrency issue that eliminated 99% of failed push notifications.",
+      "Worked in Unity Gaming Services. Created two games and several Blender models during company recreation hours.",
   },
   gameloft: {
     leftText: "2021",
     rightTitle: "Software Developer at Gameloft Studios",
     rightSubtitle: "Montréal, QC",
     rightText:
-      "Managed Gameloft's online gaming infrastructure. Minimized costs to AWS S3 backup costs by 80%.",
+      "Managed Gameloft's online gaming infrastructure. Contributed to Meet the Team, a game developed as part of Gameloft's Global Game Jam.",
   },
 };
 
@@ -36,7 +36,8 @@ export const work = {
   modeling: {
     leftText: "2023",
     rightTitle: "3D Design",
-    rightText: "3D models made with Blender.",
+    rightText:
+      "3D models made with Blender, uploaded to Sketchfab frequently. Links below.",
   },
 };
 

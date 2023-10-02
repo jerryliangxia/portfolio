@@ -51,7 +51,7 @@ function Blog() {
     <Flex
       gap="6"
       direction="column"
-      style={{ width: "100%", paddingBottom: "5vh" }}
+      // style={{ width: "100%", paddingBottom: "5vh" }}
     >
       <Heading>Read my blog:</Heading>
       <Flex direction="column">

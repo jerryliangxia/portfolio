@@ -76,3 +76,11 @@ code {
     flex-direction: row;
   }
 }
+
+.arrow-icon {
+  transform: translateX(0);
+}
+
+p:hover .arrow-icon {
+  transform: translateX(3px);
+}

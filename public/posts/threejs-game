@@ -1,0 +1,78 @@
+---
+title: "Three.js Spider-Man Game"
+publishedAt: "2023-09-30"
+summary: "Documenting the development of a Three.js game."
+---
+
+This past week I've had a blast making a Spider-Man game with Three.js. The tools I used include:
+
+- [Blender](https://www.blender.org/) (for modelling)
+- React Three [Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction), [DREI](https://github.com/pmndrs/drei), and [Rapier](https://github.com/pmndrs/react-three-rapier) (coding)
+- [Mixamo](https://www.mixamo.com/#/) (for importing animations)
+
+I got some inspiration for a quick Three.js game from Andy Chung's [self-portrait](https://andychung.me/self-portrait), which involved a WASD-based movement system with some simple animations. For my game I knew I wanted something similar, and decided to model Insomniac Games' newest Spider-Man model, the Advanced Suit 2.0.
+
+I started everything by modelling a low-poly model. I found a good [reference](https://sketchfab.com/3d-models/marvel-spider-man-ps4-for-blender-517d2274e86f4a4ebe14d8cdb1ab32f6) of the character from the 2018 game, and got started. Once I was in a good place, I colored it in by using different materials (with only varying colors);
+
+<img src="../images/threejs-game/colors.png" width="100%">
+
+After this I rigged the character and added some of my own animations. I started coding and set out a first-draft scene: Spider-Man walking on a plane, navigating to wherever the user clicked. I added a fixed camera hovering above the scene, and placed Spider-Man in the middle. This wasn't too hard, but it did involve a lot of trial and error. Here's what it looked like:
+
+<img src="../gifs/threejs-game/rough_draft.gif" width="100%">
+
+This was great! However, I couldn't help but notice that the animation was too stiff, so I decided to scrap everything (not the model though) and restart. This involved setting up a new scene, with proper WASD controls this time, and using animations from a site called [Mixamo](https://www.mixamo.com/#/). Mixamo allows you to simply import a character, and that character will have access to a ton of animations on their website. After doing this, I got the following scene.
+
+<img src="../gifs/threejs-game/good_draft.gif" width="100%">
+
+To store which animation the character was using, I used a game engine called [Zustand](https://github.com/pmndrs/zustand), which allowed me to set the animation to either "Idle" or "Run". I created a Canvas component, and placed this skeleton inside:
+
+```
+function Game() {
+  const map = useMemo(() => [
+    { name: Controls.forward, keys: ["ArrowUp", "KeyW"] },
+    { name: Controls.back, keys: ["ArrowDown", "KeyS"] },
+    { name: Controls.left, keys: ["ArrowLeft", "KeyA"] },
+    { name: Controls.right, keys: ["ArrowRight", "KeyD"] },
+    { name: Controls.jump, keys: ["Space"] },
+  ]);
+  return (
+    <KeyboardControls map={map}>
+        <Canvas
+            shadows
+            camera={{ position: [0, 6, 4], fov: 42 }}
+            style={{ height: "100vh" }}
+        >
+            <Suspense>
+            <Physics>
+                <Experience />
+            </Physics>
+            </Suspense>
+        </Canvas>
+    </KeyboardControls>
+  );
+}
+```
+
+My game (and most of my code you can find [here](https://github.com/jerryliangxia/portfolio)) was placed in the [Experience](https://github.com/jerryliangxia/portfolio/blob/main/src/components/game/Experience.js) component.
+
+For the character controller, I only asked for the WASD or directional controls from the user, and applied a Rapier physics impulse based on the direction of the character. Since my camera was only facing one direction, this was relatively straightforward. The camera would also follow the player (`character.current.getWorldPosition`), and use LERP to make him look where they were going.
+
+I used a library called `gltfjsx` to help me load in the `.glb` files from my project. This involved a single command;
+
+```
+npx gltfjsx path/to/file/file_name.glb
+```
+
+This created a `.jsx` file with all the Mesh, Plane and other components necessary in the `.glb` file itself. This was super useful in easily importing my scene and character.
+
+After this it was all about creating a set based on something Spider-Man related. I decided to have Oscorp tower in the background, with three buildings Spider-Man could have access to. I added some colliders (with Rapier, I had to manually adjust the position of each one), and finished the scene up with three new props: Harry Osborn's research center, an Oscorp radio tower, and a wooden water tower. These were all classic elements of the first game (Spider-Man 2018)!
+
+Three.js has no 3D viewport, so it was a bit tedious to figure out where to place each collider, but it was definitely worth it. Here's a screenshot of the final result:
+
+<img src="../images/threejs-game/final.png" width="100%">
+
+And a full breakdown of the process on my YouTube channel!
+
+<iframe width="100%" height="360" src="https://www.youtube.com/embed/HzNK5DMSaXI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+You can play the final product here on my [website](https://jerryxia.com/game). Hope you enjoy it!

@@ -3,8 +3,6 @@ import { Flex, Text, Strong } from "@radix-ui/themes";
 import { motion } from "framer-motion";
 
 const PSButton = () => {
-  const [count, setCount] = useState(0);
-
   return (
     <Flex
       className="corner-border-button"
@@ -16,6 +14,7 @@ const PSButton = () => {
     >
       <motion.div
         whileHover={{ backgroundPosition: "0%" }}
+        exitHover={{ backgroundPosition: "100%", transition: { duration: 0 } }}
         animate={{ backgroundPosition: "100%" }}
         transition={{ duration: 1, type: "tween" }}
         style={{
@@ -27,9 +26,8 @@ const PSButton = () => {
           border: "none",
           cursor: "pointer",
         }}
-        onClick={() => setCount((count + 1) % 2)}
       >
-        <Flex direction="row" align="center" justify="center">
+        <Flex gap="2" direction="row" align="center" justify="center">
           <img src="images/3d/x.png" style={{ width: "9%", align: "center" }} />
           <Text size="5" style={{ width: "60%" }} align="center">
             <Strong>SWITCH SUITS</Strong>

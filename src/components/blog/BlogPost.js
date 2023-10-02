@@ -166,11 +166,13 @@ function BlogPost() {
             <Blockquote color="gray" {...props} />
           ),
           iframe: ({ node, ...props }) => {
-            const { src } = node.properties;
-            if (ReactPlayer.canPlay(src)) {
-              return <ReactPlayer url={src} width="100%" />;
+            let { src } = node.properties;
+            if (src.startsWith("https://www.youtube.com/watch?v=")) {
+              src = src.replace("watch?v=", "embed/");
             }
-            return <iframe title="Your unique title here" {...props} />;
+            return (
+              <iframe title="Your unique title here" src={src} {...props} />
+            );
           },
         }}
       ></ReactMarkdown>
