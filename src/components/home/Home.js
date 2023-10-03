@@ -7,6 +7,8 @@ import SpecialContact from "./SpecialContact";
 import { basicData, jobExperience, work, flexGaps } from "../Data";
 
 function Home() {
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <Flex gap="8" direction="column">
       <Heading>{basicData.name}</Heading>
@@ -23,12 +25,12 @@ function Home() {
           <CanvasComponent
             modelPath="spiderman.glb"
             intensity={0.1}
-            style={{ maxWidth: "40%" }}
+            style={{ maxWidth: isMobile ? "30%" : "40%" }}
           />
           <CanvasComponent
             modelPath="spiderman_hand.glb"
             intensity={0}
-            style={{ maxWidth: "20%" }}
+            style={{ maxWidth: isMobile ? "30%" : "20%" }}
           />
         </Flex>
       </section>

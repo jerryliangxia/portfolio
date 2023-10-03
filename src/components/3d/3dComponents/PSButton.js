@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Flex, Text, Strong } from "@radix-ui/themes";
 import { motion } from "framer-motion";
 
@@ -28,7 +28,11 @@ const PSButton = () => {
         }}
       >
         <Flex gap="2" direction="row" align="center" justify="center">
-          <img src="images/3d/x.png" style={{ width: "9%", align: "center" }} />
+          <img
+            src="images/3d/x.png"
+            style={{ width: "9%", align: "center" }}
+            alt=""
+          />
           <Text size="5" style={{ width: "60%" }} align="center">
             <Strong>SWITCH SUITS</Strong>
           </Text>

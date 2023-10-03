@@ -1,7 +1,7 @@
 export const basicData = {
   name: "Jerry Xia",
   about:
-    "I'm a software engineering student at McGill, passionate about 3D Modeling, game development, and other forms of art. Welcome to my website!",
+    "I'm a software engineering student at McGill, passionate about 3D modeling, game development, and other forms of art. Welcome to my website!",
 };
 
 export const jobExperience = {

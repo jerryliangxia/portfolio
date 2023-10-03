@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function ImagePopup({ src }) {
   const [isOpen, setIsOpen] = useState(false);
+  const isMobile = window.innerWidth <= 768;
 
   return (
     <>
@@ -11,7 +12,7 @@ function ImagePopup({ src }) {
         onClick={() => setIsOpen(true)}
         alt=""
       />
-      {isOpen && (
+      {isOpen && !isMobile && (
         <div
           style={{
             position: "fixed",
