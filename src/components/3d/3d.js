@@ -46,9 +46,8 @@ function ThreeD() {
           </svg>
         </Text>
       )}
+      <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
       <ImagePopup src="images/3d/ps5_full_suit/full_scope.png" />
-      {/* <ImagePopup src="images/3d/ps5_full_suit/full_scope_bright.png" /> */}
-      {/* <ImagePopup src="images/3d/ps5_full_suit/dual_180.png" /> */}
       <ImagePopup src="images/3d/ps5_full_suit/dual_180_stance.png" />
       <ImagePopup src="images/3d/ps5_full_suit/shader_editor.png" />
       <ImagePopup src="images/3d/normal_mask_annotated.png" />
