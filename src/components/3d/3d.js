@@ -41,21 +41,9 @@ function ThreeD() {
           ></path>
         </svg>
       </Text>
-      <Flex direction="row" gap="2">
-        <div style={{ width: "33%" }}>
-          <ImagePopup
-            src="images/3d/ps5_full_suit/portrait.png"
-            text="Portrait"
-          />
-        </div>
-        <div style={{ width: "33%" }}>
-          <ImagePopup src="images/3d/ps5_full_suit/90.png" />
-        </div>
-        <div style={{ width: "33%" }}>
-          <ImagePopup src="images/3d/ps5_full_suit/180.png" />
-        </div>
-      </Flex>
+      <ImagePopup src="images/3d/ps5_full_suit/full_scope.png" />
       <ImagePopup src="images/3d/ps5_full_suit/dual_180.png" />
+      <ImagePopup src="images/3d/ps5_full_suit/dual_180_stance.png" />
       <ImagePopup src="images/3d/ps5_full_suit/shader_editor.png" />
       <ImagePopup src="images/3d/normal_mask_annotated.png" />
       <CanvasComponent

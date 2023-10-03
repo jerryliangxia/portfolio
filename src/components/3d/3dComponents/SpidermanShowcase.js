@@ -7,6 +7,8 @@ import PSButton from "./PSButton";
 
 function SpidermanShowcase() {
   const [count, setCount] = useState(0);
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <Flex className="flexContainer" align="center" gap="6" direction="column">
       <div style={{ height: "40vh", width: "100%" }}>
@@ -36,17 +38,27 @@ function SpidermanShowcase() {
           </motion.div>
         </AnimatePresence>
       </div>
-      <div
-        onClick={() => setCount((count + 1) % 2)}
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <PSButton />
-      </div>
+      {isMobile ? (
+        <Button
+          color={count % 2 === 0 ? "red" : "black"}
+          onClick={() => setCount((count + 1) % 2)}
+          radius="small"
+        >
+          Toggle Suit
+        </Button>
+      ) : (
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          onClick={() => setCount((count + 1) % 2)}
+        >
+          <PSButton />
+        </div>
+      )}
     </Flex>
   );
 }
