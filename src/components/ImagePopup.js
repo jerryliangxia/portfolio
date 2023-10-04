@@ -8,7 +8,7 @@ function ImagePopup({ src }) {
     <>
       <img
         src={src}
-        style={{ width: "100%", cursor: "pointer" }} // Add cursor style here
+        style={{ width: "100%", cursor: "zoom-in" }}
         onClick={() => setIsOpen(true)}
         alt=""
       />
