@@ -19,35 +19,43 @@ function Home() {
           <Text as="p" color="gray">
             {basicData.about}
           </Text>
-          <Link
-            to="/3d"
-            style={{
-              textDecoration: "none",
-              justifyContent: "start",
-              alignContent: "start",
-            }}
+          <Flex
+            direction="row"
+            gap="1"
+            align="center"
+            justify="start"
+            style={{ marginTop: "8px" }}
           >
-            <Flex
-              direction="row"
-              gap="1"
-              align="center"
-              justify="start"
-              style={{ marginTop: "8px" }}
+            <Link
+              to="/3d"
+              style={{
+                textDecoration: "none",
+                justifyContent: "start",
+                alignContent: "start",
+              }}
             >
-              <ThreeD />
-              <Text
-                color="white"
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
+              <Flex
+                direction="row"
+                gap="1"
+                align="center"
+                justify="start"
+                style={{ marginTop: "8px" }}
               >
-                3D Work
-                <Arrow />
-              </Text>
-            </Flex>
-          </Link>
+                <ThreeD />
+                <Text
+                  color="white"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  3D Work
+                  <Arrow />
+                </Text>
+              </Flex>
+            </Link>
+          </Flex>
         </Flex>
       </section>
       <section>
