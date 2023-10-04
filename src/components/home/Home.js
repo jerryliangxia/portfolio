@@ -7,7 +7,8 @@ import Contact from "./Contact";
 import SpecialContact from "./SpecialContact";
 import { basicData, jobExperience, work, flexGaps } from "../Info";
 import ImagePopup from "../ImagePopup";
-import { ThreeD, Arrow } from "../../svg/Nav";
+import { ThreeD } from "../../svg/Nav";
+import { Arrow } from "../../svg/Button";
 
 function Home() {
   return (

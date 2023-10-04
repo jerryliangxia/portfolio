@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import MultiModelShowcase from "../MultiModelShowcase";
 import { Button, Flex } from "@radix-ui/themes";
 import { AnimatePresence, motion } from "framer-motion";
+import { ToggleOff, ToggleOn } from "../../../svg/Button";
 
 function SpidermanShowcase() {
   const [count, setCount] = useState(0);
@@ -37,10 +38,11 @@ function SpidermanShowcase() {
         </AnimatePresence>
       </div>
       <Button
-        color={count % 2 === 0 ? "red" : "black"}
+        variant="ghost"
         onClick={() => setCount((count + 1) % 2)}
         radius="small"
       >
+        {count === 1 ? <ToggleOn /> : <ToggleOff />}
         Toggle Suit
       </Button>
     </Flex>

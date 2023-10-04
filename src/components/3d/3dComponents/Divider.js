@@ -4,9 +4,9 @@ const Divider = () => {
   return (
     <div
       style={{
-        height: "2px",
+        height: "1px",
         width: "100%",
-        background: "linear-gradient(90deg, #181818, #B0B0B0, #181818)",
+        background: "rgba(40,40,40,1)",
         margin: "20px 0",
       }}
     />

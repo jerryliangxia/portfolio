@@ -8,6 +8,8 @@ import CanvasComponent from "../CanvasComponent";
 import YouTubeBlock from "./3dComponents/YouTubeBlock";
 
 function ThreeD() {
+  const isMobile = window.innerWidth <= 768;
+
   const imgRef = useRef();
   const path = "images/3d/ps5_full_suit/rotation/";
   const angles = [0, 45, 90, 135, 180, 225, 270, 315];
@@ -26,11 +28,6 @@ function ThreeD() {
     setCurrentImage(images[0]);
   };
 
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-  const handleImageLoad = () => {
-    setImagesLoaded(true);
-  };
-
   return (
     <Flex
       style={{ paddingTop: "20px", paddingBottom: "5vh" }}
@@ -41,22 +38,19 @@ function ThreeD() {
       <SpidermanShowcase />
       <Divider />
       <Text size="5">Advanced Suit 2.0</Text>
-      <img
-        ref={imgRef}
-        src={currentImage}
-        style={{
-          width: "100%",
-          cursor: "ew-resize",
-        }}
-        alt=""
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-      />
-      {/* {imagesLoaded ? (
+      {isMobile ? (
         <img
           ref={imgRef}
           src={currentImage}
-          onLoad={handleImageLoad}
+          style={{
+            width: "100%",
+          }}
+          alt=""
+        />
+      ) : (
+        <img
+          ref={imgRef}
+          src={currentImage}
           style={{
             width: "100%",
             cursor: "ew-resize",
@@ -65,15 +59,7 @@ function ThreeD() {
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         />
-      ) : (
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            backgroundColor: "black",
-          }}
-        />
-      )} */}
+      )}
       <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
       <ImagePopup src="images/3d/ps5_full_suit/full_scope.png" />
       <ImagePopup src="images/3d/ps5_full_suit/dual_180.png" />
@@ -98,7 +84,6 @@ function ThreeD() {
       <Divider />
       <Text size="5">Processes</Text>
       <YouTubeBlock youtubeId="RK-2gIuRXNw" />
-      <Divider />
       <Text size="3">
         If you haven't already, check out the{" "}
         <Link style={{ textDecoration: "none", color: "#BBBBBB" }} to="/game">
