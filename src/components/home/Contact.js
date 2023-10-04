@@ -32,7 +32,7 @@ function Contact() {
     <Flex gap="4" direction="column">
       <Text as="p">Contact</Text>
       <ContactInfo
-        site="Github"
+        site="GitHub"
         username="jerryliangxia"
         href="https://github.com/jerryliangxia"
       />
