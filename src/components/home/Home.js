@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CanvasComponent from "../CanvasComponent";
 import { Flex, Heading, Text } from "@radix-ui/themes";
 import InfoBlock from "./InfoBlock";
 import Contact from "./Contact";
 import SpecialContact from "./SpecialContact";
 import { basicData, jobExperience, work, flexGaps } from "../Info";
+import ImagePopup from "../ImagePopup";
+import { ThreeD, Arrow } from "../../svg/Nav";
 
 function Home() {
-  const isMobile = window.innerWidth <= 768;
-
   return (
     <Flex gap="8" direction="column">
       <Heading>{basicData.name}</Heading>
@@ -18,22 +19,80 @@ function Home() {
           <Text as="p" color="gray">
             {basicData.about}
           </Text>
+          <Link
+            to="/3d"
+            style={{
+              textDecoration: "none",
+              justifyContent: "start",
+              alignContent: "start",
+            }}
+          >
+            <Flex
+              direction="row"
+              gap="1"
+              align="center"
+              justify="start"
+              style={{ marginTop: "8px" }}
+            >
+              <ThreeD />
+              <Text
+                color="white"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                3D Work
+                <Arrow />
+              </Text>
+            </Flex>
+          </Link>
         </Flex>
       </section>
       <section>
-        <Flex justify="center" direction="row">
+        <Flex direction="row" gap="3" align="center" justify="center">
           <CanvasComponent
             modelPath="spiderman.glb"
             intensity={0.1}
-            style={{ maxWidth: isMobile ? "30%" : "40%" }}
+            style={{ maxWidth: "24%" }}
           />
           <CanvasComponent
             modelPath="spiderman_hand.glb"
             intensity={0}
-            style={{ maxWidth: isMobile ? "25%" : "25%" }}
+            style={{ maxWidth: "24%" }}
           />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              maxWidth: "40%",
+            }}
+          >
+            <img
+              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+              src="images/3d/ps5_full_suit/full_scope_home.png"
+              alt="3D Suit"
+            />
+          </div>
+          <div
+            variant="ghost"
+            size="1"
+            radius="small"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              maxWidth: "30%",
+            }}
+          ></div>
         </Flex>
       </section>
+      <ImagePopup
+        src="images/3d/ps5_full_suit/stance.png"
+        style={{ width: "100%" }}
+      />
       <section>
         <Flex gap={flexGaps.sectionFlexGap} direction="column">
           <Text as="p">Work Experience</Text>
