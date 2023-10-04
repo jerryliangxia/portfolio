@@ -3,25 +3,23 @@ import { Link } from "react-router-dom";
 import SpidermanShowcase from "./3dComponents/SpidermanShowcase";
 import { Flex, Text } from "@radix-ui/themes";
 import Divider from "./3dComponents/Divider";
-import ImagePopup from "./3dComponents/ImagePopup";
+import ImagePopup from "../ImagePopup";
 import CanvasComponent from "../CanvasComponent";
 import YouTubeBlock from "./3dComponents/YouTubeBlock";
 
 function ThreeD() {
   const isMobile = window.innerWidth <= 768;
   const imgRef = useRef();
-  const images = [
-    "images/3d/ps5_full_suit/portrait_annotated.png",
-    "images/3d/ps5_full_suit/90.png",
-    "images/3d/ps5_full_suit/180.png",
-  ];
+  const path = "images/3d/ps5_full_suit/rotation/";
+  const angles = [0, 45, 90, 135, 180, 225, 270, 315];
+  const images = angles.map((angle) => `${path}${angle}.png`);
   const [currentImage, setCurrentImage] = useState(images[0]);
 
   const handleMouseMove = (e) => {
     const rect = imgRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left; // x position within the element.
     const width = rect.right - rect.left;
-    const part = Math.floor((x / width) * images.length);
+    const part = Math.round((x / width) * (images.length - 1));
     setCurrentImage(images[part]);
   };
 
@@ -38,7 +36,25 @@ function ThreeD() {
     >
       <SpidermanShowcase />
       <Divider />
-      <Text size="5">Advanced Suit 2.0</Text>
+      <Text size="5">
+        Advanced Suit 2.0
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="16"
+          height="16"
+          style={{
+            marginLeft: "6px",
+            position: "relative",
+            top: "1px",
+          }}
+        >
+          <path
+            d="M18.5374 19.5674C16.7844 21.0831 14.4993 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 14.1361 21.3302 16.1158 20.1892 17.7406L17 12H20C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C14.1502 20 16.1022 19.1517 17.5398 17.7716L18.5374 19.5674Z"
+            fill="rgba(149,149,149,1)"
+          ></path>
+        </svg>
+      </Text>
       <img
         ref={imgRef}
         src={currentImage}
@@ -71,7 +87,7 @@ function ThreeD() {
       )}
       <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
       <ImagePopup src="images/3d/ps5_full_suit/full_scope.png" />
-      <ImagePopup src="images/3d/ps5_full_suit/dual_180_stance.png" />
+      <ImagePopup src="images/3d/ps5_full_suit/dual_180.png" />
       <ImagePopup src="images/3d/ps5_full_suit/shader_editor.png" />
       <ImagePopup src="images/3d/normal_mask_annotated.png" />
       <CanvasComponent
