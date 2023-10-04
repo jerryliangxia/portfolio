@@ -1,7 +1,7 @@
 [
   {
     "link": "/threejs-game",
-    "title": "Making a Three.js Spider-Man Game",
+    "title": "Three.js Spider-Man Game",
     "publishedAt": "2023-09-30"
   },
   {
@@ -16,7 +16,7 @@
   },
   {
     "link": "/mern-full-stack",
-    "title": "Creating a Full Stack MERN Application",
+    "title": "Creating a Full-stack MERN Website",
     "publishedAt": "2022-02-05"
   },
   {
@@ -31,7 +31,7 @@
   },
   {
     "link": "/python-reference",
-    "title": "Python for Technical Interviews",
+    "title": "Python Cheatsheet",
     "publishedAt": "2022-09-10"
   },
   {

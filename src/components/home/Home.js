@@ -83,10 +83,9 @@ function Home() {
           align="start"
           direction="column"
         >
-          <Text as="p">Languages</Text>
+          <Text as="p">Technical Skills</Text>
           <Text as="p" color="gray">
-            Java, Python, C, C\#, C++, Kotlin, OCaml, Bash, CLI, HTML/CSS,
-            JavaScript/TypeScript, React, Git.
+            {basicData.technicalSkills}
           </Text>
         </Flex>
       </section>

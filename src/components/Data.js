@@ -2,6 +2,8 @@ export const basicData = {
   name: "Jerry Xia",
   about:
     "I'm a software engineering student at McGill, passionate about 3D modeling, game development, and other forms of art. Welcome to my website!",
+  technicalSkills:
+    "Python, Java, C++, C, C#, OCaml, Bash, CLI, HTML/CSS, JavaScript/TypeScript, Git, Github/Gitlab.",
 };
 
 export const jobExperience = {
@@ -17,7 +19,7 @@ export const jobExperience = {
     rightTitle: "Software Developer at Gameloft Studios",
     rightSubtitle: "Montréal, QC",
     rightText:
-      "Managed Gameloft's online gaming infrastructure. Contributed to Meet the Team, a game developed as part of Gameloft's Global Game Jam.",
+      "Managed Gameloft's online gaming infrastructure. Contributed to Welcome to the Team, a game developed as part of Gameloft's Global Game Jam.",
   },
 };
 
@@ -31,7 +33,7 @@ export const work = {
     leftText: "2023",
     rightTitle: "Blender 2023 Boss Fight Challenge",
     rightText:
-      "Created using Blender and Cascadeur. Involves Blender NLA, Geometry Nodes, Rigify.",
+      "Created using Blender and Cascadeur. Involves Blender NLA, Geometry Nodes, and more.",
   },
   modeling: {
     leftText: "2023",
