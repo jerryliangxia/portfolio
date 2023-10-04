@@ -41,7 +41,7 @@ function ThreeD() {
         src={currentImage}
         style={{
           width: "100%",
-          cursor: "url('/cursors/mouse-line.png')",
+          cursor: "ew-resize",
         }}
         alt=""
         onMouseMove={handleMouseMove}
