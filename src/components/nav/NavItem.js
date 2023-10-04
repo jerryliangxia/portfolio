@@ -8,16 +8,18 @@ function NavItem({ title, to, children }) {
     <>
       {isMobile ? (
         <Button variant="ghost">
-          <Text
-            color="white"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            {title}
-          </Text>
+          <Link to={to} style={{ textDecoration: "none" }}>
+            <Text
+              color="white"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {title}
+            </Text>
+          </Link>
         </Button>
       ) : (
         <Tooltip content={title}>
