@@ -24,21 +24,6 @@ function SpecialContact() {
         </Flex>
         <Flex gap="2" align="center" direction="row">
           <img
-            src="images/about/behance.png"
-            style={{ width: "20%", objectFit: "contain" }}
-            alt=""
-          />
-          <RadixLink
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.behance.net/jerryxia?tracking_source=search_users|jerry%20xia"
-            size="2"
-          >
-            Behance
-          </RadixLink>
-        </Flex>
-        <Flex gap="2" align="center" direction="row">
-          <img
             src="images/about/artstation.png"
             style={{ width: "20%", objectFit: "contain" }}
             alt=""
@@ -50,6 +35,21 @@ function SpecialContact() {
             size="2"
           >
             ArtStation
+          </RadixLink>
+        </Flex>
+        <Flex gap="2" align="center" direction="row">
+          <img
+            src="images/about/behance.png"
+            style={{ width: "20%", objectFit: "contain" }}
+            alt=""
+          />
+          <RadixLink
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.behance.net/jerryxia?tracking_source=search_users|jerry%20xia"
+            size="2"
+          >
+            Behance
           </RadixLink>
         </Flex>
         <Flex gap="2" align="center" direction="row">

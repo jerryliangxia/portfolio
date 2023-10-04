@@ -78,10 +78,9 @@ function Home() {
               maxWidth: "40%",
             }}
           >
-            <img
-              style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            <ImagePopup
               src="images/3d/ps5_full_suit/full_scope_home.png"
-              alt="3D Suit"
+              style={{ width: "100%" }}
             />
           </div>
           <div
