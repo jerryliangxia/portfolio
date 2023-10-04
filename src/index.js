@@ -6,12 +6,23 @@ import reportWebVitals from "./reportWebVitals";
 import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
 
+import { PostHogProvider } from "posthog-js/react";
+
+const options = {
+  api_host: process.env.REACT_APP_PUBLIC_POSTHOG_HOST,
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Theme appearance="dark" radius="small">
-      <App />
-    </Theme>
+    <PostHogProvider
+      apiKey={process.env.REACT_APP_PUBLIC_POSTHOG_KEY}
+      options={options}
+    >
+      <Theme appearance="dark" radius="small">
+        <App />
+      </Theme>
+    </PostHogProvider>
   </React.StrictMode>
 );
 

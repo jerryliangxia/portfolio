@@ -26,7 +26,7 @@ export const jobExperience = {
 export const work = {
   lightspeed: {
     leftText: "2023",
-    rightTitle: "Lightspeed (PC Game)",
+    rightTitle: "Lightspeed",
     rightText: "High score PC game made in Unity. Sci-fi, B&W, Music, SFX.",
   },
   blenderContest: {
