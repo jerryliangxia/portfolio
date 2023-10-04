@@ -8,7 +8,7 @@ summary: "Tutorial for a Full-Stack MERN Project."
 
 I recently followed a tutorial going over how to create a fully functioning MERN (MongoDB, Express, React, Node) Application.
 
-I've summarized here as much as I could, with all the technical details needed to make sure the application works. The server's deployed on Heroku, and the frontend on Netlify ([Here](https://github.com/jerryliangxia/Memories-Project)'s the link to the source code on GitHub).
+The server's deployed on Heroku, and the frontend on Netlify ([Here](https://github.com/jerryliangxia/Memories-Project)'s the link to the source code on GitHub).
 
 This tutorial is lengthy, with a lot of instructions, and some hopefully concrete explanations. I hope it helps!
 
@@ -16,7 +16,7 @@ This tutorial is lengthy, with a lot of instructions, and some hopefully concret
 
 #### Warm-up / Node package manager installation
 
-If you are able to access the terminal in your IDE, try to split the view into two parts. Make two directories, `client` and `server` on each side, and within the client, run this command:
+If you are able to access the terminal in your IDE, split the view into two parts. Make two directories, `client` and `server` on each side, and within the client, run this command:
 
 ```javascript
 //  must have node downloaded first - version I used was 2.2.12
@@ -25,7 +25,7 @@ npx create-react-app
 
 This might take a while, as it adds several starter files to your program.
 
-After this, `cd` into `server`, create a file called `index.js`, run `npm init -y` and then install some dependencies:
+After this, `cd` into `server`, create a file called `index.js`, run `npm init -y` and get these dependencies:
 
 ```javascript
 npm install body-parser cors express mongoose
@@ -33,9 +33,9 @@ npm install body-parser cors express mongoose
 
 Here's the overview of what you just installed:
 
-- body-parser -> is used to send POST requests.
+- body-parser -> used to send POST requests.
 - cors -> used to send cross origin requests.
-- express -> is a framework for creating routesfor the application.
+- express -> a framework for creating routesfor the application.
 - mongoose -> creates models for our posts. _Very important._
 - nodemon -> by using this, you don't have to manually reset the server after every code change.
 
@@ -43,15 +43,15 @@ After this, import all of these dependencies within your `index.js` file. Node i
 
 Once you're done that, add a variable `"type": "module"` under `"main"` in the `package.json` file that was generated. Following this, in the body of `"scripts": {}`, add `"start": nodemon index.js`. This should make it so you can run the development server.
 
-In the client, run `npm install axios moment react-file-base64 redux redux-thunk`. This will install several dependencies, including axios, and file upload, that will assist us in creating the application.
+In the client, run `npm install axios moment react-file-base64 redux redux-thunk`. This will install several dependencies, including axios and file upload, which will assist us in creating the application.
 
-- Delete the `src` folder. Create an `index.js` file in `src` instead, and we'll use this from now on. Import React, ReactDOM in this file, and, using your HTML skills, render the app and call it the `"root"`.
+- Delete the `src` folder. Create an `index.js` file in `src` instead; we'll use this from now on. Import React, ReactDOM in this file, and, using your HTML skills, render the app and call it the `"root"`.
 
 In `App.js`, import React, return the `App` as a const, and export it. By accomplishing this, running `npm start` will now start the development server :)
 
 ## Setting up the Backend and Database
 
-The basic gist of the application can be seen in the demo (via the GitHub link). On this website we're creating, we'll have several Post objects on a page. These posts will contain data such as the creator's name, the message of the post, and some other fields you'll see later below. We'll add the basic functionalities to these posts as well by using a Form object. With this Form object, we can create, and update posts. We can also like and delete posts from the Post object itself.
+On this website we're creating, we'll have several Post objects on a page. These posts will contain data such as the creator's name, the message of the post, and some other fields you'll see later below. We'll add the basic functionalities to these posts as well by using a Form object. With this Form object, we can create, and update posts. We can also like and delete posts from the Post object itself.
 
 Here's a Post:
 
@@ -65,13 +65,13 @@ And here's the Form:
     <img src ="../images/creating-a-full-stack-application/form.png" width="50%"/>
 </p>
 
-Let's dive right into the database setup.
+Let's dive into the database setup.
 
 We'll be using MongoDB (The M in MERN) to create a cluster we can operate on. Here are the instructions:
 
 - First, add a database user.
 - Ensure network access is available to all IPs, then;
-- Connect the application with Node 2.2.12 (which is just what I used), and in `index.js` paste the following:
+- Connect the application with `Node 2.2.12` (which is just what I used), and in `index.js` paste the following:
 
 ```javascript
 import express from "express";
@@ -97,11 +97,11 @@ app.get("/", (req, res) => {
 });
 ```
 
-This will be the start of our development.
+This will be the start of our backend development.
 
-Now, some of these dependencies will be used and explained later. After this, create `controller` and `routes` directories within `server`. These two folders are more for organization; but play a pivotal role in making a clean backend component. Follow these steps:
+I'll explain some of these dependencies later. After this, create `controller` and `routes` directories in `server`. These two folders are more for organization, but play a pivotal role in making a clean backend component. Follow these steps:
 
-- In `routes`, add a file called `post.js`. Do the same in `controller`.
+- In `routes`, create a file called `post.js`. Do the same in `controller`.
 
 - In `controllers/posts.js`, we'll be exporting functions that we will be listing in `routes/posts.js`.
 
@@ -157,7 +157,7 @@ export default PostMessage;
 
 > As mentioned briefly above, Mongoose is used to create models; we essentially create a schema, then export this as a model.
 
-We just created a schema, corresponding to one model. In bigger applications, we'd have to create several schemas, but just for the sake of our application, we're sticking to something small and simple. So - just one schema, one model.
+We just created a schema, corresponding to one model. In bigger applications, we'd have to create several schemas, but just for the sake of our application we're sticking to something small and simple. So - just one schema, one model.
 
 We use this model in `controllers/posts.js`. In this file, we can then use this `PostMessage` like so: `await PostMessage.find()` (just an example). `await` here is used because `find()` takes time; we thus have to account for this by using something called `async`, taking in two parameters; `req` and `res`. Add in status codes, and surround in try-catch blocks:
 
@@ -180,7 +180,7 @@ This is our first asynchronous call! We'll be using this further throughout the 
 
 ## Setting up the Frontend
 
-Install material UI: `npm install @material-ui/core` and `npm install @material-ui/icons` while in `client`.
+Install `material-ui`: `npm install @material-ui/core` and `npm install @material-ui/icons` while in `client`.
 
 Follow these four steps:
 
@@ -195,13 +195,13 @@ Import all the components from `@material-ui`. For example:
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
 ```
 
-Setup of the frontend is done! It's very quick, as you can see.
+Setup of the frontend is done!
 
 Now, we move on to a bit of styling before setting up backend APIs, and connecting them to the frontend.
 
 ## Styling
 
-Using the `./styles.js` file in every directory, import `makeStyles` from `@material-ui` and define the styling (This is ultimately up to you - but the styling I used can be found on the repository). Once this is done, go to `App.js` and within this file (and within App itself), insert the following:
+Using the `./styles.js` file in every directory, import `makeStyles` from `@material-ui` and define the styling (This is ultimately up to you - but the styling I used can be found on the repository). Once this is done, open `App.js` and add the following:
 
 ```javascript
 // using styles
@@ -213,9 +213,9 @@ const classes = useStyles();
 
 Now, you can use styles by specifying `className={classes.appBar}`, for example, in the HTML.
 
-> Referring to GitHub is ideal to follow the next few steps, especially when it comes to making Containers and Grids in material-ui.
+> Referring to GitHub is ideal to follow the next few steps, especially when it comes to making Containers and Grids in Material UI.
 
-Now, for `Post`, `Posts` and `Form`, update the `styles.js` file and import the styles respectively. Create a `const` just as shown above.
+Now for `Post`, `Posts` and `Form`, update the `styles.js` file and import the styles respectively. Create a `const` just as shown above.
 
 ## Backend APIs and Redux
 
@@ -277,7 +277,7 @@ useEffect(() => {
 }, [dispatch]);
 ```
 
-Once this is done, create a folder called `actions` in `src`. This will house all the Action Creators we'll define.
+After this is done, create a folder called `actions` in `src`. This will house all the Action Creators we'll define.
 
 **Note:** Action Creators are functions that return an action. An action is simply an object that has a `type` and a `payload`. Once this action we've just created, gets dispatched from `App.js`, we go to the post's `reducer`, and `FETCH_ALL` of the posts. Then - in `/reducers/posts.js`, under `FETCH_ALL` we can return the `action.payload` (again, referring to GitHub here is important), which is the data returned from the action. This basically allows us to fetch all the posts.
 

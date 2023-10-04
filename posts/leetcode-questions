@@ -26,7 +26,7 @@ Questions with neat tricks I found:
 1. [Maximum Product of Two Elements in an Array](https://leetcode.com/submissions/detail/800054009/): Keeping track of min and max values
 2. [Make Array Zero by Subtracting Equal Amounts](https://leetcode.com/submissions/detail/800061115/): Great use of a set and its importance
 
-Things to think about...
+Things to keep in mind:
 
 - Can you shorten/**filter** what you are to iterate through? Maybe shorten a list by making it into a tuple of `(index, item)` entries?
 - Iterating through the input isn't terrible; sometimes solving a problem depends on how sound the logic can be.

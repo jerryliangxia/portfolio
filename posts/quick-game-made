@@ -4,9 +4,16 @@ publishedAt: "2023-09-20"
 summary: "Game made for COMP 521 - Modern Computer Games."
 ---
 
-Today I made a quick game (~2h), which features the player moving around four areas: a starting area, combat zone, canyon area and goal area. This was part of COMP 521: Modern Computer Games, and was the first assignment in the course.
+Today I made a quick 3D game (~2h), which involves the player moving across four areas:
 
-Following a brief altercation with Unity's Package Import 🙃 ([full problem on this forum here](https://forum.unity.com/threads/i-lost-all-of-my-scene-assets-after-scene-reload.978981/)) I lost all my progress withstood in the past three hours. So I thought I'd take the advantage to do the whole thing again, but with the knowledge of what I'd done before and a nice timelapse I could upload and show on YouTube. Here's that video:
+- Starting area
+- Combat zone
+- Canyon area
+- Goal area
+
+This was part of COMP 521: Modern Computer Games, and was the first assignment in the course.
+
+Following a brief altercation with Unity's Package Import 🙃 ([full problem on this forum here](https://forum.unity.com/threads/i-lost-all-of-my-scene-assets-after-scene-reload.978981/)) I lost all my progress at the end of the project. BUT I thought I'd take advantage of the situation and do a timelapse of the whole process!
 
 <iframe width="100%" height="360" src="https://www.youtube.com/embed/ssFuIBbE0hQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -21,4 +28,4 @@ Following a brief altercation with Unity's Package Import 🙃 ([full problem on
 
 - [GLTF importer for Unity](https://github.com/atteneder/glTFast)
 
-I originally lost all my progress because of a WebGL issue, but I'm now happy to say that the game is deployed [here](https://jerrylxia.itch.io/a-nice-walk) on itch.io if you'd like to check it out :) (Playtime: ~2 mins)
+You can play the game [here](https://jerrylxia.itch.io/a-nice-walk) on itch.io :) Thanks for reading!
