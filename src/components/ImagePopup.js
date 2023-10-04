@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ProgressiveImg from "./ProgressiveImg";
 
 function ImagePopup({ src }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,13 @@ function ImagePopup({ src }) {
         onClick={() => setIsOpen(true)}
         alt=""
       />
+      {/* <ProgressiveImg
+        src={src}
+        placeholderSrc="images/insomniac-games.jpeg"
+        width={src.maxWidth}
+        height={src.maxHeight}
+        onClick={() => setIsOpen(true)}
+      /> */}
       {isOpen && !isMobile && (
         <div
           style={{

@@ -26,6 +26,11 @@ function ThreeD() {
     setCurrentImage(images[0]);
   };
 
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const handleImageLoad = () => {
+    setImagesLoaded(true);
+  };
+
   return (
     <Flex
       style={{ paddingTop: "20px", paddingBottom: "5vh" }}
@@ -47,6 +52,28 @@ function ThreeD() {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       />
+      {/* {imagesLoaded ? (
+        <img
+          ref={imgRef}
+          src={currentImage}
+          onLoad={handleImageLoad}
+          style={{
+            width: "100%",
+            cursor: "ew-resize",
+          }}
+          alt=""
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        />
+      ) : (
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            backgroundColor: "black",
+          }}
+        />
+      )} */}
       <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
       <ImagePopup src="images/3d/ps5_full_suit/full_scope.png" />
       <ImagePopup src="images/3d/ps5_full_suit/dual_180.png" />
