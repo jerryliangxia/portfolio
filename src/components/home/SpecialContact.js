@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex, Text, Link as RadixLink } from "@radix-ui/themes";
-import { flexGaps } from "../Data";
+import { flexGaps } from "../Info";
 
 function SpecialContact() {
   return (

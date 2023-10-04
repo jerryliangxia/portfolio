@@ -4,7 +4,7 @@ import { Flex, Heading, Text } from "@radix-ui/themes";
 import InfoBlock from "./InfoBlock";
 import Contact from "./Contact";
 import SpecialContact from "./SpecialContact";
-import { basicData, jobExperience, work, flexGaps } from "../Data";
+import { basicData, jobExperience, work, flexGaps } from "../Info";
 
 function Home() {
   const isMobile = window.innerWidth <= 768;
