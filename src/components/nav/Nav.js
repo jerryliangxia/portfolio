@@ -1,39 +1,24 @@
 import React from "react";
-import { Button, Flex, Text, Theme } from "@radix-ui/themes";
-import { Link } from "react-router-dom";
+import { Flex, Theme } from "@radix-ui/themes";
+import { Home, Blog, ThreeD, Insomniac } from "../../svg/Nav";
+import NavItem from "./NavItem";
 
 function Nav() {
   return (
     <Theme accentColor="gray" radius="small">
       <Flex gap="3">
-        <Button variant="ghost" color="white">
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <Text color="white" size="2">
-              About
-            </Text>
-          </Link>
-        </Button>
-        <Button variant="ghost">
-          <Link to="/blog" style={{ textDecoration: "none" }}>
-            <Text color="white" size="2">
-              Blog
-            </Text>
-          </Link>
-        </Button>
-        <Button variant="ghost">
-          <Link to="/3d" style={{ textDecoration: "none" }}>
-            <Text color="white" size="2">
-              3D
-            </Text>
-          </Link>
-        </Button>
-        <Button variant="ghost">
-          <Link to="/game" style={{ textDecoration: "none" }}>
-            <Text color="white" size="2">
-              Game
-            </Text>
-          </Link>
-        </Button>
+        <NavItem title="Home" to="/">
+          <Home />
+        </NavItem>
+        <NavItem title="Blog" to="/blog">
+          <Blog />
+        </NavItem>
+        <NavItem title="3D" to="/3d">
+          <ThreeD />
+        </NavItem>
+        <NavItem title="Game" to="/game">
+          <Insomniac />
+        </NavItem>
       </Flex>
     </Theme>
   );
