@@ -42,6 +42,7 @@ function ThreeD() {
       <Text color="gray" as="p" style={{ paddingBottom: "20px" }}>
         {ThreeDInfo.timeline}
       </Text>
+      <Dropdown title="Note to Insomniac Games" text={ThreeDInfo.insomniac} />
       <Divider />
       <Text size="5">Advanced Suit 2.0</Text>
       {isMobile ? (
@@ -72,9 +73,11 @@ function ThreeD() {
         src="images/3d/spiderman_low_poly_scope.png"
       />
       <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
-      <Text color="gray" size="3">
-        Click any to enlarge image.
-      </Text>
+      {!isMobile && (
+        <Text color="gray" size="3">
+          Click any to enlarge image.
+        </Text>
+      )}
       <ImagePopup src="images/3d/ps5_full_suit/full_scope.png" />
       <ImagePopup src="images/3d/ps5_full_suit/dual_180.png" />
       <ImagePopup src="images/3d/ps5_full_suit/shader_editor.png" />
