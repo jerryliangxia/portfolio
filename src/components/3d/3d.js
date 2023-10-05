@@ -7,6 +7,7 @@ import ImagePopup from "../ImagePopup";
 import CanvasComponent from "../CanvasComponent";
 import Dropdown from "./3dComponents/Dropdown";
 import { ThreeD as ThreeDInfo } from "../Info";
+import GifPopup from "./3dComponents/GifPopup";
 
 function ThreeD() {
   const isMobile = window.innerWidth <= 768;
@@ -42,7 +43,11 @@ function ThreeD() {
       <Text color="gray" as="p" style={{ paddingBottom: "20px" }}>
         {ThreeDInfo.timeline}
       </Text>
-      <Dropdown title="Note to Insomniac Games" text={ThreeDInfo.insomniac} />
+      <Dropdown
+        color="rgba(115,192,196,1)"
+        title="Note to Insomniac Games"
+        text={ThreeDInfo.insomniac}
+      />
       <Divider />
       <Text size="5">Advanced Suit 2.0</Text>
       {isMobile ? (
@@ -120,7 +125,10 @@ function ThreeD() {
         title="Symbiote Material"
         text={ThreeDInfo.symbioteShaderEditor}
       />
-      <ImagePopup src="gifs/blender-contest/4.gif" />
+      <GifPopup
+        placeHolderSrc="images/3d/anim_placeholder.png"
+        src="gifs/blender-contest/4.gif"
+      />
       <Dropdown
         title="Animation Process"
         text={ThreeDInfo.animation}

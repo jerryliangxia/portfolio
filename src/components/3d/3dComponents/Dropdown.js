@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Button, Text } from "@radix-ui/themes";
+import { Button, Text, Flex } from "@radix-ui/themes";
 import { DropdownArrowUp, DropdownArrowDown } from "../../../svg/Button";
 import ImagePopup from "../../ImagePopup";
 import YouTubeBlock from "./YouTubeBlock";
 
-function Dropdown({ title, text, src, youtubeId }) {
+function Dropdown({ title, text, src, youtubeId, color = "white" }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -17,22 +17,30 @@ function Dropdown({ title, text, src, youtubeId }) {
         onClick={toggleDropdown}
         variant="ghost"
         radius="small"
-        color="white"
+        color={color}
       >
-        {isOpen ? <DropdownArrowUp /> : <DropdownArrowDown />}
+        {isOpen ? (
+          <DropdownArrowUp
+            color={color === "white" ? "rgba(177,177,177,1)" : color}
+          />
+        ) : (
+          <DropdownArrowDown
+            color={color === "white" ? "rgba(177,177,177,1)" : color}
+          />
+        )}
         {title}
       </Button>
-      <div className={`dropdown-content ${isOpen ? "open" : ""}`}>
+      <Flex
+        gap="2"
+        direction="column"
+        className={`dropdown-content ${isOpen ? "open" : ""}`}
+      >
         {src !== "" && <ImagePopup src={src} />}
         {youtubeId !== "" && <YouTubeBlock youtubeId={youtubeId} />}
-        <Text
-          color="gray"
-          size="2"
-          style={{ marginTop: src === "" && youtubeId === "" ? "0px" : "8px" }}
-        >
+        <Text color="gray" size="2">
           {text}
         </Text>
-      </div>
+      </Flex>
     </div>
   );
 }

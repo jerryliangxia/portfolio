@@ -94,5 +94,5 @@ p:hover .arrow-icon {
 }
 
 .dropdown-content.open {
-  max-height: 500px; /* adjust this value to fit your content */
+  max-height: none;
 }

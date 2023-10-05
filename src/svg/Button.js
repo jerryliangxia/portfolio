@@ -47,7 +47,7 @@ export const Arrow = () => {
   );
 };
 
-export const DropdownArrowDown = () => {
+export const DropdownArrowDown = ({ color = "rgba(177,177,177,1)" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -57,13 +57,13 @@ export const DropdownArrowDown = () => {
     >
       <path
         d="M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z"
-        fill="rgba(177,177,177,1)"
+        fill={color}
       ></path>
     </svg>
   );
 };
 
-export const DropdownArrowUp = () => {
+export const DropdownArrowUp = ({ color = "rgba(177,177,177,1)" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +73,7 @@ export const DropdownArrowUp = () => {
     >
       <path
         d="M11.9997 10.8284L7.04996 15.7782L5.63574 14.364L11.9997 8L18.3637 14.364L16.9495 15.7782L11.9997 10.8284Z"
-        fill="rgba(177,177,177,1)"
+        fill={color}
       ></path>
     </svg>
   );

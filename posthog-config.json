@@ -1,0 +1,14 @@
+[
+  {
+    "property": "host",
+    "type": "string",
+    "operator": "is_not",
+    "value": "localhost:3000"
+  },
+  {
+    "property": "$host",
+    "type": "string",
+    "operator": "is_not",
+    "value": "localhost:3000"
+  }
+]
