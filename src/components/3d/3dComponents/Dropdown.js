@@ -13,7 +13,12 @@ function Dropdown({ title, text, src, youtubeId }) {
 
   return (
     <div style={{ padding: "10px" }}>
-      <Button onClick={toggleDropdown} variant="ghost" radius="small">
+      <Button
+        onClick={toggleDropdown}
+        variant="ghost"
+        radius="small"
+        color="white"
+      >
         {isOpen ? <DropdownArrowUp /> : <DropdownArrowDown />}
         {title}
       </Button>
@@ -21,6 +26,7 @@ function Dropdown({ title, text, src, youtubeId }) {
         {src !== "" && <ImagePopup src={src} />}
         {youtubeId !== "" && <YouTubeBlock youtubeId={youtubeId} />}
         <Text
+          color="gray"
           size="2"
           style={{ marginTop: src === "" && youtubeId === "" ? "0px" : "8px" }}
         >

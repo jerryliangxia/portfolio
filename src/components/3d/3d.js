@@ -32,14 +32,14 @@ function ThreeD() {
   return (
     <Flex style={{ paddingBottom: "5vh" }} gap="4" direction="column">
       <Heading>3D Modeling</Heading>
-      <Text as="p" style={{ paddingBottom: "20px" }}>
+      <Text color="gray" as="p" style={{ paddingBottom: "20px" }}>
         {ThreeDInfo.about}
       </Text>
       <SpidermanShowcase style={{ marginTop: "100px" }} />
-      <Text as="p" style={{ paddingBottom: "20px" }}>
+      <Text color="gray" as="p" style={{ paddingBottom: "20px" }}>
         {ThreeDInfo.teamwork}
       </Text>
-      <Text as="p" style={{ paddingBottom: "20px" }}>
+      <Text color="gray" as="p" style={{ paddingBottom: "20px" }}>
         {ThreeDInfo.timeline}
       </Text>
       <Divider />
@@ -72,10 +72,17 @@ function ThreeD() {
         src="images/3d/spiderman_low_poly_scope.png"
       />
       <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
-      <Text>All artwork created in Blender. Click to zoom.</Text>
+      <Text color="gray" size="3">
+        Click any to enlarge image.
+      </Text>
       <ImagePopup src="images/3d/ps5_full_suit/full_scope.png" />
       <ImagePopup src="images/3d/ps5_full_suit/dual_180.png" />
       <ImagePopup src="images/3d/ps5_full_suit/shader_editor.png" />
+      <Dropdown
+        src="images/3d/mask_mat.png"
+        title="Suit Material"
+        text={ThreeDInfo.maskShaderEditor}
+      />
       <ImagePopup src="images/3d/normal_mask_annotated.png" />
       <Dropdown
         title="Mask Process"
@@ -105,7 +112,11 @@ function ThreeD() {
       </Flex>
       <ImagePopup src="images/3d/symbiote_annotated.png" />
       <ImagePopup src="images/3d/symbiote_inner.png" />
-      <Dropdown title="Symbiote Process" text={ThreeDInfo.symbioteInner} />
+      <Dropdown
+        src="images/3d/symbiote_mat.png"
+        title="Symbiote Material"
+        text={ThreeDInfo.symbioteShaderEditor}
+      />
       <ImagePopup src="gifs/blender-contest/4.gif" />
       <Dropdown
         title="Animation Process"
