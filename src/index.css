@@ -23,6 +23,7 @@ code {
   padding: 60px 20px 20px 20px; /* Adjust the first value as needed */
   width: 35%;
   margin: auto;
+  padding-bottom: 5vh;
 }
 
 @media (max-width: 600px) {
@@ -83,4 +84,15 @@ code {
 
 p:hover .arrow-icon {
   transform: translateX(3px);
+}
+
+.dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-top: 6px; /* adjust this value to move the content down */
+}
+
+.dropdown-content.open {
+  max-height: 500px; /* adjust this value to fit your content */
 }

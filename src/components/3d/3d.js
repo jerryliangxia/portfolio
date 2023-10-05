@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import SpidermanShowcase from "./3dComponents/SpidermanShowcase";
-import { Flex, Text } from "@radix-ui/themes";
+import { Flex, Text, Heading, Link as RadixLink } from "@radix-ui/themes";
 import Divider from "./3dComponents/Divider";
 import ImagePopup from "../ImagePopup";
 import CanvasComponent from "../CanvasComponent";
-import YouTubeBlock from "./3dComponents/YouTubeBlock";
+import Dropdown from "./3dComponents/Dropdown";
+import { ThreeD as ThreeDInfo } from "../Info";
 
 function ThreeD() {
   const isMobile = window.innerWidth <= 768;
@@ -29,13 +30,18 @@ function ThreeD() {
   };
 
   return (
-    <Flex
-      style={{ paddingTop: "20px", paddingBottom: "5vh" }}
-      align="center"
-      gap="4"
-      direction="column"
-    >
-      <SpidermanShowcase />
+    <Flex style={{ paddingBottom: "5vh" }} gap="4" direction="column">
+      <Heading>3D Modeling</Heading>
+      <Text as="p" style={{ paddingBottom: "20px" }}>
+        {ThreeDInfo.about}
+      </Text>
+      <SpidermanShowcase style={{ marginTop: "100px" }} />
+      <Text as="p" style={{ paddingBottom: "20px" }}>
+        {ThreeDInfo.teamwork}
+      </Text>
+      <Text as="p" style={{ paddingBottom: "20px" }}>
+        {ThreeDInfo.timeline}
+      </Text>
       <Divider />
       <Text size="5">Advanced Suit 2.0</Text>
       {isMobile ? (
@@ -60,30 +66,53 @@ function ThreeD() {
           onMouseLeave={handleMouseLeave}
         />
       )}
+      <Dropdown
+        title="Full Suit Process"
+        text={ThreeDInfo.fullSuit}
+        src="images/3d/spiderman_low_poly_scope.png"
+      />
       <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
+      <Text>All artwork created in Blender. Click to zoom.</Text>
       <ImagePopup src="images/3d/ps5_full_suit/full_scope.png" />
       <ImagePopup src="images/3d/ps5_full_suit/dual_180.png" />
       <ImagePopup src="images/3d/ps5_full_suit/shader_editor.png" />
       <ImagePopup src="images/3d/normal_mask_annotated.png" />
+      <Dropdown
+        title="Mask Process"
+        text={ThreeDInfo.mask}
+        youtubeId="vXmO4obPq2Q"
+      />
       <CanvasComponent
         modelPath="spiderman_hand_showcase.glb"
         intensity={0}
         camera={{ fov: 22.5 }}
         style={{ maxWidth: "100%", height: "50vh" }}
       />
-      <Text align="start" justify="end" size="1">
-        Finished September 21, 2023.
-      </Text>
+      <Flex direction="column" style={{ textAlign: "right" }}>
+        <Text size="2">Finished September 21, 2023.</Text>
+        <Text size="2">
+          View all my models{" "}
+          <RadixLink
+            href="https://sketchfab.com/jerrylxia"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="white"
+          >
+            here
+          </RadixLink>{" "}
+          on Sketchfab.
+        </Text>
+      </Flex>
       <ImagePopup src="images/3d/symbiote_annotated.png" />
       <ImagePopup src="images/3d/symbiote_inner.png" />
+      <Dropdown title="Symbiote Process" text={ThreeDInfo.symbioteInner} />
+      <ImagePopup src="gifs/blender-contest/4.gif" />
+      <Dropdown
+        title="Animation Process"
+        text={ThreeDInfo.animation}
+        youtubeId="RK-2gIuRXNw"
+      />
       <Divider />
-      <Text size="5">Timelapses</Text>
-      <YouTubeBlock youtubeId="jAWvmQtjtN4" />
-      <YouTubeBlock youtubeId="HzNK5DMSaXI" />
-      <YouTubeBlock youtubeId="ssFuIBbE0hQ" />
-      <Divider />
-      <Text size="5">Processes</Text>
-      <YouTubeBlock youtubeId="RK-2gIuRXNw" />
       <Text size="3">
         If you haven't already, check out the{" "}
         <Link style={{ textDecoration: "none", color: "#BBBBBB" }} to="/game">
