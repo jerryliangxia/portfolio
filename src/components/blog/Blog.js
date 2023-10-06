@@ -48,11 +48,7 @@ function Blog() {
   }, {});
 
   return (
-    <Flex
-      gap="6"
-      direction="column"
-      // style={{ width: "100%", paddingBottom: "5vh" }}
-    >
+    <Flex gap="6" direction="column" style={{ width: "100%" }}>
       <Heading>Read my blog:</Heading>
       <Flex direction="column">
         {Object.entries(postsByYear)

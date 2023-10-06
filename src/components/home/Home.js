@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CanvasComponent from "../CanvasComponent";
-import { Flex, Heading, Text } from "@radix-ui/themes";
+import { Flex, Heading, Text, Button } from "@radix-ui/themes";
 import InfoBlock from "./InfoBlock";
 import Contact from "./Contact";
 import SpecialContact from "./SpecialContact";
@@ -27,39 +27,36 @@ function Home() {
             justify="start"
             style={{ marginTop: "8px" }}
           >
-            <Link
-              to="/3d"
-              style={{
-                textDecoration: "none",
-                justifyContent: "start",
-                alignContent: "start",
-              }}
-            >
-              <Flex
-                direction="row"
-                gap="1"
-                align="center"
-                justify="start"
-                style={{ marginTop: "8px" }}
+            <div>
+              <Link
+                to="/3d"
+                style={{
+                  textDecoration: "none",
+                  justifyContent: "start",
+                  alignContent: "start",
+                }}
               >
-                <ThreeD />
-                <Text
-                  color="white"
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  3D Work
-                  <Arrow />
-                </Text>
-              </Flex>
-            </Link>
+                <Flex direction="row" gap="1" align="center" justify="start">
+                  <ThreeD />
+                  <Text
+                    className="btn"
+                    color="white"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    3D Work
+                    <Arrow />
+                  </Text>
+                </Flex>
+              </Link>
+            </div>
           </Flex>
         </Flex>
       </section>
-      <section>
+      {/* <section>
         <Flex direction="row" gap="3" align="center" justify="center">
           <CanvasComponent
             modelPath="spiderman.glb"
@@ -96,11 +93,17 @@ function Home() {
             }}
           ></div>
         </Flex>
+      </section> */}
+      <section>
+        <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
+        <div className="reel">
+          <ImagePopup src="images/about/dual_square.png" />
+          <ImagePopup src="images/about/hand_square.png" />
+          <ImagePopup src="images/about/mask_square.png" />
+          <ImagePopup src="images/about/symbiote_mask_square.png" />
+        </div>
       </section>
-      <ImagePopup
-        src="images/3d/ps5_full_suit/stance.png"
-        style={{ width: "100%" }}
-      />
+
       <section>
         <Flex gap={flexGaps.sectionFlexGap} direction="column">
           <Text as="p">Work Experience</Text>

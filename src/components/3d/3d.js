@@ -5,7 +5,7 @@ import { Flex, Text, Heading, Link as RadixLink } from "@radix-ui/themes";
 import Divider from "./3dComponents/Divider";
 import ImagePopup from "../ImagePopup";
 import CanvasComponent from "../CanvasComponent";
-import Dropdown from "./3dComponents/Dropdown";
+import Documentation from "./3dComponents/Documentation";
 import { ThreeD as ThreeDInfo } from "../Info";
 import GifPopup from "./3dComponents/GifPopup";
 
@@ -36,18 +36,13 @@ function ThreeD() {
       <Text color="gray" as="p" style={{ paddingBottom: "20px" }}>
         {ThreeDInfo.about}
       </Text>
-      <SpidermanShowcase style={{ marginTop: "100px" }} />
+      <SpidermanShowcase />
       <Text color="gray" as="p" style={{ paddingBottom: "20px" }}>
         {ThreeDInfo.teamwork}
       </Text>
-      <Text color="gray" as="p" style={{ paddingBottom: "20px" }}>
-        {ThreeDInfo.timeline}
+      <Text color="gray" as="p">
+        {ThreeDInfo.insomniac}
       </Text>
-      <Dropdown
-        color="rgba(115,192,196,1)"
-        title="Note to Insomniac Games"
-        text={ThreeDInfo.insomniac}
-      />
       <Divider />
       <Text size="5">Advanced Suit 2.0</Text>
       {isMobile ? (
@@ -72,31 +67,17 @@ function ThreeD() {
           onMouseLeave={handleMouseLeave}
         />
       )}
-      <Dropdown
-        title="Full Suit Process"
+      <Documentation
         text={ThreeDInfo.fullSuit}
         src="images/3d/spiderman_low_poly_scope.png"
       />
       <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
-      {!isMobile && (
-        <Text color="gray" size="3">
-          Click any to enlarge image.
-        </Text>
-      )}
-      <ImagePopup src="images/3d/ps5_full_suit/full_scope.png" />
+      <ImagePopup src="images/3d/ps5_full_suit/full_scope_home.png" />
       <ImagePopup src="images/3d/ps5_full_suit/dual_180.png" />
       <ImagePopup src="images/3d/ps5_full_suit/shader_editor.png" />
-      <Dropdown
-        src="images/3d/mask_mat.png"
-        title="Suit Material"
-        text={ThreeDInfo.maskShaderEditor}
-      />
+      <Documentation text={ThreeDInfo.maskShaderEditor} />
       <ImagePopup src="images/3d/normal_mask_annotated.png" />
-      <Dropdown
-        title="Mask Process"
-        text={ThreeDInfo.mask}
-        youtubeId="vXmO4obPq2Q"
-      />
+      <Documentation text={ThreeDInfo.mask} />
       <CanvasComponent
         modelPath="spiderman_hand_showcase.glb"
         intensity={0}
@@ -120,20 +101,12 @@ function ThreeD() {
       </Flex>
       <ImagePopup src="images/3d/symbiote_annotated.png" />
       <ImagePopup src="images/3d/symbiote_inner.png" />
-      <Dropdown
-        src="images/3d/symbiote_mat.png"
-        title="Symbiote Material"
-        text={ThreeDInfo.symbioteShaderEditor}
-      />
+      <Documentation text={ThreeDInfo.symbioteShaderEditor} />
       <GifPopup
         placeHolderSrc="images/3d/anim_placeholder.png"
         src="gifs/blender-contest/4.gif"
       />
-      <Dropdown
-        title="Animation Process"
-        text={ThreeDInfo.animation}
-        youtubeId="RK-2gIuRXNw"
-      />
+      <Documentation text={ThreeDInfo.animation} />
       <Divider />
       <Text size="3">
         If you haven't already, check out the{" "}

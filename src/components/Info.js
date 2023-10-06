@@ -45,13 +45,11 @@ export const work = {
 
 export const ThreeD = {
   about:
-    "Welcome to my 3D page! This portfolio focuses on my 3D technical work, as I aspire to become a concept artist.",
+    "Welcome to my 3D page! This portfolio showcases my 3D work compiled from August to October 2023.",
   teamwork:
-    "With my extensive experience in teamwork and agile structure, I excel at maneuvering through complex problems and producing professional results. My work history with Unity and Gameloft, combined with my drive for 3D art have equipped me to pursue a career in the gaming industry.",
-  timeline:
-    "After three months of studying Blender, this portfolio serves as a testament to my ability to quickly learn and master new skills.",
+    "With my experience at Unity and Gameloft, I’ve worked in agile team environments to deliver professional user products. My involvement with games has inspired me to pursue a career in the gaming industry.",
   insomniac:
-    "I am best suited for a Concept Artist Intern position at Insomniac Games, but I also have experience with animation and gameplay programming. I am applying for both Concept Art Intern and Gameplay Programmer Intern roles.",
+    "At Insomniac, I believe I’d be best suited as a Concept Art intern.",
   fullSuit:
     "Modeled after Insomniac Games' Spider-Man 2 (2023). A low-poly Spider-Man model was created in Blender, extruding edges from an image reference to form a basis. Web lines were traced onto the body and the magnet tool used to add webbing and seams to the base. Shoes were created with a solidify modifier and simple roughness shader. UV mapping and minor tweaks were then applied, and the model exported as an .obj file for Mixamo's auto-rigging software. Textures were then baked and uploaded to Sketchfab in .blend format. More details on the material texture below!",
   maskShaderEditor:

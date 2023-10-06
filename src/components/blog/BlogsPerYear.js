@@ -8,11 +8,10 @@ function BlogsPerYear({ posts, year }) {
 
   return (
     <Flex direction="row" gap={yearGapSize}>
-      {/* <Text size="2" color="gray" style={{ width: "10%" }}> */}
       <Text size="2" color="gray" style={{ width: "20%" }}>
         {year}
       </Text>
-      <Flex gap="0" direction="column" style={{ width: "80%" }}>
+      <Flex gap="0" direction="column" style={{ width: "100%" }}>
         {posts.map(({ link, title, publishedAtMMDD }) => (
           <Link
             to={`/blog${link}`}

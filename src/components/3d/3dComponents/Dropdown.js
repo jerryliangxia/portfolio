@@ -12,7 +12,7 @@ function Dropdown({ title, text, src, youtubeId, color = "white" }) {
   };
 
   return (
-    <div style={{ padding: "10px" }}>
+    <div>
       <Button
         onClick={toggleDropdown}
         variant="ghost"

@@ -96,3 +96,16 @@ p:hover .arrow-icon {
 .dropdown-content.open {
   max-height: none;
 }
+.btn {
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.reel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
