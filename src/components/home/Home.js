@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CanvasComponent from "../CanvasComponent";
-import { Flex, Heading, Text, Button } from "@radix-ui/themes";
+import { Flex, Heading, Text } from "@radix-ui/themes";
 import InfoBlock from "./InfoBlock";
 import Contact from "./Contact";
 import SpecialContact from "./SpecialContact";
@@ -56,54 +55,17 @@ function Home() {
           </Flex>
         </Flex>
       </section>
-      {/* <section>
-        <Flex direction="row" gap="3" align="center" justify="center">
-          <CanvasComponent
-            modelPath="spiderman.glb"
-            intensity={0.1}
-            style={{ maxWidth: "24%" }}
-          />
-          <CanvasComponent
-            modelPath="spiderman_hand.glb"
-            intensity={0}
-            style={{ maxWidth: "20%" }}
-          />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              maxWidth: "40%",
-            }}
-          >
-            <ImagePopup
-              src="images/3d/ps5_full_suit/full_scope_home.png"
-              style={{ width: "100%" }}
-            />
-          </div>
-          <div
-            variant="ghost"
-            size="1"
-            radius="small"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              maxWidth: "30%",
-            }}
-          ></div>
-        </Flex>
-      </section> */}
       <section>
-        <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
-        <div className="reel">
-          <ImagePopup src="images/about/dual_square.png" />
-          <ImagePopup src="images/about/hand_square.png" />
-          <ImagePopup src="images/about/mask_square.png" />
-          <ImagePopup src="images/about/symbiote_mask_square.png" />
-        </div>
+        <Flex gap="6" direction="column">
+          <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
+          <div className="reel">
+            <ImagePopup src="images/3d/hand.png" />
+            <ImagePopup src="images/3d/webshooter/sample.png" />
+            <ImagePopup src="images/3d/normal_mask.png" />
+            <ImagePopup src="images/3d/symbiote_mask.png" />
+          </div>
+        </Flex>
       </section>
-
       <section>
         <Flex gap={flexGaps.sectionFlexGap} direction="column">
           <Text as="p">Work Experience</Text>

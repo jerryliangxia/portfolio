@@ -6,12 +6,12 @@ import YouTubeBlock from "./YouTubeBlock";
 function Documentation({ text, src, youtubeId }) {
   return (
     <div>
-      <Flex gap="2" direction="column">
-        {src !== "" && <ImagePopup src={src} />}
-        {youtubeId !== "" && <YouTubeBlock youtubeId={youtubeId} />}
+      <Flex gap="6" direction="column">
         <Text color="gray" size="2">
           {text}
         </Text>
+        {src !== "" && <ImagePopup src={src} />}
+        {youtubeId !== "" && <YouTubeBlock youtubeId={youtubeId} />}
       </Flex>
     </div>
   );

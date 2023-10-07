@@ -1,3 +1,5 @@
+import { Tooltip } from "@radix-ui/themes";
+
 export const ToggleOff = () => {
   return (
     <svg
@@ -76,5 +78,26 @@ export const DropdownArrowUp = ({ color = "rgba(177,177,177,1)" }) => {
         fill={color}
       ></path>
     </svg>
+  );
+};
+
+export const Look = () => {
+  return (
+    <Tooltip content="Able to rotate" radius="small">
+      <svg
+        height="16"
+        width="16"
+        style={{ paddingLeft: "6px" }}
+        viewBox="0 0 1145 624"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M163.5 186L129.023 210.486C36.631 276.104 24.7856 408.772 104.091 489.72V489.72C115.973 501.849 129.475 512.277 144.212 520.709L155.861 527.374C197.271 551.067 244.033 563.825 291.738 564.445L875.845 572.03C924.246 572.659 971.49 557.227 1010.19 528.148L1012.12 526.692C1028.61 514.303 1043.12 499.475 1055.14 482.718V482.718C1095.27 426.773 1104.33 354.304 1079.19 290.204L1077.58 286.097C1045.86 205.21 967.846 152 880.962 152H695M695 152H524.5V152C496.55 152 488.74 113.652 514.463 102.72L625.209 55.658C658.297 41.5972 695 65.8797 695 101.831V152Z"
+          stroke="white"
+          stroke-width="102"
+        />
+      </svg>
+    </Tooltip>
   );
 };
