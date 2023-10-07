@@ -10,6 +10,7 @@ import { ThreeD as ThreeDInfo } from "../Info";
 import GifPopup from "./3dComponents/GifPopup";
 import ImageRotation from "./3dComponents/ImageRotation";
 import { Look } from "../../svg/Button";
+import Dropdown from "./3dComponents/Dropdown";
 
 function DateLog({ date }) {
   return <Text size="2">Finished {date}.</Text>;
@@ -42,6 +43,7 @@ function Webshooter() {
         Spider-Man Web Shooter <Look />
       </Text>
       <ImageRotation path="images/3d/webshooter/" />
+      <Dropdown title="Interactive 3D Model" modelPath="webshooter.glb" />
       <DateLog date="October 7, 2023" />
       <Documentation
         text={ThreeDInfo.webshooterInit}
