@@ -25,7 +25,6 @@ function FullSuit() {
       <ImageRotation path="images/3d/ps5_full_suit/rotation_stance/" />
       <DateLog date="October 2, 2023" />
       <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
-
       <Documentation
         text={ThreeDInfo.fullSuit}
         src="images/3d/spiderman_low_poly_scope.png"
