@@ -13,6 +13,7 @@ import {
 } from "@radix-ui/themes";
 import rehypeRaw from "rehype-raw";
 import frontMatter from "front-matter";
+import { motion } from "framer-motion";
 
 function formatDate(dateString) {
   const date = new Date(dateString);
@@ -56,126 +57,139 @@ function BlogPost() {
       <Heading>{title}</Heading>
       <Text as="p">{publishedAt}</Text>
       {title && publishedAt && (
-        <ReactMarkdown
-          children={post}
-          remarkPlugins={[gfm]}
-          rehypePlugins={[rehypeRaw]}
-          components={{
-            h1: ({ node, ...props }) => (
-              <Text
-                as="h1"
-                style={{ marginTop: 0, marginBottom: 0 }}
-                {...props}
-              />
-            ),
-            h2: ({ node, ...props }) => (
-              <Text
-                as="h2"
-                style={{ marginTop: 0, marginBottom: 0 }}
-                {...props}
-              />
-            ),
-            h3: ({ node, ...props }) => (
-              <Text
-                as="h3"
-                style={{ marginTop: 0, marginBottom: 0 }}
-                {...props}
-              />
-            ),
-            h4: ({ node, ...props }) => (
-              <Text
-                as="h4"
-                style={{ marginTop: 0, marginBottom: 0 }}
-                {...props}
-              />
-            ),
-            a: ({ node, children, ...props }) => (
-              <RadixLink>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          style={{ width: "100%" }}
+        >
+          <ReactMarkdown
+            children={post}
+            remarkPlugins={[gfm]}
+            rehypePlugins={[rehypeRaw]}
+            components={{
+              h1: ({ node, ...props }) => (
+                <Text
+                  as="h1"
+                  style={{ marginTop: 0, marginBottom: 0 }}
+                  {...props}
+                />
+              ),
+              h2: ({ node, ...props }) => (
+                <Text
+                  as="h2"
+                  style={{ marginTop: 0, marginBottom: 0 }}
+                  {...props}
+                />
+              ),
+              h3: ({ node, ...props }) => (
+                <Text
+                  as="h3"
+                  style={{ marginTop: 0, marginBottom: 0 }}
+                  {...props}
+                />
+              ),
+              h4: ({ node, ...props }) => (
+                <Text
+                  as="h4"
+                  style={{ marginTop: 0, marginBottom: 0 }}
+                  {...props}
+                />
+              ),
+              a: ({ node, children, ...props }) => (
+                <RadixLink>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: "#aaa",
+                      textDecoration: "none",
+                      marginTop: 0,
+                      marginBottom: 0,
+                    }}
+                    {...props}
+                  >
+                    {children}
+                  </a>
+                </RadixLink>
+              ),
+              p: ({ node, ...props }) => (
+                <Text
+                  as="p"
+                  size="2"
+                  style={{ marginTop: 0, marginBottom: 0 }}
+                  {...props}
+                />
+              ),
+              li: ({ node, ...props }) => (
+                <Text
+                  as="li"
+                  size="2"
                   style={{
-                    color: "#aaa",
-                    textDecoration: "none",
+                    listStyleType: "disc",
                     marginTop: 0,
                     marginBottom: 0,
                   }}
                   {...props}
-                >
-                  {children}
-                </a>
-              </RadixLink>
-            ),
-            p: ({ node, ...props }) => (
-              <Text
-                as="p"
-                size="2"
-                style={{ marginTop: 0, marginBottom: 0 }}
-                {...props}
-              />
-            ),
-            li: ({ node, ...props }) => (
-              <Text
-                as="li"
-                size="2"
-                style={{ listStyleType: "disc", marginTop: 0, marginBottom: 0 }}
-                {...props}
-              />
-            ),
-            code: ({ node, inline, className, children, ...props }) => {
-              return !inline ? (
-                <Card style={{ overflowX: "auto" }}>
-                  <Text
-                    as="code"
-                    size="1"
-                    style={{ whiteSpace: "pre-wrap" }}
+                />
+              ),
+              code: ({ node, inline, className, children, ...props }) => {
+                return !inline ? (
+                  <Card style={{ overflowX: "auto" }}>
+                    <Text
+                      as="code"
+                      size="1"
+                      style={{ whiteSpace: "pre-wrap" }}
+                      {...props}
+                    >
+                      {children}
+                    </Text>
+                  </Card>
+                ) : (
+                  <Code
+                    color="gray"
+                    style={{ marginTop: 0, marginBottom: 0 }}
                     {...props}
                   >
                     {children}
-                  </Text>
-                </Card>
-              ) : (
-                <Code
-                  color="gray"
-                  style={{ marginTop: 0, marginBottom: 0 }}
-                  {...props}
-                >
-                  {children}
-                </Code>
-              );
-            },
-            img: ({ node, ...props }) => {
-              const isMobile = window.innerWidth <= 600;
-              const width = isMobile ? "100%" : node.properties.width || "50%";
-              const height = isMobile ? "auto" : "auto";
-              return (
-                <img
-                  {...props}
-                  style={{
-                    display: "block",
-                    marginLeft: "auto",
-                    marginRight: "auto",
-                    width: width,
-                    height: height,
-                  }}
-                  alt=""
-                />
-              );
-            },
-            blockquote: ({ node, ...props }) => (
-              <Blockquote color="gray" {...props} />
-            ),
-            iframe: ({ node, ...props }) => {
-              let { src } = node.properties;
-              if (src.startsWith("https://www.youtube.com/watch?v=")) {
-                src = src.replace("watch?v=", "embed/");
-              }
-              return (
-                <iframe title="Your unique title here" src={src} {...props} />
-              );
-            },
-          }}
-        ></ReactMarkdown>
+                  </Code>
+                );
+              },
+              img: ({ node, ...props }) => {
+                const isMobile = window.innerWidth <= 600;
+                const width = isMobile
+                  ? "100%"
+                  : node.properties.width || "50%";
+                const height = isMobile ? "auto" : "auto";
+                return (
+                  <img
+                    {...props}
+                    style={{
+                      display: "block",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      width: width,
+                      height: height,
+                    }}
+                    alt=""
+                  />
+                );
+              },
+              blockquote: ({ node, ...props }) => (
+                <Blockquote color="gray" {...props} />
+              ),
+              iframe: ({ node, ...props }) => {
+                let { src } = node.properties;
+                if (src.startsWith("https://www.youtube.com/watch?v=")) {
+                  src = src.replace("watch?v=", "embed/");
+                }
+                return (
+                  <iframe title="Your unique title here" src={src} {...props} />
+                );
+              },
+            }}
+          ></ReactMarkdown>
+        </motion.div>
       )}
     </Flex>
   );
