@@ -25,7 +25,7 @@ function App() {
             path="/*"
             element={
               <React.Fragment>
-                <Flex gap="4" className="app-container" align="start">
+                <Flex gap="6" className="app-container" align="start">
                   <Nav />
                   <motion.div
                     initial={{ opacity: 0 }}

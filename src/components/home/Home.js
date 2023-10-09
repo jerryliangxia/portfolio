@@ -11,7 +11,7 @@ import { Arrow } from "../../svg/Button";
 
 function Home() {
   return (
-    <Flex gap="8" direction="column">
+    <Flex gap="6" direction="column">
       <Heading>{basicData.name}</Heading>
       <section>
         <Flex gap="1" direction="column">
@@ -56,7 +56,7 @@ function Home() {
         </Flex>
       </section>
       <section>
-        <Flex gap="6" direction="column">
+        <Flex gap="4" direction="column">
           <div className="reel">
             <ImagePopup src="images/3d/webshooter/sample.png" />
             <ImagePopup src="images/3d/parker_head.png" />
