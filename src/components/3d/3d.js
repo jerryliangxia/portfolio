@@ -15,6 +15,7 @@ import Dropdown from "./3dComponents/Dropdown";
 function DateLog({ date }) {
   return <Text size="2">Finished {date}.</Text>;
 }
+
 function FullSuit() {
   return (
     <>
@@ -98,6 +99,18 @@ function SymbioteMask() {
   );
 }
 
+function ParkerHead() {
+  return (
+    <>
+      <Divider />
+      <Text size="5">Peter Parker</Text>
+      <ImagePopup src="images/3d/parker_head.png" />
+      <DateLog date="October 9, 2023" />
+      <Documentation text={ThreeDInfo.parkerHead} />
+    </>
+  );
+}
+
 function Animation({ isMobile }) {
   return (
     <>
@@ -151,6 +164,7 @@ function ThreeD() {
       <NormalMask />
       <SymbioteMask />
       <SpidermanHand />
+      <ParkerHead />
       <Animation isMobile={isMobile} />
       <Conclusion />
     </Flex>

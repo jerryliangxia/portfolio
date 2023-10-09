@@ -1,25 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import ProgressiveImg from "./ProgressiveImg";
 
 function ImagePopup({ src }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [imgWidth, setImgWidth] = useState(0);
+  const [imgHeight, setImgHeight] = useState(0);
   const isMobile = window.innerWidth <= 768;
+  const imgRef = useRef();
+
+  const handleImageLoad = () => {
+    if (imgRef.current) {
+      setImgWidth(imgRef.current.offsetWidth);
+      setImgHeight(imgRef.current.offsetHeight);
+    }
+  };
 
   return (
     <>
-      <img
-        src={src}
-        style={{ width: "100%", cursor: "zoom-in" }}
-        onClick={() => setIsOpen(true)}
-        alt=""
-      />
-      {/* <ProgressiveImg
-        src={src}
-        placeholderSrc="images/insomniac-games.jpeg"
-        width={src.maxWidth}
-        height={src.maxHeight}
-        onClick={() => setIsOpen(true)}
-      /> */}
+      {!isOpen && (
+        <img
+          ref={imgRef}
+          src={src}
+          style={{ width: "100%", cursor: "zoom-in" }}
+          onClick={() => setIsOpen(true)}
+          onLoad={handleImageLoad}
+          alt=""
+        />
+      )}
+      {isOpen && <div style={{ width: imgWidth, height: imgHeight }} />}
       {isOpen && !isMobile && (
         <div
           style={{
