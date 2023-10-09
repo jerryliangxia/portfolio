@@ -57,13 +57,13 @@ function Home() {
       </section>
       <section>
         <Flex gap="6" direction="column">
-          <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
           <div className="reel">
             <ImagePopup src="images/3d/webshooter/sample.png" />
             <ImagePopup src="images/3d/parker_head.png" />
             <ImagePopup src="images/3d/normal_mask.png" />
             <ImagePopup src="images/3d/symbiote_mask.png" />
           </div>
+          <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
         </Flex>
       </section>
       <section>
