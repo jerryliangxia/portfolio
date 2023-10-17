@@ -107,6 +107,7 @@ function ParkerHead() {
       <ImagePopup src="images/3d/parker_head.png" />
       <DateLog date="October 9, 2023" />
       <Documentation text={ThreeDInfo.parkerHead} />
+      <ImagePopup src="images/3d/unmasked.png" />
     </>
   );
 }
