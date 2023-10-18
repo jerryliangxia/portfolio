@@ -116,7 +116,7 @@ function Animation({ isMobile }) {
   return (
     <>
       <Divider />
-      <Text size="5">Animation Contest</Text>
+      <Text size="5">Animation</Text>
       {isMobile ? (
         <img src="gifs/blender-contest/4.gif" alt="" />
       ) : (
@@ -149,7 +149,7 @@ function ThreeD() {
 
   return (
     <Flex style={{ paddingBottom: "5vh" }} gap="4" direction="column">
-      <Heading>3D Modeling</Heading>
+      <Heading>Gaming Work</Heading>
       <Text color="gray" as="p" style={{ paddingBottom: "20px" }}>
         {ThreeDInfo.about}
       </Text>

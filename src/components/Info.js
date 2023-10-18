@@ -12,14 +12,14 @@ export const jobExperience = {
     rightTitle: "Software Engineer at Unity Technologies",
     rightSubtitle: "Montréal, QC",
     rightText:
-      "Worked in Unity Gaming Services. Created two games and several Blender models during company recreation hours.",
+      "Worked in Unity's Live Operation Game Services. Managed pipelines for deployment, monitored alerts; resolved a Snowflake database concurrency error, created the first endpoints for a new Unity Gaming Service. Created two games and several Blender models during company recreation hours.",
   },
   gameloft: {
     leftText: "2021",
     rightTitle: "Software Developer at Gameloft Studios",
     rightSubtitle: "Montréal, QC",
     rightText:
-      "Managed Gameloft's online gaming infrastructure. Contributed to Welcome to the Team, a game made as part of Gameloft's Global Game Jam.",
+      "Managed Gameloft's online gaming infrastructure; wrote testing suites, reduced AWS S3 backup calls by over 50%. Contributed to Welcome to the Team, a game made as part of Gameloft's Global Game Jam.",
   },
 };
 
@@ -45,11 +45,11 @@ export const work = {
 
 export const ThreeD = {
   about:
-    "Welcome to my 3D page! This portfolio showcases my work from August to October 2023.",
+    "This work portfolio showcases my gaming asset work from August to October 2023.",
   teamwork:
     "With my experience at Unity and Gameloft, I've worked in agile team environments to deliver professional user products.",
   insomniac:
-    "My involvement with games has inspired me to pursue a career in the gaming industry, where I see myself best in development support.",
+    "My passion for gaming has led me to pursue a career in the industry, where my combination of gaming and software skills can be utilized in development support.",
   fullSuit:
     "Modeled after Insomniac Games' Spider-Man 2 (2023). A low-poly Spider-Man model was created in Blender (seen below) to form a basis. Web lines were traced onto the body and the magnet tool used to add webbing and seams to the base; adding a skin modifier created depth. Materials were UV generated. More on the material in the Mask section.",
   webshooterInit: "Web shooter from Marvel's Spider-Man (2018).",
