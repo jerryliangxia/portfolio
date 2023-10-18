@@ -118,7 +118,7 @@ function Animation({ isMobile }) {
       <Divider />
       <Text size="5">Animation Contest</Text>
       {isMobile ? (
-        <img src="gifs/blender-contest/4.gif" />
+        <img src="gifs/blender-contest/4.gif" alt="" />
       ) : (
         <GifPopup
           placeHolderSrc="images/3d/anim_placeholder.png"

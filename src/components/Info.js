@@ -45,10 +45,11 @@ export const work = {
 
 export const ThreeD = {
   about:
-    "Welcome to my 3D page! This portfolio showcases my 3D work from August to October 2023.",
+    "Welcome to my 3D page! This portfolio showcases my work from August to October 2023.",
   teamwork:
-    "With my experience at Unity and Gameloft, I've worked in agile team environments to deliver professional user products. My involvement with games has inspired me to pursue a career in the gaming industry.",
-  insomniac: "At Insomniac, I believe I'd be best as a Concept Art intern.",
+    "With my experience at Unity and Gameloft, I've worked in agile team environments to deliver professional user products.",
+  insomniac:
+    "My involvement with games has inspired me to pursue a career in the gaming industry, where I see myself best in development support.",
   fullSuit:
     "Modeled after Insomniac Games' Spider-Man 2 (2023). A low-poly Spider-Man model was created in Blender (seen below) to form a basis. Web lines were traced onto the body and the magnet tool used to add webbing and seams to the base; adding a skin modifier created depth. Materials were UV generated. More on the material in the Mask section.",
   webshooterInit: "Web shooter from Marvel's Spider-Man (2018).",
