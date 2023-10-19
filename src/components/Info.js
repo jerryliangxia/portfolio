@@ -1,7 +1,7 @@
 export const basicData = {
   name: "Jerry Xia",
   about:
-    "I'm a software engineering student at McGill, aspiring to be a concept artist. Welcome to my website!",
+    "I'm a software engineering student at McGill, passionate about games. Welcome to my website!",
   technicalSkills:
     "Python, Java, C++, C, C#, OCaml, Bash, CLI, HTML/CSS, JavaScript/TypeScript, Git, Github/Gitlab.",
 };
