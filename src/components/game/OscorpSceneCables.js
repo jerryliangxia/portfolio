@@ -1485,8 +1485,8 @@ export function Model(props) {
       <mesh
         geometry={nodes.Insomniac_Wire_2001.geometry}
         material={materials.Black}
-        position={[4.439, 0.557, -11.115]}
-        rotation={[1.912, -0.655, 0.762]}
+        position={[4.459, 0.528, -11.007]}
+        rotation={[2.038, -0.56, 0.759]}
         scale={[0.048, 0.014, 0.011]}
       />
       <mesh
@@ -1730,257 +1730,257 @@ export function Model(props) {
       <mesh
         geometry={nodes.Games001.geometry}
         material={materials.White}
-        position={[4.785, -1.179, -10.849]}
+        position={[4.788, -1.179, -10.853]}
         rotation={[0, -0.547, 0]}
         scale={0.955}
       />
       <mesh
         geometry={nodes.Plane164.geometry}
         material={materials["Darker Gray"]}
-        position={[-6.402, -2.553, -21.044]}
+        position={[-6.402, -3.244, -21.044]}
         rotation={[0, -0.74, 0]}
         scale={[0.101, 0.099, 0.1]}
       />
       <mesh
         geometry={nodes.Plane165.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-6.203, -2.556, -21.398]}
+        position={[-6.203, -3.246, -21.398]}
         rotation={[0, -0.574, 0]}
         scale={[0.099, 0.133, 0.133]}
       />
       <mesh
         geometry={nodes.Plane166.geometry}
         material={materials["Light Gray"]}
-        position={[-6.591, -2.556, -21.208]}
+        position={[-6.591, -3.246, -21.208]}
         rotation={[0, 0.066, 0]}
         scale={[0.072, 0.07, 0.071]}
       />
       <mesh
         geometry={nodes.Plane167.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-5.652, -2.553, -21.266]}
+        position={[-5.652, -3.244, -21.266]}
         rotation={[0, 0.066, 0]}
         scale={[0.105, 0.07, 0.091]}
       />
       <mesh
         geometry={nodes.Plane168.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-5.795, -2.553, -21.885]}
+        position={[-5.795, -3.244, -21.885]}
         rotation={[0, -0.902, 0]}
         scale={[0.105, 0.07, 0.091]}
       />
       <mesh
         geometry={nodes.Plane169.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-6.266, -2.553, -21.152]}
+        position={[-6.266, -3.243, -21.152]}
         rotation={[0, -0.574, 0]}
         scale={[0.051, 0.069, 0.069]}
       />
       <mesh
         geometry={nodes.Plane170.geometry}
         material={materials["Darker Gray"]}
-        position={[-8.36, -2.553, -22.159]}
+        position={[-8.36, -3.244, -22.159]}
         rotation={[0, -1.262, 0]}
         scale={[0.105, 0.102, 0.104]}
       />
       <mesh
         geometry={nodes.Plane171.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-7.813, -2.556, -23.314]}
+        position={[-7.813, -3.247, -23.314]}
         rotation={[0, -1.482, 0]}
         scale={[0.103, 0.138, 0.138]}
       />
       <mesh
         geometry={nodes.Plane172.geometry}
         material={materials["Light Gray"]}
-        position={[-8.514, -2.556, -21.994]}
+        position={[-8.514, -3.247, -21.994]}
         rotation={[0, -0.644, 0]}
         scale={[0.074, 0.073, 0.074]}
       />
       <mesh
         geometry={nodes.Plane173.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-7.583, -2.553, -22.805]}
+        position={[-7.583, -3.244, -22.805]}
         rotation={[0, -0.455, 0]}
         scale={[0.109, 0.073, 0.095]}
       />
       <mesh
         geometry={nodes.Plane174.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-7.391, -2.553, -23.436]}
+        position={[-7.391, -3.244, -23.436]}
         rotation={[0, -1.424, 0]}
         scale={[0.109, 0.073, 0.095]}
       />
       <mesh
         geometry={nodes.Plane175.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-8.195, -2.553, -23.021]}
+        position={[-8.195, -3.243, -23.021]}
         rotation={[0, -1.096, 0]}
         scale={[0.053, 0.071, 0.071]}
       />
       <mesh
         geometry={nodes.Plane176.geometry}
         material={materials["Darker Gray"]}
-        position={[-8.038, -2.553, -23.561]}
+        position={[-8.038, -3.244, -23.561]}
         rotation={[0, -1.124, 0]}
         scale={[0.105, 0.102, 0.104]}
       />
       <mesh
         geometry={nodes.Plane177.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-7.197, -2.556, -23.824]}
+        position={[-7.197, -3.247, -23.824]}
         rotation={[0, -0.958, 0]}
         scale={[0.103, 0.138, 0.138]}
       />
       <mesh
         geometry={nodes.Plane178.geometry}
         material={materials["Light Gray"]}
-        position={[-8.18, -2.556, -24.176]}
+        position={[-8.18, -3.247, -24.176]}
         rotation={[0, -0.318, 0]}
         scale={[0.074, 0.073, 0.074]}
       />
       <mesh
         geometry={nodes.Plane179.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-7.486, -2.553, -23.75]}
+        position={[-7.486, -3.244, -23.75]}
         rotation={[0, -0.318, 0]}
         scale={[0.109, 0.073, 0.095]}
       />
       <mesh
         geometry={nodes.Plane180.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-7.069, -2.553, -24.203]}
+        position={[-7.069, -3.244, -24.203]}
         rotation={[0, -1.286, 0]}
         scale={[0.109, 0.073, 0.095]}
       />
       <mesh
         geometry={nodes.Plane181.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-7.737, -2.553, -23.915]}
+        position={[-7.737, -3.243, -23.915]}
         rotation={[0, -1.25, 0]}
         scale={[0.053, 0.071, 0.071]}
       />
       <mesh
         geometry={nodes.Plane182.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-8.488, -2.555, -20.889]}
+        position={[-8.488, -3.246, -20.889]}
         rotation={[Math.PI, -1.551, Math.PI]}
         scale={[0.074, 0.1, 0.1]}
       />
       <mesh
         geometry={nodes.Plane183.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-8.019, -2.553, -20.821]}
+        position={[-8.019, -3.244, -20.821]}
         rotation={[Math.PI, -1.223, Math.PI]}
         scale={[0.079, 0.052, 0.068]}
       />
       <mesh
         geometry={nodes.Plane184.geometry}
         material={materials["Darker Gray"]}
-        position={[-8.327, -2.553, -22.463]}
+        position={[-8.327, -3.244, -22.463]}
         rotation={[Math.PI, -0.862, Math.PI]}
         scale={[0.078, 0.077, 0.078]}
       />
       <mesh
         geometry={nodes.Plane185.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-8.239, -2.553, -22.361]}
+        position={[-8.239, -3.243, -22.361]}
         rotation={[Math.PI, -1.029, Math.PI]}
         scale={[0.039, 0.053, 0.053]}
       />
       <mesh
         geometry={nodes.Plane186.geometry}
         material={materials["Darker Gray"]}
-        position={[-7.835, -2.553, -22.473]}
+        position={[-7.835, -3.244, -22.473]}
         rotation={[Math.PI, -1, Math.PI]}
         scale={[0.078, 0.077, 0.078]}
       />
       <mesh
         geometry={nodes.Plane187.geometry}
         material={materials["Darker Gray"]}
-        position={[-7.033, -2.536, -21.954]}
+        position={[-7.033, -3.227, -21.954]}
         rotation={[0, -0.74, 0]}
         scale={[0.101, 0.099, 0.1]}
       />
       <mesh
         geometry={nodes.Plane188.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-6.834, -2.539, -22.308]}
+        position={[-6.834, -3.229, -22.308]}
         rotation={[0, -0.574, 0]}
         scale={[0.099, 0.133, 0.133]}
       />
       <mesh
         geometry={nodes.Plane189.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-5.949, -2.536, -22.723]}
+        position={[-5.949, -3.227, -22.723]}
         rotation={[0, 0.713, 0]}
         scale={[0.093, 0.062, 0.08]}
       />
       <mesh
         geometry={nodes.Plane190.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-6.438, -2.536, -22.755]}
+        position={[-6.438, -3.227, -22.755]}
         rotation={[0, -0.255, 0]}
         scale={[0.093, 0.062, 0.08]}
       />
       <mesh
         geometry={nodes.Plane191.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-6.898, -2.536, -22.062]}
+        position={[-6.898, -3.226, -22.062]}
         rotation={[0, -0.574, 0]}
         scale={[0.051, 0.069, 0.069]}
       />
       <mesh
         geometry={nodes.Plane192.geometry}
         material={materials["Darker Gray"]}
-        position={[-6.519, -2.536, -23.227]}
+        position={[-6.519, -3.227, -23.227]}
         rotation={[0, -0.969, 0]}
         scale={[0.101, 0.099, 0.1]}
       />
       <mesh
         geometry={nodes.Plane193.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-6.245, -2.539, -23.527]}
+        position={[-6.245, -3.229, -23.527]}
         rotation={[0, -0.803, 0]}
         scale={[0.099, 0.133, 0.133]}
       />
       <mesh
         geometry={nodes.Plane194.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-6.208, -2.536, -23.455]}
+        position={[-6.208, -3.227, -23.455]}
         rotation={[0, 0.484, 0]}
         scale={[0.093, 0.062, 0.08]}
       />
       <mesh
         geometry={nodes.Plane195.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-5.737, -2.536, -23.908]}
+        position={[-5.737, -3.227, -23.908]}
         rotation={[0, -1.131, 0]}
         scale={[0.105, 0.07, 0.091]}
       />
       <mesh
         geometry={nodes.Plane196.geometry}
         material={materials["Dirty Beige 2"]}
-        position={[-6.362, -2.536, -23.301]}
+        position={[-6.362, -3.226, -23.301]}
         rotation={[0, -0.803, 0]}
         scale={[0.051, 0.069, 0.069]}
       />
       <mesh
         geometry={nodes.Insomniac_Exhaust_L002.geometry}
         material={materials["Darker Gray"]}
-        position={[-5.217, -2.561, -21.111]}
+        position={[-5.217, -3.251, -21.111]}
         rotation={[0, -1.571, 0]}
         scale={[-0.11, -0.008, -0.11]}
       />
       <mesh
         geometry={nodes.Insomniac_Exhaust_R002.geometry}
         material={materials["Darker Gray"]}
-        position={[-5.217, -2.561, -21.778]}
+        position={[-5.217, -3.251, -21.778]}
         rotation={[0, -1.571, 0]}
         scale={[-0.11, -0.008, -0.11]}
       />
       <group
-        position={[-8.549, -2.872, -22.872]}
+        position={[-8.549, -3.562, -22.872]}
         rotation={[0, 1.57, 0]}
         scale={0.587}
       >
@@ -1998,7 +1998,7 @@ export function Model(props) {
         />
       </group>
       <group
-        position={[-8.549, -2.872, -24.29]}
+        position={[-8.549, -3.562, -24.29]}
         rotation={[0, 1.57, 0]}
         scale={0.587}
       >
@@ -2018,85 +2018,79 @@ export function Model(props) {
       <mesh
         geometry={nodes.Insomniac_Wire_1003.geometry}
         material={materials.Black}
-        position={[-5.926, -2.533, -23.329]}
+        position={[-5.926, -3.224, -23.329]}
         rotation={[Math.PI, -1.072, 0]}
         scale={[-0.048, -0.014, -0.011]}
       />
       <mesh
         geometry={nodes.Insomniac_Wire_2003.geometry}
         material={materials.Black}
-        position={[-7.667, -2.533, -21.425]}
+        position={[-7.667, -3.224, -21.425]}
         rotation={[0, 0.048, 0]}
         scale={[0.048, 0.014, 0.011]}
       />
       <mesh
         geometry={nodes.Insomniac_Wire_3003.geometry}
         material={materials.Black}
-        position={[-7.483, -2.533, -21.789]}
+        position={[-7.483, -3.224, -21.789]}
         rotation={[Math.PI, -1.072, 0]}
         scale={[-0.048, -0.014, -0.011]}
       />
       <mesh
         geometry={nodes.Backboard002.geometry}
         material={materials["Insomniac Background"]}
-        position={[-7.157, -2.786, -21.562]}
+        position={[-7.157, -3.477, -21.562]}
         rotation={[0, 1.023, 0]}
       />
       <mesh
         geometry={nodes.Base_Bottom002.geometry}
         material={materials.Wood}
-        position={[-7.157, -2.786, -21.562]}
+        position={[-7.157, -3.477, -21.562]}
         rotation={[0, 1.023, 0]}
       />
       <mesh
         geometry={nodes.Base_Bottom_Metal002.geometry}
         material={materials["Darker Gray"]}
-        position={[-7.157, -3.855, -21.562]}
+        position={[-7.157, -4.545, -21.562]}
         rotation={[0, 1.023, 0]}
       />
       <mesh
         geometry={nodes.Base_Top002.geometry}
         material={materials.Wood}
-        position={[-7.157, -2.786, -21.562]}
+        position={[-7.157, -3.477, -21.562]}
         rotation={[0, 1.023, 0]}
-      />
-      <mesh
-        geometry={nodes.Fence_Back002.geometry}
-        material={materials.Wood}
-        position={[4.9, -1.326, -16.968]}
-        rotation={[0, -0.548, 0]}
       />
       <mesh
         geometry={nodes.Fence_Back_Bottom002.geometry}
         material={materials.Wood}
-        position={[-7.157, -2.786, -21.562]}
+        position={[-7.157, -3.477, -21.562]}
         rotation={[0, 1.023, 0]}
       />
       <mesh
         geometry={nodes.Fence_Front002.geometry}
         material={materials.Wood}
-        position={[-7.157, -2.786, -21.562]}
+        position={[-7.157, -3.477, -21.562]}
         rotation={[0, 1.023, 0]}
       />
       <mesh
         geometry={nodes.Fence_Front_Bottom002.geometry}
         material={materials.Wood}
-        position={[-7.157, -2.786, -21.562]}
+        position={[-7.157, -3.477, -21.562]}
         rotation={[0, 1.023, 0]}
       />
       <mesh
         geometry={nodes.Games002.geometry}
         material={materials.White}
-        position={[-7.157, -2.786, -21.562]}
+        position={[-7.157, -3.477, -21.562]}
         rotation={[0, 1.023, 0]}
       />
       <mesh
         geometry={nodes.Hello001.geometry}
         material={materials.White}
-        position={[-7.157, -2.786, -21.562]}
+        position={[-7.157, -3.477, -21.562]}
         rotation={[0, 1.023, 0]}
       />
-      <group position={[-7.157, -2.786, -21.562]} rotation={[0, 1.023, 0]}>
+      <group position={[-7.157, -3.477, -21.562]} rotation={[0, 1.023, 0]}>
         <mesh
           geometry={nodes.Plane231.geometry}
           material={materials["Insomniac O"]}
@@ -2104,7 +2098,7 @@ export function Model(props) {
         <mesh geometry={nodes.Plane231_1.geometry} material={materials.White} />
       </group>
       <group
-        position={[-7.034, -4.153, -22.742]}
+        position={[-7.034, -4.843, -22.742]}
         rotation={[0, Math.PI / 2, 0]}
         scale={1.592}
       >
@@ -2124,13 +2118,13 @@ export function Model(props) {
       <mesh
         geometry={nodes.Lights002.geometry}
         material={materials["Dark Gray"]}
-        position={[-7.157, -2.786, -21.562]}
+        position={[-7.157, -3.477, -21.562]}
         rotation={[0, 1.023, 0]}
       />
       <mesh
         geometry={nodes.Oscorp_Logo001.geometry}
         material={materials.White}
-        position={[7.173, 0.983, -9.37]}
+        position={[7.074, 0.983, -9.436]}
         rotation={[1.535, -0.02, 0.55]}
         scale={[-0.003, -0.005, -0.008]}
       />
