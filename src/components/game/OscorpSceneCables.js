@@ -1376,8 +1376,9 @@ export function Model(props) {
       <mesh
         geometry={nodes.Fence_Front.geometry}
         material={materials.Wood}
-        position={[4.9, -1.326, -10.774]}
+        position={[4.9, -1.002, -10.774]}
         rotation={[0, -0.548, 0]}
+        scale={[1, 0.743, 1]}
       />
       <mesh
         geometry={nodes.Fence_Front_Bottom.geometry}
@@ -1492,7 +1493,7 @@ export function Model(props) {
         geometry={nodes.Insomniac_Wire_1001.geometry}
         material={materials.Black}
         position={[6.742, 0.825, -9.583]}
-        rotation={[-1.955, -0.185, -0.551]}
+        rotation={[-1.729, -0.295, -0.596]}
         scale={[-0.048, -0.014, -0.011]}
       />
       <mesh
@@ -1729,7 +1730,7 @@ export function Model(props) {
       <mesh
         geometry={nodes.Games001.geometry}
         material={materials.White}
-        position={[4.785, -1.311, -10.849]}
+        position={[4.785, -1.179, -10.849]}
         rotation={[0, -0.547, 0]}
         scale={0.955}
       />
@@ -2125,6 +2126,13 @@ export function Model(props) {
         material={materials["Dark Gray"]}
         position={[-7.157, -2.786, -21.562]}
         rotation={[0, 1.023, 0]}
+      />
+      <mesh
+        geometry={nodes.Oscorp_Logo001.geometry}
+        material={materials.White}
+        position={[7.173, 0.983, -9.37]}
+        rotation={[1.535, -0.02, 0.55]}
+        scale={[-0.003, -0.005, -0.008]}
       />
     </group>
   );
