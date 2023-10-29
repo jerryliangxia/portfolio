@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 
-function ImageRotation({ path }) {
+function ImageRotation({ path, mainImageIndex = 0 }) {
   const isMobile = window.innerWidth <= 768;
   const imgRef = useRef();
   const angles = [0, 45, 90, 135, 180, 225, 270, 315];
   const images = angles.map((angle) => `${path}${angle}.png`);
-  const [currentImage, setCurrentImage] = useState(images[0]);
+  const [currentImage, setCurrentImage] = useState(images[mainImageIndex]);
 
   const handleMouseMove = (e) => {
     const rect = imgRef.current.getBoundingClientRect();
@@ -16,7 +16,7 @@ function ImageRotation({ path }) {
   };
 
   const handleMouseLeave = () => {
-    setCurrentImage(images[0]);
+    setCurrentImage(images[mainImageIndex]);
   };
 
   return (

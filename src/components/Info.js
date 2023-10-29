@@ -3,7 +3,7 @@ export const basicData = {
   about:
     "I'm a software engineering student at McGill, passionate about games. Welcome to my website!",
   technicalSkills:
-    "Python, Java, C++, C, C#, OCaml, Bash, CLI, HTML/CSS, JavaScript/TypeScript, Git, Github/Gitlab.",
+    "Python, Java, C++, C, C#, Kotlin, Jenkins, OCaml, Bash, CLI, HTML/CSS, JavaScript/TypeScript, Git, GitHub/GitLab.",
 };
 
 export const jobExperience = {
@@ -63,6 +63,8 @@ export const ThreeD = {
   mask: "The mask's webbing is thicker and wider than the full suit model's. This process was tedious, requiring 16 vertices (5 faces) at each intersection as opposed to one. Still, the depth added to the mask was worth it; I liked the final render. I used a bevel to preserve sharp edges for the lenses and then Blender's Sculpt tool to create small indentations for a realistic, imperfect finish.",
   parkerHead:
     "Original face model based off of Ben Jordan from the Remastered game (2020). Keen's FaceBuilder tool was used for the head sculpt, with minor adjustments using Blender's sculp tool. Blender's geometry nodes were used for the hair, eyebrows and eyelashes.",
+  parkerHead2:
+    "Added in webshooters, padding for palms, and improved textures on gloves.",
   hand: "This hand is made up of the same mask material above; the original hand used was part of a previous rig, which I sculpted to fit a more glove-like surrounding.",
   animation:
     "Here, Blender and Cascadeur were used to create this animation, which was replicated from Insomniac Games' Spider-Man (2018). Cascadeur's AI-assisted keyframing greatly aided in creating an accurate animation, while Blender's Geometry Nodes were utilized to create the portal and Blender's NLA strips were used to slow down time.",

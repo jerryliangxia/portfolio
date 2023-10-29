@@ -59,9 +59,9 @@ function Home() {
         <Flex gap="4" direction="column">
           <div className="reel">
             <ImagePopup src="images/3d/webshooter/sample.png" />
-            <ImagePopup src="images/3d/parker_head.png" />
-            <ImagePopup src="images/3d/normal_mask.png" />
-            <ImagePopup src="images/3d/symbiote_mask.png" />
+            <ImagePopup src="images/3d/unmasked/sample.png" />
+            <ImagePopup src="images/3d/mask/mask.png" />
+            <ImagePopup src="images/3d/symbiote_mask/symbiote_mask.png" />
           </div>
           <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
         </Flex>

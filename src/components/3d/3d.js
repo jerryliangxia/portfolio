@@ -10,7 +10,6 @@ import { ThreeD as ThreeDInfo } from "../Info";
 import GifPopup from "./3dComponents/GifPopup";
 import ImageRotation from "./3dComponents/ImageRotation";
 import { Look } from "../../svg/Button";
-import Dropdown from "./3dComponents/Dropdown";
 
 function DateLog({ date }) {
   return <Text size="2">Finished {date}.</Text>;
@@ -23,12 +22,12 @@ function FullSuit() {
       <Text size="5">
         Marvel's Spider-Man 2: Advanced Suit 2.0 <Look />
       </Text>
-      <ImageRotation path="images/3d/ps5_full_suit/rotation_stance/" />
+      <ImageRotation path="images/3d/ps5_full_suit/rotation/" />
       <DateLog date="October 2, 2023" />
       <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
       <Documentation
         text={ThreeDInfo.fullSuit}
-        src="images/3d/spiderman_low_poly_scope.png"
+        src="images/3d/ps5_full_suit/spiderman_low_poly_scope.png"
       />
       <ImagePopup src="images/3d/ps5_full_suit/dual_180.png" />
     </>
@@ -42,12 +41,11 @@ function Webshooter() {
       <Text size="5">
         Spider-Man Web Shooter <Look />
       </Text>
-      <ImageRotation path="images/3d/webshooter/" />
-      <Dropdown title="Interactive 3D Model" modelPath="webshooter.glb" />
+      <ImageRotation path="images/3d/webshooter/rotation/" />
       <DateLog date="October 7, 2023" />
       <Documentation
         text={ThreeDInfo.webshooterInit}
-        src="images/3d/rubber_mat.png"
+        src="images/3d/webshooter/rubber_mat.png"
       />
       <Documentation text={ThreeDInfo.webshooter} />
     </>
@@ -59,10 +57,10 @@ function NormalMask() {
     <>
       <Divider />
       <Text size="5">Spider-Man Mask</Text>
-      <ImagePopup src="images/3d/normal_mask.png" />
+      <ImagePopup src="images/3d/mask/mask.png" />
       <DateLog date="September 15, 2023" />
       <Documentation text={ThreeDInfo.mask} />
-      <ImagePopup src="images/3d/normal_mask_shader_editor.png" />
+      <ImagePopup src="images/3d/mask/mask_mat.png" />
       <Documentation text={ThreeDInfo.maskShaderEditor} />
     </>
   );
@@ -90,10 +88,10 @@ function SymbioteMask() {
     <>
       <Divider />
       <Text size="5">Symbiote Mask</Text>
-      <ImagePopup src="images/3d/symbiote_mask.png" />
+      <ImagePopup src="images/3d/symbiote_mask/symbiote_mask.png" />
       <DateLog date="September 22, 2023" />
       <Documentation text={ThreeDInfo.symbiote} />
-      <ImagePopup src="images/3d/symbiote_inner_shader_editor.png" />
+      <ImagePopup src="images/3d/symbiote/symbiote_mask_mat.png" />
       <Documentation text={ThreeDInfo.symbioteShaderEditor} />
     </>
   );
@@ -104,11 +102,12 @@ function ParkerHead() {
     <>
       <Divider />
       <Text size="5">Peter Parker</Text>
-      <ImagePopup src="images/3d/parker_head.png" />
+      <ImagePopup src="images/3d/unmasked/sample.png" />
       <DateLog date="October 9, 2023" />
       <Documentation text={ThreeDInfo.parkerHead} />
-      <ImagePopup src="images/3d/unmasked.png" />
-      {/* <ImageRotation path="images/3d/unmasked/" /> */}
+      <ImageRotation path="images/3d/unmasked/rotation/" mainImageIndex={1} />
+      <DateLog date="October 12, 2023" />
+      <Documentation text={ThreeDInfo.parkerHead2} />
     </>
   );
 }
