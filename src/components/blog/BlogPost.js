@@ -117,7 +117,7 @@ function BlogPost() {
                 <Text
                   as="p"
                   size="2"
-                  style={{ marginTop: 0, marginBottom: 0 }}
+                  style={{ marginTop: 0, marginBottom: "1em" }}
                   {...props}
                 />
               ),
@@ -170,6 +170,7 @@ function BlogPost() {
                       marginRight: "auto",
                       width: width,
                       height: height,
+                      marginBottom: "1em",
                     }}
                     alt=""
                   />
