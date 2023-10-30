@@ -14,6 +14,8 @@ import {
 import rehypeRaw from "rehype-raw";
 import frontMatter from "front-matter";
 import { motion } from "framer-motion";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { gruvboxDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 function formatDate(dateString) {
   const date = new Date(dateString);
@@ -135,16 +137,18 @@ function BlogPost() {
               ),
               code: ({ node, inline, className, children, ...props }) => {
                 return !inline ? (
-                  <Card style={{ overflowX: "auto" }}>
-                    <Text
-                      as="code"
-                      size="1"
-                      style={{ whiteSpace: "pre-wrap" }}
-                      {...props}
-                    >
-                      {children}
-                    </Text>
-                  </Card>
+                  <SyntaxHighlighter
+                    language="javascript"
+                    style={{
+                      ...gruvboxDark,
+                      'code[class*="language-"]': {
+                        ...gruvboxDark['code[class*="language-"]'],
+                        fontSize: "0.8em", // Adjust this value to change the font size
+                      },
+                    }}
+                  >
+                    {children}
+                  </SyntaxHighlighter>
                 ) : (
                   <Code
                     color="gray"
