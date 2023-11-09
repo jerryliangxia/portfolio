@@ -16,7 +16,7 @@ For humans (white capsules), the `target = goal`. For chairs (red capsules), the
 
 However, by choosing whichever human was closest, chairs tended to clump together in a large group:
 
-<img src="../gifs/astar-pathfinding/findclosest.gif" width="100%"/>
+<img src="../images/astar-pathfinding/findclosest.gif" width="100%"/>
 
 This could be nice for zombie-like shooter games, but I wanted the movement to be more complex. If I assigned a human to each chair, they would often form a wall that would be more difficult to surpass, along with other surprising results. To do this, I used a round-robin approach:
 
@@ -50,16 +50,16 @@ To find the optimal difficulty for the humans and the performance, I tried chang
 
 As mentioned above, the chairs did move in a more strategic fashion, giving the results you see below:
 
-<img src="../gifs/astar-pathfinding/notfindclosest.gif" width="100%"/>
+<img src="../images/astar-pathfinding/notfindclosest.gif" width="100%"/>
 
 After adding an isometric camera, I had the final scene below:
 
-<img src="../gifs/astar-pathfinding/finalnotfindclosest.gif" width="100%"/>
+<img src="../images/astar-pathfinding/finalnotfindclosest.gif" width="100%"/>
 
 That's it! This was a fun exploration that helped me understand how paths work in games. Currently I'm working on a third-person shooter for a zombie game, and this type of pathfinding will make it possible to create more intelligent enemies.
 
 Here's a sneak peek of what I have so far:
 
-<img src="../gifs/astar-pathfinding/thirdpersonshooter.gif" width="100%"/>
+<img src="../images/astar-pathfinding/thirdpersonshooter.gif" width="100%"/>
 
 Thanks for reading!

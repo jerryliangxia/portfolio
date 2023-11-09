@@ -18,11 +18,11 @@ I started everything by modeling a low-poly model. I found a good [reference](ht
 
 After this I rigged the character and added some of my own animations. I started coding and set out a first-draft scene: Spider-Man walking on a plane, navigating to where the user clicked. I added a fixed camera hovering above the scene, and placed Spider-Man in the middle. This wasn't too hard, but it did involve a lot of trial and error. Here's what it looked like in the end:
 
-<img src="../gifs/threejs-game/rough_draft.gif" width="100%">
+<img src="../images/threejs-game/rough_draft.gif" width="100%">
 
 This was great! However the animation was too stiff, so I decided to scrap everything (except the model) and restart. This involved setting up a new scene, with proper WASD controls this time, and using animations from a site called [Mixamo](https://www.mixamo.com/#/). After this, I had the following scene:
 
-<img src="../gifs/threejs-game/good_draft.gif" width="100%">
+<img src="../images/threejs-game/good_draft.gif" width="100%">
 
 To store which animation Spider-Man was using, I used a game engine called [Zustand](https://github.com/pmndrs/zustand), which allowed me to set the animation to either "Idle" or "Run". I created a Canvas component, and placed this skeleton inside:
 
