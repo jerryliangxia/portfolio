@@ -159,12 +159,18 @@ function BlogPost() {
                 return !inline ? (
                   <SyntaxHighlighter
                     language={language}
-                    style={{ ...gruvboxDark, fontSize: "6px" }}
+                    style={{
+                      ...gruvboxDark,
+                      'code[class*="language-"]': {
+                        ...gruvboxDark['code[class*="language-"]'],
+                        fontSize: "12px",
+                      },
+                    }}
                   >
                     {children}
                   </SyntaxHighlighter>
                 ) : (
-                  <Code style={{ fontSize: "6px" }} {...props}>
+                  <Code style={{ fontSize: "12px" }} {...props}>
                     {children}
                   </Code>
                 );
