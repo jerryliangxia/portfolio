@@ -1,4 +1,4 @@
-Today I finished a project with A\* pathfinding with dynamic obstacles. You can play the demo [here](https://jerrylxia.itch.io/pathfinding-demo) on itch.io.
+Today I made a project involving A\* pathfinding and dynamic obstacles. You can check out the demo [here](https://jerrylxia.itch.io/pathfinding-demo) on itch.io.
 
 <img src="../images/astar-pathfinding/final_init.png" width="100%"/>
 
@@ -12,7 +12,7 @@ The general procedure of the algorithm is as follows:
 
 As you can see, to handle dynamic obstacles the grid was computed at every step before a movement was made. This happened for every chair and human.
 
-For humans, the `target = goal`. For chairs, the `target = closest human`. For every iteration, I'd update the position of the chairs once, and then the humans four times so that they could outmaneuver the chairs. Additionally, once the chairs were in a certain radius of a human, they would stop, so that the human could successfully move to the goal in most cases.
+For humans (white capsules), the `target = goal`. For chairs (red capsules), the `target = closest human`. For every iteration, I'd update the position of the chairs once, and then the humans four times so that they could outmaneuver the chairs. Additionally, once the chairs were in a certain radius of a human, they would stop, so that the human could successfully move to the goal in most cases.
 
 However, by choosing whichever human was closest, chairs tended to clump together in a large group:
 
@@ -35,7 +35,7 @@ if (!GetComponent<Spawner>().findClosest)
 
 To find the optimal difficulty for the humans and the performance, I tried changing chairs to a fixed amount of humans and vice versa. Through this, I found a ratio of 8:8 was most optimal for performance and pathfinding difficulty.
 
-#### Keeping Chairs Constant (8), Humans Double
+#### Keeping Chairs Constant (8), and Varying Number of Humans
 
 | Chairs | Time (ms) | Time (ms) | Time (ms) | Time (ms) | Avg Time (ms) |
 | :----: | :-------: | :-------: | :-------: | :-------: | :-----------: |
@@ -46,7 +46,7 @@ To find the optimal difficulty for the humans and the performance, I tried chang
 |   16   |    142    |    141    |    151    |    146    |      145      |
 |   32   |    266    |    290    |    269    |    267    |      273      |
 
-<img src="../images/astar-pathfinding/dhcc.png" width="100%"/>
+<img src="../images/astar-pathfinding/graph.png" width="100%"/>
 
 As mentioned above, the chairs did move in a more strategic fashion, giving the results you see below:
 
@@ -57,3 +57,9 @@ After adding an isometric camera, I had the final scene below:
 <img src="../gifs/astar-pathfinding/finalnotfindclosest.gif" width="100%"/>
 
 That's it! This was a fun exploration that helped me understand how paths work in games. Currently I'm working on a third-person shooter for a zombie game, and this type of pathfinding will make it possible to create more intelligent enemies.
+
+Here's a sneak peek of what I have so far:
+
+<img src="../gifs/astar-pathfinding/thirdpersonshooter.gif" width="100%"/>
+
+Thanks for reading!
