@@ -6,7 +6,7 @@ import {
   Flex,
   Link as RadixLink,
   Text,
-  Card,
+  Table,
   Code,
   Blockquote,
   Heading,
@@ -70,6 +70,23 @@ function BlogPost() {
             remarkPlugins={[gfm]}
             rehypePlugins={[rehypeRaw]}
             components={{
+              table: ({ node, ...props }) => (
+                <Table.Root
+                  variant="ghost"
+                  style={{ marginTop: "1em", marginBottom: "1em" }}
+                  {...props}
+                />
+              ),
+              thead: ({ node, ...props }) => <Table.Header {...props} />,
+              tbody: ({ node, ...props }) => <Table.Body {...props} />,
+              tr: ({ node, ...props }) => <Table.Row {...props} />,
+              th: ({ node, ...props }) => <Table.RowHeaderCell {...props} />,
+              td: ({ node, ...props }) => (
+                <Table.ColumnHeaderCell
+                  style={{ fontWeight: "normal" }}
+                  {...props}
+                />
+              ),
               h1: ({ node, ...props }) => (
                 <Text
                   as="h1"
@@ -175,6 +192,7 @@ function BlogPost() {
                       width: width,
                       height: height,
                       marginBottom: "1em",
+                      marginTop: "1em",
                     }}
                     alt=""
                   />

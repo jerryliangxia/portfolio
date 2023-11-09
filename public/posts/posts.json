@@ -1,5 +1,10 @@
 [
   {
+    "link": "/astar-pathfinding",
+    "title": "A* Pathfinding Demo",
+    "publishedAt": "2023-11-09"
+  },
+  {
     "link": "/threejs-game",
     "title": "Three.js Spider-Man Game",
     "publishedAt": "2023-09-30"
