@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import ProgressiveImg from "./ProgressiveImg";
 
 function ImagePopup({ src }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,8 +20,12 @@ function ImagePopup({ src }) {
         <img
           ref={imgRef}
           src={src}
-          style={{ width: "100%", cursor: "zoom-in" }}
-          onClick={() => setIsOpen(true)}
+          style={{ width: "100%", cursor: "pointer" }}
+          onClick={() => {
+            if (!isMobile) {
+              setIsOpen(true);
+            }
+          }}
           onLoad={handleImageLoad}
           alt=""
         />

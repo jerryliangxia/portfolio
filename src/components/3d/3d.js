@@ -149,7 +149,7 @@ function ThreeD() {
 
   return (
     <Flex style={{ paddingBottom: "5vh" }} gap="4" direction="column">
-      <Heading>Gaming Work</Heading>
+      <Heading>3D Work</Heading>
       <Text color="gray" as="p" style={{ paddingBottom: "20px" }}>
         {ThreeDInfo.about}
       </Text>

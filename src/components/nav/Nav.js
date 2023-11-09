@@ -6,7 +6,7 @@ import NavItem from "./NavItem";
 function Nav() {
   return (
     <Theme accentColor="gray" radius="small">
-      <Flex gap="3">
+      <Flex gap="4">
         <NavItem title="Home" to="/">
           <Home />
         </NavItem>
