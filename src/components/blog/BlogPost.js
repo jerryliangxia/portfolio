@@ -153,25 +153,18 @@ function BlogPost() {
                 />
               ),
               code: ({ node, inline, className, children, ...props }) => {
+                const match = /language-(\w+)/.exec(className || "");
+                const language = match ? match[1] : null;
+
                 return !inline ? (
                   <SyntaxHighlighter
-                    language="javascript"
-                    style={{
-                      ...gruvboxDark,
-                      'code[class*="language-"]': {
-                        ...gruvboxDark['code[class*="language-"]'],
-                        fontSize: "0.8em", // Adjust this value to change the font size
-                      },
-                    }}
+                    language={language}
+                    style={{ ...gruvboxDark, fontSize: "6px" }}
                   >
                     {children}
                   </SyntaxHighlighter>
                 ) : (
-                  <Code
-                    color="gray"
-                    style={{ marginTop: 0, marginBottom: 0 }}
-                    {...props}
-                  >
+                  <Code style={{ fontSize: "6px" }} {...props}>
                     {children}
                   </Code>
                 );

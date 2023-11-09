@@ -26,7 +26,7 @@ This was great! However the animation was too stiff, so I decided to scrap every
 
 To store which animation Spider-Man was using, I used a game engine called [Zustand](https://github.com/pmndrs/zustand), which allowed me to set the animation to either "Idle" or "Run". I created a Canvas component, and placed this skeleton inside:
 
-```
+```javascript
 function Game() {
   const map = useMemo(() => [
     { name: Controls.forward, keys: ["ArrowUp", "KeyW"] },
@@ -37,17 +37,17 @@ function Game() {
   ]);
   return (
     <KeyboardControls map={map}>
-        <Canvas
-            shadows
-            camera={{ position: [0, 6, 4], fov: 42 }}
-            style={{ height: "100vh" }}
-        >
-            <Suspense>
-            <Physics>
-                <Experience />
-            </Physics>
-            </Suspense>
-        </Canvas>
+      <Canvas
+        shadows
+        camera={{ position: [0, 6, 4], fov: 42 }}
+        style={{ height: "100vh" }}
+      >
+        <Suspense>
+          <Physics>
+            <Experience />
+          </Physics>
+        </Suspense>
+      </Canvas>
     </KeyboardControls>
   );
 }
@@ -59,7 +59,7 @@ For the character controller, I asked for WASD/directional arrowcontrols from th
 
 I used a library called `gltfjsx` to help me load in the `.glb` files from my project. This involved a single command;
 
-```
+```javascript
 npx gltfjsx path/to/file/file_name.glb
 ```
 
