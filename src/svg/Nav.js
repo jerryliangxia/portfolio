@@ -41,6 +41,7 @@ export const ThreeD = () => {
       viewBox="0 0 24 24"
       width="16"
       height="16"
+      style={{ paddingRight: "1px" }}
       className="nav-svg"
     >
       <path
@@ -58,6 +59,7 @@ export const Insomniac = () => {
       height="14"
       viewBox="0 0 919 922"
       fill="none"
+      style={{ paddingRight: "2px" }}
       xmlns="http://www.w3.org/2000/svg"
       className="nav-svg"
     >
