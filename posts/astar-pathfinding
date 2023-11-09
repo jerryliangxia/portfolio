@@ -20,7 +20,7 @@ However, by choosing whichever human was closest, chairs tended to clump togethe
 
 This could be nice for zombie-like shooter games, but I wanted the movement to be more complex. If I assigned a human to each chair, they would often form a wall that would be more difficult to surpass, along with other surprising results. To do this, I used a round-robin approach:
 
-```
+```csharp
 if (!GetComponent<Spawner>().findClosest)
 {
     for (var i = 0; i < _chairs.Length; i++)
