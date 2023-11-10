@@ -1,13 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Flex, Heading, Text, Link as RadixLink } from "@radix-ui/themes";
+import { Flex, Heading, Text } from "@radix-ui/themes";
 import InfoBlock from "./InfoBlock";
 import Contact from "./Contact";
 import SpecialContact from "./SpecialContact";
 import { basicData, jobExperience, work, flexGaps } from "../Info";
 import ImagePopup from "../ImagePopup";
-import { ThreeD } from "../../svg/Nav";
-import { Arrow } from "../../svg/Button";
+import ThreeDButton from "./3dButton";
 
 function Home() {
   return (
@@ -26,26 +24,7 @@ function Home() {
             justify="start"
             style={{ marginTop: "8px" }}
           >
-            <div>
-              <Link
-                to="/3d"
-                style={{
-                  textDecoration: "none",
-                  justifyContent: "start",
-                  alignContent: "start",
-                }}
-              >
-                <RadixLink to="/3d" target="_blank" rel="noopener noreferrer">
-                  <Flex gap="1" direction="row" align="center">
-                    <ThreeD />
-                    <Text style={{ color: "white" }} as="p">
-                      3D Work
-                      <Arrow />
-                    </Text>
-                  </Flex>
-                </RadixLink>
-              </Link>
-            </div>
+            <ThreeDButton />
           </Flex>
         </Flex>
       </section>

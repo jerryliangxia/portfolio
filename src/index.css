@@ -116,6 +116,14 @@ p:hover .arrow-icon {
   ); /* Even darker shadow on hover */
 }
 
+.threeD-logo {
+  transition: transform 0.3s ease-in-out;
+}
+
+.threeD-logo:hover {
+  transform: rotate(360deg);
+}
+
 .dropdown-content {
   max-height: 0;
   overflow: hidden;
