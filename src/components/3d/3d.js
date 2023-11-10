@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SpidermanShowcase from "./3dComponents/SpidermanShowcase";
+import SpidermanShowcase from "./components/SpidermanShowcase";
 import { Flex, Text, Heading } from "@radix-ui/themes";
-import Divider from "./3dComponents/Divider";
-import ImagePopup from "../ImagePopup";
-import CanvasComponent from "../CanvasComponent";
-import Documentation from "./3dComponents/Documentation";
-import { ThreeD as ThreeDInfo } from "../Info";
-import GifPopup from "./3dComponents/GifPopup";
-import ImageRotation from "./3dComponents/ImageRotation";
-import { Look } from "../../svg/Button";
+import Divider from "./components/Divider";
+import ImagePopup from "../general/ImagePopup";
+import CanvasComponent from "../general/CanvasComponent";
+import Documentation from "./components/Documentation";
+import { ThreeD as ThreeDInfo } from "../../Info";
+import GifPopup from "./components/GifPopup";
+import ImageRotation from "./components/ImageRotation";
+import { Look } from "../svg/Button";
 
 function DateLog({ date }) {
   return <Text size="2">Finished {date}.</Text>;

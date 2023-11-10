@@ -3,7 +3,7 @@ import { CapsuleCollider, RigidBody, vec3 } from "@react-three/rapier";
 import SpiderManPS5 from "./SpiderManPS5";
 import { useFrame } from "@react-three/fiber";
 import { useKeyboardControls } from "@react-three/drei";
-import { Controls } from "./Game";
+import { Controls } from "../Game";
 import { useGameStore } from "./Store";
 
 import * as THREE from "three";

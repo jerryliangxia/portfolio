@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Flex, Heading } from "@radix-ui/themes";
-import BlogsPerYear from "./BlogsPerYear";
+import BlogsPerYear from "./components/BlogsPerYear";
 
 function formatDate(dateString) {
   const date = new Date(dateString);

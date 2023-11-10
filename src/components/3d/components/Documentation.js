@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, Flex } from "@radix-ui/themes";
-import ImagePopup from "../../ImagePopup";
+import ImagePopup from "../../general/ImagePopup";
 import YouTubeBlock from "./YouTubeBlock";
 
 function Documentation({ text, src, youtubeId }) {

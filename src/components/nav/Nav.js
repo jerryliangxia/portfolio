@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex, Theme } from "@radix-ui/themes";
-import { Home, Blog, ThreeD, Insomniac } from "../../svg/Nav";
-import NavItem from "./NavItem";
+import { Home, Blog, ThreeD, Insomniac } from "../svg/Nav";
+import NavItem from "./components/NavItem";
 
 function Nav() {
   return (

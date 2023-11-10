@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import MultiModelShowcase from "../MultiModelShowcase";
+import MultiModelShowcase from "./MultiModelShowcase";
 import { Button, Flex } from "@radix-ui/themes";
 import { AnimatePresence, motion } from "framer-motion";
-import { ToggleOff, ToggleOn } from "../../../svg/Button";
+import { ToggleOff, ToggleOn } from "../../svg/Button";
 
 function SpidermanShowcase() {
   const [count, setCount] = useState(0);

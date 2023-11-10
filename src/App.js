@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./components/home/Home";
 import Blog from "./components/blog/Blog";
-import BlogPost from "./components/blog/BlogPost";
+import BlogPost from "./components/blog/components/BlogPost";
 import Nav from "./components/nav/Nav";
 import { Theme, Flex } from "@radix-ui/themes";
 import ThreeD from "./components/3d/3d";

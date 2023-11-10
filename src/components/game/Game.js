@@ -1,7 +1,7 @@
 import React, { Suspense, useMemo } from "react";
 import { Physics } from "@react-three/rapier";
 import { Canvas } from "@react-three/fiber";
-import Experience from "./Experience";
+import Experience from "./components/Experience";
 import { KeyboardControls } from "@react-three/drei";
 import { motion } from "framer-motion";
 

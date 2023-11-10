@@ -1,11 +1,11 @@
 import React from "react";
 import { Flex, Heading, Text } from "@radix-ui/themes";
-import InfoBlock from "./InfoBlock";
-import Contact from "./Contact";
-import SpecialContact from "./SpecialContact";
-import { basicData, jobExperience, work, flexGaps } from "../Info";
-import ImagePopup from "../ImagePopup";
-import ThreeDButton from "./3dButton";
+import InfoBlock from "./components/InfoBlock";
+import Contact from "./components/Contact";
+import SpecialContact from "./components/SpecialContact";
+import { basicData, jobExperience, work, flexGaps } from "../../Info";
+import ImagePopup from "../general/ImagePopup";
+import ThreeDButton from "./components/3dButton";
 
 function Home() {
   return (
