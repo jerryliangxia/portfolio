@@ -4,7 +4,7 @@ publishedAt: "2023-09-30"
 summary: "Documenting the development of a Three.js game."
 ---
 
-This past week I've had a blast making a Spider-Man game with Three.js. The tools I used include:
+This past week I've been making a Spider-Man game with Three.js. The tools I used include:
 
 - [Blender](https://www.blender.org/) (for modeling)
 - React Three [Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction), [DREI](https://github.com/pmndrs/drei), and [Rapier](https://github.com/pmndrs/react-three-rapier) (coding)
