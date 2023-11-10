@@ -7,6 +7,13 @@ import { ToggleOff, ToggleOn } from "../../../svg/Button";
 
 function SpidermanShowcase() {
   const [count, setCount] = useState(0);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
+  const handleClick = () => {
+    setIsButtonDisabled(true);
+    setCount((count + 1) % 2);
+    setTimeout(() => setIsButtonDisabled(false), 1500); // 1500 milliseconds = 2.5 seconds
+  };
 
   return (
     <Flex className="flexContainer" align="center" gap="6" direction="column">
@@ -39,8 +46,10 @@ function SpidermanShowcase() {
       </div>
       <Button
         variant="ghost"
-        onClick={() => setCount((count + 1) % 2)}
+        onClick={handleClick}
+        disabled={isButtonDisabled}
         radius="small"
+        style={{ cursor: isButtonDisabled ? "default" : "pointer" }}
       >
         {count === 1 ? <ToggleOn /> : <ToggleOff />}
         Toggle Suit

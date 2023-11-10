@@ -28,10 +28,10 @@ function InfoBlock({
                       width="16"
                       height="16"
                       style={{
-                        marginLeft: "3px",
+                        marginLeft: "1px",
                         transition: "transform 0.3s ease-in-out", // Add transition here
                         position: "relative", // Add position here
-                        top: "1px", // Adjust vertical position here
+                        top: "0px", // Adjust vertical position here
                       }}
                       className="arrow-icon"
                     >

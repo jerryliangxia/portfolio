@@ -8,11 +8,11 @@ export const basicData = {
 
 export const jobExperience = {
   unity: {
-    leftText: "2022-2023",
+    leftText: "2022 - 2023",
     rightTitle: "Software Engineer at Unity Technologies",
     rightSubtitle: "Montréal, QC",
     rightText:
-      "Worked in Unity's Live Operation Game Services. Managed pipelines for deployment, monitored alerts; resolved a Snowflake database concurrency error, created the first endpoints for a new Unity Gaming Service. Created two games and several Blender models during company recreation hours.",
+      "Worked in Unity's LiveOps Game Services. Monitored pipelines for deployment, resolved incidents and Snowflake concurrency errors. Created the first endpoints for a new LiveOps service. Created two games and several Blender models during company recreation hours.",
   },
   gameloft: {
     leftText: "2021",
@@ -27,19 +27,17 @@ export const work = {
   lightspeed: {
     leftText: "2023",
     rightTitle: "Lightspeed",
-    rightText: "High score PC game made in Unity. Sci-fi, B&W, Music, SFX.",
+    rightText: "High score PC game made in Unity. Sci-fi, B&W.",
   },
   blenderContest: {
     leftText: "2023",
     rightTitle: "Blender 2023 Boss Fight Challenge",
-    rightText:
-      "Created using Blender and Cascadeur. Involves Blender NLA, Geometry Nodes, and more.",
+    rightText: "Created using Blender and Cascadeur.",
   },
   modeling: {
     leftText: "2023",
     rightTitle: "3D Design",
-    rightText:
-      "3D models made with Blender, uploaded to Sketchfab frequently. Links below.",
+    rightText: "All models available for download on Sketchfab.",
   },
 };
 

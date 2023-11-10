@@ -127,7 +127,7 @@ function Animation({ isMobile }) {
       )}
       <DateLog date="August 27, 2023" />
       <Documentation text={ThreeDInfo.animation} />
-      <Divider />
+      {/* <Divider /> */}
     </>
   );
 }

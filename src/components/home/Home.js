@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Flex, Heading, Text } from "@radix-ui/themes";
+import { Flex, Heading, Text, Link as RadixLink } from "@radix-ui/themes";
 import InfoBlock from "./InfoBlock";
 import Contact from "./Contact";
 import SpecialContact from "./SpecialContact";
@@ -35,21 +35,15 @@ function Home() {
                   alignContent: "start",
                 }}
               >
-                <Flex direction="row" gap="1" align="center" justify="start">
-                  <ThreeD />
-                  <Text
-                    className="btn"
-                    color="white"
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    3D Work
-                    <Arrow />
-                  </Text>
-                </Flex>
+                <RadixLink to="/3d" target="_blank" rel="noopener noreferrer">
+                  <Flex gap="1" direction="row" align="center">
+                    <ThreeD />
+                    <Text style={{ color: "white" }} as="p">
+                      3D Work
+                      <Arrow />
+                    </Text>
+                  </Flex>
+                </RadixLink>
               </Link>
             </div>
           </Flex>
