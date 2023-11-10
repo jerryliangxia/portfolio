@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Text, Flex } from "@radix-ui/themes";
 
 function NavItem({ title, to, children }) {
+  const [isHovered, setIsHovered] = useState(false);
   const isMobile = window.innerWidth <= 768;
+
   return (
     <>
       {isMobile ? (
@@ -22,7 +24,12 @@ function NavItem({ title, to, children }) {
           </Button>
         </Link>
       ) : (
-        <Link to={to} style={{ textDecoration: "none" }}>
+        <Link
+          to={to}
+          style={{ textDecoration: "none" }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <Button
             variant="ghost"
             style={{
@@ -38,14 +45,16 @@ function NavItem({ title, to, children }) {
                   paddingTop: "4px",
                 }}
               >
-                {children}
+                {React.cloneElement(children, { isWhite: isHovered })}
               </div>
               <Text
-                color="white"
+                color={isHovered ? "white" : "initial"}
                 style={{
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  transition: "transform 0.3s ease-in-out",
+                  transform: isHovered ? "translateX(1px)" : "initial",
                 }}
               >
                 {title}
