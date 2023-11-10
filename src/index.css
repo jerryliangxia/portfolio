@@ -124,6 +124,10 @@ p:hover .arrow-icon {
   transform: rotate(360deg);
 }
 
+.post-div:hover {
+  transform: translateX(3px);
+}
+
 .dropdown-content {
   max-height: 0;
   overflow: hidden;

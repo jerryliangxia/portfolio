@@ -22,7 +22,7 @@ function BlogsPerYear({ posts, year }) {
               style={{
                 borderTop: "1px solid rgba(128, 128, 128, 0.2)",
                 padding: "8px",
-                transition: "background-color 0.3s ease",
+                transition: "transform 0.3s ease-in-out",
               }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.backgroundColor =
@@ -31,6 +31,7 @@ function BlogsPerYear({ posts, year }) {
               onMouseLeave={(e) =>
                 (e.currentTarget.style.backgroundColor = "transparent")
               }
+              className="post-div"
             >
               <Flex gap="1" direction="row">
                 <Text size="4" style={{ color: "white", width: "80%" }}>
