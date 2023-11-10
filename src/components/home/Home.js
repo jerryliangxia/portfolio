@@ -109,16 +109,19 @@ function Home() {
               src="images/about/blender.png"
               style={{ width: "10%", objectFit: "contain" }}
               alt=""
+              className="image-class-quick"
             />
             <img
               src="images/about/unity.png"
               style={{ width: "7.5%", objectFit: "contain" }}
               alt=""
+              className="image-class-quick"
             />
             <img
               src="images/about/cascadeur.png"
               style={{ width: "8.5%", objectFit: "contain" }}
               alt=""
+              className="image-class-quick"
             />
           </Flex>
         </Flex>

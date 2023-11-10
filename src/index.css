@@ -116,6 +116,15 @@ p:hover .arrow-icon {
   ); /* Even darker shadow on hover */
 }
 
+.image-class-quick {
+  transition: transform 0.05s ease-in-out, filter 0.1s ease-in-out;
+  transform: scale(0.95);
+}
+
+.image-class-quick:hover {
+  transform: scale(1);
+}
+
 .threeD-logo {
   transition: transform 0.3s ease-in-out;
 }

@@ -13,7 +13,6 @@ export const Controls = {
   jump: "jump",
 };
 
-// Equivalent of App.js for this page
 function Game() {
   const map = useMemo(() => [
     { name: Controls.forward, keys: ["ArrowUp", "KeyW"] },
