@@ -8,7 +8,7 @@ function GifPopup({ placeHolderSrc, src }) {
     <>
       <img
         src={placeHolderSrc}
-        style={{ width: "100%", cursor: "zoom-in" }}
+        style={{ width: "100%", cursor: "pointer" }}
         onClick={() => setIsOpen(true)}
         alt=""
       />

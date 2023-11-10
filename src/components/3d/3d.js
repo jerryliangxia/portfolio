@@ -91,7 +91,7 @@ function SymbioteMask() {
       <ImagePopup src="images/3d/symbiote_mask/symbiote_mask.png" />
       <DateLog date="September 22, 2023" />
       <Documentation text={ThreeDInfo.symbiote} />
-      <ImagePopup src="images/3d/symbiote/symbiote_mask_mat.png" />
+      <ImagePopup src="images/3d/symbiote_mask/symbiote_mask_mat.png" />
       <Documentation text={ThreeDInfo.symbioteShaderEditor} />
     </>
   );
@@ -122,7 +122,7 @@ function Animation({ isMobile }) {
       ) : (
         <GifPopup
           placeHolderSrc="images/3d/anim_placeholder.png"
-          src="gifs/blender-contest/4.gif"
+          src="images/blender-contest/4.gif"
         />
       )}
       <DateLog date="August 27, 2023" />
