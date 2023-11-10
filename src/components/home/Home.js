@@ -57,7 +57,10 @@ function Home() {
             <ImagePopup src="images/3d/mask/mask.png" />
             <ImagePopup src="images/3d/symbiote_mask/symbiote_mask.png" />
           </div>
-          <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
+          <ImagePopup
+            src="images/3d/ps5_full_suit/stance.png"
+            isSubtle={true}
+          />
         </Flex>
       </section>
       <section>

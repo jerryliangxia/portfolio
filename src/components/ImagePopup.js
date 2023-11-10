@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 
-function ImagePopup({ src }) {
+function ImagePopup({ src, isSubtle = false }) {
   const [isOpen, setIsOpen] = useState(false);
   const [imgWidth, setImgWidth] = useState(0);
   const [imgHeight, setImgHeight] = useState(0);
@@ -28,6 +28,7 @@ function ImagePopup({ src }) {
           }}
           onLoad={handleImageLoad}
           alt=""
+          className={isSubtle ? "image-class-subtle" : "image-class"}
         />
       )}
       {isOpen && <div style={{ width: imgWidth, height: imgHeight }} />}

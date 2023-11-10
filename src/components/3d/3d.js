@@ -24,7 +24,7 @@ function FullSuit() {
       </Text>
       <ImageRotation path="images/3d/ps5_full_suit/rotation/" />
       <DateLog date="October 2, 2023" />
-      <ImagePopup src="images/3d/ps5_full_suit/stance.png" />
+      <ImagePopup src="images/3d/ps5_full_suit/stance.png" isSubtle={true} />
       <Documentation
         text={ThreeDInfo.fullSuit}
         src="images/3d/ps5_full_suit/spiderman_low_poly_scope.png"
@@ -127,7 +127,6 @@ function Animation({ isMobile }) {
       )}
       <DateLog date="August 27, 2023" />
       <Documentation text={ThreeDInfo.animation} />
-      {/* <Divider /> */}
     </>
   );
 }

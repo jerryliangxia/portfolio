@@ -90,6 +90,32 @@ p:hover .arrow-icon {
   transform: translateX(3px);
 }
 
+.image-class {
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  transform: scale(0.95);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Darker initial shadow */
+}
+
+.image-class:hover {
+  transform: scale(1);
+  filter: drop-shadow(
+    0 0 20px rgba(0, 0, 0, 0.7)
+  ); /* Even darker shadow on hover */
+}
+
+.image-class-subtle {
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  transform: scale(0.98);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.2)); /* Darker initial shadow */
+}
+
+.image-class-subtle:hover {
+  transform: scale(1);
+  filter: drop-shadow(
+    0 0 20px rgba(0, 0, 0, 0.3)
+  ); /* Even darker shadow on hover */
+}
+
 .dropdown-content {
   max-height: 0;
   overflow: hidden;

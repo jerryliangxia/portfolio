@@ -20,7 +20,7 @@ function ImageRotation({ path, mainImageIndex = 0 }) {
   };
 
   return (
-    <>
+    <div className="image-class">
       {" "}
       {isMobile ? (
         <img
@@ -37,14 +37,13 @@ function ImageRotation({ path, mainImageIndex = 0 }) {
           src={currentImage}
           style={{
             width: "100%",
-            cursor: "ew-resize",
           }}
           alt=""
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         />
       )}
-    </>
+    </div>
   );
 }
 

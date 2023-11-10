@@ -11,6 +11,7 @@ function GifPopup({ placeHolderSrc, src }) {
         style={{ width: "100%", cursor: "pointer" }}
         onClick={() => setIsOpen(true)}
         alt=""
+        className="image-class-subtle"
       />
       {isOpen && !isMobile && (
         <div
