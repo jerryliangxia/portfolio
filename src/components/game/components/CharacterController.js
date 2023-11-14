@@ -5,6 +5,7 @@ import { useFrame } from "@react-three/fiber";
 import { useKeyboardControls } from "@react-three/drei";
 import { Controls } from "../Game";
 import { useGameStore } from "./Store";
+import Venom from "./Venom";
 
 import * as THREE from "three";
 
@@ -15,12 +16,27 @@ const RUN_VEL = 1.5;
 const CAMERA_DISTANCE = 4;
 
 function CharacterController() {
+  const { characterActive, setCharacterActive } = useGameStore((state) => ({
+    characterActive: state.characterActive,
+    setCharacterActive: state.setCharacterActive,
+    gameState: state.gameState,
+  }));
+
   const { characterState, setCharacterState } = useGameStore((state) => ({
     character: state.characterState,
     setCharacterState: state.setCharacterState,
     gameState: state.gameState,
   }));
+
   const [isColliding, setIsColliding] = useState(false);
+  const [isSpiderManActive, setIsSpiderManActive] = useState(true);
+  const kPressed = useKeyboardControls((state) => state[Controls.jump]);
+
+  useEffect(() => {
+    if (kPressed) {
+      setIsSpiderManActive((prev) => !prev);
+    }
+  }, [kPressed]);
 
   useEffect(() => {
     setCharacterState("Land");
@@ -31,7 +47,7 @@ function CharacterController() {
     return () => clearTimeout(timer); // Clean up the timer when the component unmounts
   }, []);
 
-  const jumpPressed = useKeyboardControls((state) => state[Controls.jump]);
+  // const jumpPressed = useKeyboardControls((state) => state[Controls.jump]);
   const leftPressed = useKeyboardControls((state) => state[Controls.left]);
   const rightPressed = useKeyboardControls((state) => state[Controls.right]);
   const backPressed = useKeyboardControls((state) => state[Controls.back]);
@@ -160,7 +176,9 @@ function CharacterController() {
       >
         <CapsuleCollider args={[0.8, 0.4]} position={[0, 1.2, 0]} />
         <group ref={character}>
-          <SpiderManPS5 />
+          {/* <Venom /> */}
+          {/* <SpiderManPS5 /> */}
+          {isSpiderManActive ? <SpiderManPS5 /> : <Venom />}
         </group>
       </RigidBody>
     </group>

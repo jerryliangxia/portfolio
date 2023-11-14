@@ -9,4 +9,6 @@ export const useGameStore = create((set) => ({
     set({
       characterState,
     }),
+  characterActive: "Spider-Man",
+  setCharacterActive: (characterActive) => set({ characterActive }),
 }));

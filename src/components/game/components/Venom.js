@@ -8,10 +8,10 @@ import { useFrame } from "@react-three/fiber";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useGameStore } from "./Store";
 
-export function SpiderManPS5(props) {
+export function Venom(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
-    "models/animated_spiderman_ps5.glb"
+    "models/animated_venom_ps5.glb"
   );
   const { characterState, setCharacterState } = useGameStore((state) => ({
     characterState: state.characterState,
@@ -44,36 +44,29 @@ export function SpiderManPS5(props) {
       setCharacterState("Land");
     }
   });
-
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <group name="Armature" rotation={[Math.PI / 2, 0, 0]}>
+        <group name="Armature" rotation={[Math.PI / 2, 0, 0]} scale={0.999}>
           <primitive object={nodes.mixamorigHips} />
-          <group name="Spider-Man">
+          <group name="Venom001">
             <skinnedMesh
-              name="Spider-Man_Redmesh"
-              geometry={nodes["Spider-Man_Redmesh"].geometry}
-              material={materials.Red}
-              skeleton={nodes["Spider-Man_Redmesh"].skeleton}
-            />
-            <skinnedMesh
-              name="Spider-Man_Redmesh_1"
-              geometry={nodes["Spider-Man_Redmesh_1"].geometry}
-              material={materials.Blue}
-              skeleton={nodes["Spider-Man_Redmesh_1"].skeleton}
-            />
-            <skinnedMesh
-              name="Spider-Man_Redmesh_2"
-              geometry={nodes["Spider-Man_Redmesh_2"].geometry}
+              name="Venommesh"
+              geometry={nodes.Venommesh.geometry}
               material={materials.Black}
-              skeleton={nodes["Spider-Man_Redmesh_2"].skeleton}
+              skeleton={nodes.Venommesh.skeleton}
             />
             <skinnedMesh
-              name="Spider-Man_Redmesh_3"
-              geometry={nodes["Spider-Man_Redmesh_3"].geometry}
-              material={materials.White}
-              skeleton={nodes["Spider-Man_Redmesh_3"].skeleton}
+              name="Venommesh_1"
+              geometry={nodes.Venommesh_1.geometry}
+              material={materials["White.001"]}
+              skeleton={nodes.Venommesh_1.skeleton}
+            />
+            <skinnedMesh
+              name="Venommesh_2"
+              geometry={nodes.Venommesh_2.geometry}
+              material={materials.Red}
+              skeleton={nodes.Venommesh_2.skeleton}
             />
           </group>
         </group>
@@ -82,6 +75,6 @@ export function SpiderManPS5(props) {
   );
 }
 
-export default SpiderManPS5;
+export default Venom;
 
-useGLTF.preload("models/animated_spiderman_ps5.glb");
+useGLTF.preload("models/animated_venom_ps5.glb");
