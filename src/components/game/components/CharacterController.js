@@ -6,6 +6,7 @@ import { useKeyboardControls } from "@react-three/drei";
 import { Controls } from "../Game";
 import { useGameStore } from "./Store";
 import Venom from "./Venom";
+import Cube from "./Cube";
 
 import * as THREE from "three";
 
@@ -16,12 +17,6 @@ const RUN_VEL = 1.5;
 const CAMERA_DISTANCE = 4;
 
 function CharacterController() {
-  const { characterActive, setCharacterActive } = useGameStore((state) => ({
-    characterActive: state.characterActive,
-    setCharacterActive: state.setCharacterActive,
-    gameState: state.gameState,
-  }));
-
   const { characterState, setCharacterState } = useGameStore((state) => ({
     character: state.characterState,
     setCharacterState: state.setCharacterState,
@@ -29,14 +24,18 @@ function CharacterController() {
   }));
 
   const [isColliding, setIsColliding] = useState(false);
-  const [isSpiderManActive, setIsSpiderManActive] = useState(true);
-  const kPressed = useKeyboardControls((state) => state[Controls.jump]);
+  const [currentCharacter, setCurrentCharacter] = useState("SpiderManPS5");
+  const spacePressed = useKeyboardControls((state) => state[Controls.jump]);
 
   useEffect(() => {
-    if (kPressed) {
-      setIsSpiderManActive((prev) => !prev);
+    if (spacePressed) {
+      setCurrentCharacter((prev) => {
+        if (prev === "SpiderManPS5") return "Venom";
+        if (prev === "Venom") return "Cube";
+        return "SpiderManPS5";
+      });
     }
-  }, [kPressed]);
+  }, [spacePressed]);
 
   useEffect(() => {
     setCharacterState("Land");
@@ -176,9 +175,9 @@ function CharacterController() {
       >
         <CapsuleCollider args={[0.8, 0.4]} position={[0, 1.2, 0]} />
         <group ref={character}>
-          {/* <Venom /> */}
-          {/* <SpiderManPS5 /> */}
-          {isSpiderManActive ? <SpiderManPS5 /> : <Venom />}
+          {currentCharacter === "SpiderManPS5" && <SpiderManPS5 />}
+          {currentCharacter === "Venom" && <Venom />}
+          {currentCharacter === "Cube" && <Cube />}
         </group>
       </RigidBody>
     </group>
