@@ -306,11 +306,11 @@ export function Model(props) {
       />
       <group position={[4.948, -0.018, -1.163]} scale={[0.094, 0.119, 0.094]}>
         <mesh
-          geometry={nodes.Cylinder004.geometry}
+          geometry={nodes.Cylinder004_1.geometry}
           material={materials.Black}
         />
         <mesh
-          geometry={nodes.Cylinder004_1.geometry}
+          geometry={nodes.Cylinder004_2.geometry}
           material={materials["Darker Gray"]}
         />
       </group>
@@ -1143,21 +1143,24 @@ export function Model(props) {
         />
       </group>
       <group position={[9.999, -2.765, -9.861]}>
-        <mesh geometry={nodes.Cylinder008.geometry} material={materials.Wood} />
         <mesh
           geometry={nodes.Cylinder008_1.geometry}
-          material={materials.Black}
+          material={materials.Wood}
         />
         <mesh
           geometry={nodes.Cylinder008_2.geometry}
-          material={materials["Darker Gray"]}
+          material={materials.Black}
         />
         <mesh
           geometry={nodes.Cylinder008_3.geometry}
-          material={materials["Dirty Beige 1"]}
+          material={materials["Darker Gray"]}
         />
         <mesh
           geometry={nodes.Cylinder008_4.geometry}
+          material={materials["Dirty Beige 1"]}
+        />
+        <mesh
+          geometry={nodes.Cylinder008_5.geometry}
           material={materials["Dirty Beige 1.1"]}
         />
       </group>
@@ -2133,6 +2136,204 @@ export function Model(props) {
         <mesh geometry={nodes.Plane024_2.geometry} material={materials.White} />
         <mesh geometry={nodes.Plane024_3.geometry} material={materials.Red} />
       </group>
+      <mesh
+        geometry={nodes.Cylinder.geometry}
+        material={materials.Black}
+        position={[8.241, -6.654, -23.44]}
+        scale={[0.578, 16.487, 0.578]}
+      />
+      <mesh
+        geometry={nodes.Cylinder006.geometry}
+        material={materials.Black}
+        position={[-7.568, -2.91, -27.566]}
+        rotation={[0, -0.31, 0]}
+        scale={[0.613, 17.491, 0.613]}
+      />
+      <mesh
+        geometry={nodes.Cylinder008.geometry}
+        material={materials.Black}
+        position={[-9.574, 0.821, -18.001]}
+        scale={[0.817, 23.322, 0.817]}
+      />
+      <mesh
+        geometry={nodes.Cylinder012.geometry}
+        material={materials.Black}
+        position={[9.427, 3.067, -5.558]}
+        rotation={[-0.708, 0.365, 0.876]}
+        scale={[0.338, 9.635, 0.338]}
+      />
+      <mesh
+        geometry={nodes.Cylinder022.geometry}
+        material={materials.Black}
+        position={[10.533, -4.351, -14.278]}
+        rotation={[0, 1.106, 0]}
+        scale={[0.52, 14.826, 0.52]}
+      />
+      <mesh
+        geometry={nodes.Cylinder027.geometry}
+        material={materials.Black}
+        position={[-8.293, -2.395, -29.227]}
+        rotation={[0, 0.566, 0]}
+        scale={[0.407, 11.61, 0.407]}
+      />
+      <mesh
+        geometry={nodes.Cylinder031.geometry}
+        material={materials.Black}
+        position={[-7.961, -7.936, -27.795]}
+        rotation={[-Math.PI, 0, 0]}
+        scale={[-0.509, -14.528, -0.509]}
+      />
+      <mesh
+        geometry={nodes.Cylinder032.geometry}
+        material={materials.Black}
+        position={[-9.231, -9.418, -27.372]}
+        rotation={[0, -0.31, 0]}
+        scale={[0.454, 12.967, 0.454]}
+      />
+      <mesh
+        geometry={nodes.Cylinder033.geometry}
+        material={materials.Black}
+        position={[-7.626, -9.418, -28.353]}
+        rotation={[0, -0.31, 0]}
+        scale={[0.312, 8.905, 0.312]}
+      />
+      <mesh
+        geometry={nodes.Cylinder034.geometry}
+        material={materials.Black}
+        position={[-8.538, -7.936, -27.795]}
+        scale={[0.509, 14.528, 0.509]}
+      />
+      <mesh
+        geometry={nodes.Cylinder035.geometry}
+        material={materials.Black}
+        position={[-8.644, -4.138, -27.795]}
+        scale={[0.648, 18.503, 0.648]}
+      />
+      <mesh
+        geometry={nodes.Cylinder036.geometry}
+        material={materials.Black}
+        position={[-7.78, -6.421, -27.795]}
+        scale={[0.604, 17.237, 0.604]}
+      />
+      <mesh
+        geometry={nodes.Cylinder044.geometry}
+        material={materials.Black}
+        position={[12.545, -0.297, -19.494]}
+        rotation={[0, 0.623, 0]}
+        scale={[0.43, 12.264, 0.43]}
+      />
+      <mesh
+        geometry={nodes.Cylinder001.geometry}
+        material={materials.Black}
+        position={[0.423, -10.808, -23.89]}
+        rotation={[0.381, 0.948, -0.418]}
+        scale={[0.488, 13.923, 0.488]}
+      />
+      <mesh
+        geometry={nodes.Cylinder002.geometry}
+        material={materials.Black}
+        position={[0.423, -12.488, -23.89]}
+        rotation={[-2.761, 0.948, -0.418]}
+        scale={[-0.406, -11.58, -0.406]}
+      />
+      <mesh
+        geometry={nodes.Cylinder003.geometry}
+        material={materials.Black}
+        position={[5.964, 1.007, -15.23]}
+        rotation={[-1.491, 0.601, 1.71]}
+        scale={[0.197, 5.618, 0.197]}
+      />
+      <mesh
+        geometry={nodes.Cylinder004.geometry}
+        material={materials.Black}
+        position={[-3.5, 0.631, -26.179]}
+        rotation={[-0.098, -0.205, -0.614]}
+        scale={[0.339, 9.663, 0.339]}
+      />
+      <mesh
+        geometry={nodes.Cylinder005.geometry}
+        material={materials.Black}
+        position={[-6.501, 1.184, -11.949]}
+        rotation={[-0.306, -1.247, -0.885]}
+        scale={[0.408, 11.654, 0.408]}
+      />
+      <mesh
+        geometry={nodes.Cylinder007.geometry}
+        material={materials.Black}
+        position={[1.568, -1.493, -23.967]}
+        rotation={[3.074, 1.094, 0.11]}
+        scale={[-0.194, -5.549, -0.194]}
+      />
+      <mesh
+        geometry={nodes.Cylinder009.geometry}
+        material={materials.Black}
+        position={[-10.716, -2.92, -3.41]}
+        rotation={[0.856, 0.818, -1.006]}
+        scale={[0.52, 14.826, 0.52]}
+      />
+      <mesh
+        geometry={nodes.Cylinder010.geometry}
+        material={materials.Black}
+        position={[-19.155, -5.273, -34.988]}
+        rotation={[-2.761, 0.948, -0.418]}
+        scale={[-0.956, -27.281, -0.956]}
+      />
+      <mesh
+        geometry={nodes.Cylinder011.geometry}
+        material={materials.Black}
+        position={[-19.155, -8.565, -34.988]}
+        rotation={[0.381, 0.948, -0.418]}
+        scale={[0.795, 22.691, 0.795]}
+      />
+      <mesh
+        geometry={nodes.Cylinder013.geometry}
+        material={materials.Black}
+        position={[-19.155, -13.16, -34.988]}
+        rotation={[-0.323, 1.172, 0.38]}
+        scale={[0.795, 22.691, 0.795]}
+      />
+      <mesh
+        geometry={nodes.Cylinder014.geometry}
+        material={materials.Black}
+        position={[4.3, 7.661, -24.252]}
+        rotation={[-2.321, -0.495, -1.795]}
+        scale={[-0.194, -5.549, -0.194]}
+      />
+      <mesh
+        geometry={nodes.Cylinder015.geometry}
+        material={materials.Black}
+        position={[21.755, -4.863, -26.77]}
+        rotation={[-1.035, 1.316, -2.224]}
+        scale={[-0.956, -27.281, -0.956]}
+      />
+      <mesh
+        geometry={nodes.Cylinder016.geometry}
+        material={materials.Black}
+        position={[21.755, -8.155, -26.77]}
+        rotation={[0.226, 0.256, -0.162]}
+        scale={[0.795, 22.691, 0.795]}
+      />
+      <mesh
+        geometry={nodes.Cylinder017.geometry}
+        material={materials.Black}
+        position={[21.755, -12.75, -26.77]}
+        rotation={[-0.139, 0.467, 0.144]}
+        scale={[0.795, 22.691, 0.795]}
+      />
+      <mesh
+        geometry={nodes.Cylinder018.geometry}
+        material={materials.Black}
+        position={[-27.498, -4.718, -37.132]}
+        rotation={[0, 1.226, 0]}
+        scale={[0.641, 18.302, 0.641]}
+      />
+      <mesh
+        geometry={nodes.Cylinder019.geometry}
+        material={materials.Black}
+        position={[-25.8, 0.286, -43.821]}
+        rotation={[0, 0.743, 0]}
+        scale={[0.531, 15.139, 0.531]}
+      />
     </group>
   );
 }
