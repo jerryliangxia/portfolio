@@ -2,7 +2,7 @@ import React from "react";
 import { Environment, ContactShadows } from "@react-three/drei";
 import { RigidBody, CuboidCollider } from "@react-three/rapier";
 import CharacterController from "./CharacterController";
-import Model from "./OscorpSceneCables";
+import Model from "./OscorpSceneVenom";
 
 function Experience() {
   return (
