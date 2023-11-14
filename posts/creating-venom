@@ -1,0 +1,27 @@
+<img src="../images/creating-venom/arrow.png" width="100%"/>
+
+After completing Insomniac's [Spider-Man 2](https://insomniac.games/game/marvels-spider-man-2/), I created my own low-poly version of Venom from the game. I wanted to use this model in my `/game` section of the site, and make him look intimidating.
+
+I started by using my original Spider-Man model, which I wrote about in my blog [here](https://jerryxia.com/blog/threejs-game), and inflated him using Blender's sculpt tool.
+
+<img src="../images/creating-venom/frogman.png" width="100%"/>
+
+To get the character proportions right, I used the Hot Toys' 1:1 model of Venom (seen in the bakcground above), and got the following:
+
+<img src="../images/creating-venom/maninsuit.gif" width="100%"/>
+
+However, he was too skinny. I needed a suit in a man, not a man in a suit! So I tried with several reference images -- finding details, reiterating, finding more details, and trying again.
+
+<img src="../images/creating-venom/ref_venom.png" width="100%"/>
+
+Tweaking the size of his arms, chest, groin, buttocks and other large and slimy parts, I got this:
+
+<img src="../images/creating-venom/poses_venom.png" width="100%"/>
+
+Finally, I imported animations from Mixamo, and included it as a `.glb` file in my scene.
+
+<img src="../images/creating-venom/suitinman.gif" width="100%"/>
+
+I later attended some tendrils to simulate the final act of the game.
+
+You can see it all [here](https://jerryxia.com/game)!
