@@ -2087,10 +2087,7 @@ export function Model(props) {
         rotation={[0, 1.023, 0]}
       />
       <group position={[-7.157, -3.477, -21.562]} rotation={[0, 1.023, 0]}>
-        <mesh
-          geometry={nodes.Plane231.geometry}
-          material={materials["Insomniac O"]}
-        />
+        <mesh geometry={nodes.Plane231.geometry} material={materials.Red} />
         <mesh geometry={nodes.Plane231_1.geometry} material={materials.White} />
       </group>
       <group
