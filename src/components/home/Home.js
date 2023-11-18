@@ -37,8 +37,9 @@ function Home() {
             <ImagePopup src="images/3d/symbiote_mask/symbiote_mask.png" />
           </div>
           <ImagePopup
-            src="images/3d/ps5_full_suit/stance.png"
+            src="images/about/venom-game.gif"
             isSubtle={true}
+            link="/game"
           />
         </Flex>
       </section>
