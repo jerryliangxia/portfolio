@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
-import { Link } from "@radix-ui/themes";
+import { Flex, Link, Text } from "@radix-ui/themes";
+import { Insomniac } from "../svg/Nav";
+import { Arrow } from "../svg/Button";
 
 function ImagePopup({ src, isSubtle = false, link = null }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +30,7 @@ function ImagePopup({ src, isSubtle = false, link = null }) {
     };
 
     const handleMouseMove = (event) => {
-      setTooltipPosition({ x: event.clientX, y: event.clientY - 30 });
+      setTooltipPosition({ x: event.clientX - 5, y: event.clientY - 30 });
     };
     return (
       <Link to={link}>
@@ -56,7 +58,13 @@ function ImagePopup({ src, isSubtle = false, link = null }) {
               left: tooltipPosition.x,
             }}
           >
-            {link}
+            <Flex direction="row" align="center">
+              <Insomniac isWhite={false} isButton={true} />
+              <Text style={{ color: "white" }} as="p">
+                {/* Game */}
+                <Arrow />
+              </Text>
+            </Flex>
           </div>
         )}
       </Link>
