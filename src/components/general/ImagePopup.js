@@ -58,10 +58,10 @@ function ImagePopup({ src, isSubtle = false, link = null }) {
               left: tooltipPosition.x,
             }}
           >
-            <Flex direction="row" align="center">
+            <Flex gap="1" direction="row" align="center">
               <Insomniac isWhite={false} isButton={true} />
-              <Text style={{ color: "white" }} as="p">
-                {/* Game */}
+              <Text style={{ color: "rgba(177,177,177,1)" }} as="p">
+                Game
                 <Arrow />
               </Text>
             </Flex>
