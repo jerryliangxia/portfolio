@@ -34,6 +34,22 @@ function FullSuit() {
   );
 }
 
+function Venom() {
+  return (
+    <>
+      <Divider />
+      <Text size="5">
+        Venom <Look />
+      </Text>
+      <ImageRotation path="images/3d/venom/rotation/" mainImageIndex={0} />
+      <DateLog date="November 21, 2023" />
+      <Documentation text={ThreeDInfo.venom} />
+      <ImagePopup src="images/3d/venom/venom_low_poly_scope.png" />
+      <ImagePopup src="images/3d/venom/dual_180.png" />
+    </>
+  );
+}
+
 function Webshooter() {
   return (
     <>
@@ -160,6 +176,7 @@ function ThreeD() {
         {ThreeDInfo.insomniac}
       </Text>
       <FullSuit />
+      <Venom />
       <Webshooter />
       <NormalMask />
       <SymbioteMask />
