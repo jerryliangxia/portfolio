@@ -20,7 +20,7 @@ function FullSuit() {
     <>
       <Divider />
       <Text size="5">
-        Marvel's Spider-Man 2: Advanced Suit 2.0 <Look />
+        Advanced Suit 2.0 <Look />
       </Text>
       <ImageRotation path="images/3d/ps5_full_suit/rotation/" />
       <DateLog date="October 2, 2023" />
@@ -175,8 +175,8 @@ function ThreeD() {
       <Text color="gray" as="p">
         {ThreeDInfo.insomniac}
       </Text>
-      <FullSuit />
       <Venom />
+      <FullSuit />
       <Webshooter />
       <NormalMask />
       <SymbioteMask />
