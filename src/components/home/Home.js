@@ -34,7 +34,7 @@ function Home() {
             <ImagePopup src="images/3d/webshooter/sample.png" />
             <ImagePopup src="images/3d/unmasked/sample.png" />
             <ImagePopup src="images/3d/mask/mask.png" />
-            <ImagePopup src="images/3d/symbiote_mask/symbiote_mask.png" />
+            <ImagePopup src="images/3d/venom/head.png" />
           </div>
           <ImagePopup
             src="images/about/venom-game.gif"
