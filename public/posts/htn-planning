@@ -1,7 +1,7 @@
 Today I finished a project on Hierarchical Task Network (HTN) Planning, a recent form of video game AI first introduced by the game [Transformers: Fall of Cybertron](https://www.youtube.com/watch?v=kXm467TFTcY) in 2012. The
-prompt was to create a game with four adventurers, who attempt to steal gold
-from an invincible minotaur. The four adventurers used an HTN to work together, while the
-minotaur was implemented with a simple reactive AI. In more detail:
+prompt was to create a game with four adventurers, who attempt to steal treasure
+from an invincible Minotaur. The four adventurers used an HTN to work together, while the
+Minotaur was implemented with a simple reactive AI. In more detail:
 
 Within the adventurers' HTN;
 
@@ -29,9 +29,9 @@ The Minotaur's AI is quite simple. Its' order of priorities are:
 
 In HTN, there is a `Plan()` function that processes the world state, and breaks down a composite task to a list of simple tasks tasks for the character. In this project, these were (in order of priority) `TakeDamage`, `ManageTreasure` and `AttackMinotaur`.
 
-The first adventurer who spawns in will be assigned `ManageTreasure`. All other adventurers play the role of distracting the minotaur (`AttackMinotaur`), which means throwing rocks or attacking it with their sword.
+The first adventurer who spawns in will be assigned `ManageTreasure`. All other adventurers play the role of distracting the Minotaur (`AttackMinotaur`), which means throwing rocks or attacking it with their sword.
 
-The minotaur has a radius attack, meaning anyone in radius `r` of the minotaur receives damage. If an adventurer is within this radius, they fail their current task and immediately start a `TakeDamage` composite task. After this, they backtrack to their failed task and continue.
+The Minotaur has a radius attack, meaning anyone in radius `r` of the Minotaur receives damage. If an adventurer is within this radius, they fail their current task and immediately start a `TakeDamage` composite task. After this, they backtrack to their failed task and continue.
 
 The `BeAdventurer` tree is shown below, although it's more for keepsake:
 
@@ -124,7 +124,7 @@ To test this, I implemented a `TakeDamageTest` class, which made the adventurer 
 
 <img src="../images/htn-planning/1.gif" width="100%" />
 
-Adding multiple adventurers was fine as long as they were spawned one after the other. A simple `Spawner` class fixed this. Soon I had multiple adventurers working together to distract a motionless minotaur.
+Adding multiple adventurers was fine as long as they were spawned one after the other. A simple `Spawner` class fixed this. Soon I had multiple adventurers working together to distract a motionless Minotaur.
 
 In the below video, the following can be seen:
 
@@ -133,7 +133,7 @@ In the below video, the following can be seen:
 
 <img src="../images/htn-planning/2.gif" width="100%" />
 
-I then added movement to the minotaur capsule, and a particle effect that simulated its' radius of attack.
+I then added movement to the Minotaur capsule, and a particle effect that simulated its' radius of attack.
 
 <img src="../images/htn-planning/3.gif" width="100%" />
 
