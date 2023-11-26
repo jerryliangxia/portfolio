@@ -43,7 +43,7 @@ export const work = {
 
 export const ThreeD = {
   about:
-    "This work portfolio showcases my gaming asset work from August to October 2023.",
+    "This work portfolio showcases my gaming asset work from August to November 2023.",
   teamwork:
     "With my experience at Unity and Gameloft, I've worked in agile team environments to deliver professional user products.",
   insomniac:

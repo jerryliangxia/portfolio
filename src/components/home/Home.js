@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Heading, Text } from "@radix-ui/themes";
+import { Flex, Heading, Text, Link as RadixLink } from "@radix-ui/themes";
 import InfoBlock from "./components/InfoBlock";
 import Contact from "./components/Contact";
 import SpecialContact from "./components/SpecialContact";
@@ -15,7 +15,9 @@ function Home() {
         <Flex gap="1" direction="column">
           <Text as="p">About</Text>
           <Text as="p" color="gray">
-            {basicData.about}
+            Hi! I'm a SWE student at McGill, passionate about games. Read about
+            my journey with Hierarchical Task Networks in my latest{" "}
+            <RadixLink href="https://jerryxia.com/blog">blog!</RadixLink>
           </Text>
           <Flex
             direction="row"
