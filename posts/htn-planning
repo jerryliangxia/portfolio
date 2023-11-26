@@ -1,0 +1,188 @@
+Today I finished a project on Hierarchical Task Network (HTN) Planning, a recent form of video game AI first introduced by the game [Transformers: Fall of Cybertron](https://www.youtube.com/watch?v=kXm467TFTcY) in 2012. The
+prompt was to create a game with four adventurers, who attempt to steal treasure
+from an invincible Minotaur. The four adventurers used an HTN to work together, while the
+Minotaur was implemented with a simple reactive AI. In more detail:
+
+Within the adventurers' HTN;
+
+- If one adventurer drops a treasure another
+  will come grab it.
+- Close-range combat adventurers grab treasure before
+  far-range combat adventurers.
+
+Using a common world state, the adventurers are
+able to consistently assign tasks to themselves with the knowledge of other
+adventurers. They are also able to backtrack and re-plan if their current task
+fails.
+
+The Minotaur's AI is quite simple. Its' order of priorities are:
+
+- Attack the adventurer holding the treasure.
+- Attack the adventurer attacking them.
+- Attack the closest adventurer.
+
+## Hierarchical Task Network
+
+<img src="../images/htn-planning/0.png" width="100%" />
+
+> To see a thorough explanation of HTN, I recommend reading [this article](https://www.gameaipro.com/GameAIPro/GameAIPro_Chapter12_Exploring_HTN_Planners_through_Example.pdf).
+
+In HTN, there is a `Plan()` function that processes the world state, and breaks down a composite task to a list of simple tasks tasks for the character. In this project, these were (in order of priority) `TakeDamage`, `ManageTreasure` and `AttackMinotaur`.
+
+The first adventurer who spawns in will be assigned `ManageTreasure`. All other adventurers play the role of distracting the Minotaur (`AttackMinotaur`), which means throwing rocks or attacking it with their sword.
+
+The Minotaur has a radius attack, meaning anyone in radius `r` of the Minotaur receives damage. If an adventurer is within this radius, they fail their current task and immediately start a `TakeDamage` composite task. After this, they backtrack to their failed task and continue.
+
+The `BeAdventurer` tree is shown below, although it's more for keepsake:
+
+```
+BeAdventurer
+|
+|-- Method 0 (Navigate to Treasure)
+|   |
+|   |-- NavToTarget
+|   |   |
+|   |   |-- NavToTargetLocation (Takes in GameObject that can be either Treasure or Minotaur)
+|   |   |
+|   |   |-- NavToMinotaurLOS (Archers Go Where Minotaur in Line of Sight)
+|   |
+|   |-- PickUpTreasure
+|   |
+|   |-- MoveToSpawn
+|
+|-- Method 1 (Navigate to Minotaur)
+|   |
+|   |-- NavToTarget
+|   |   |
+|   |   |-- NavToTargetLocation (Takes in GameObject that can be either Treasure or Minotaur)
+|   |   |
+|   |   |-- NavToMinotaurLOS (Archers Go Where Minotaur in Line of Sight)
+|   |
+|   |-- DoAttack
+|   |   |
+|   |   |-- DoCloseRangeAttack (If Close-Combat Adventurer)
+|   |   |
+|   |   |-- DoFarRangeAttack (If Far-Range Adventurer)
+|   |
+|   |-- Recover
+|
+|-- Method 2 (Take Damage)
+    |
+    |-- TakeDamage
+        |
+        |-- Method 0
+        |   |
+        |   |-- TakeDamageToHealth
+        |   |   |
+        |   |   |-- Recover (Can still take n > 1 hits)
+        |   |   |
+        |   |   |-- Despawn (Can take n = 0 hits)
+        |
+        |-- Method 1
+            |
+            |-- DropTreasure
+            |
+            |-- TakeDamageToHealth
+                |
+                |-- Recover (Can still take n > 1 hits)
+                |
+                |-- Despawn (Can take n = 0 hits)
+```
+
+## Implementation
+
+This is the pseudocode for the `Plan()` function in a HTN.
+
+```csharp
+Plan: <>
+State: current world state
+tasks.push(rootTask)
+while(tasks != empty) {
+	t = tasks.pop()
+	if(t.composite) {
+		m = t.findMethod(state)
+		if(m != null) {
+			saveState(t, plan, m)
+			tasks.push(m.subtasks)
+		} else {
+			restoreSavedState() <- backtrack
+		}
+	} else {
+		if(t.precondition(state)) {
+			state = t.apply(state)
+			plan.append(t)
+		} else {
+			restoreSavedState() <- backtrack
+		}
+	}
+}
+```
+
+The magic of this is the restoration of the saved state. If `TakeDamage` occurs, the adventurer can backtrack through their saved state to continue their plan. HTN ensures the adventurer always has something to do, even if they fail their current task.
+
+To test this, I implemented a `TakeDamageTest` class, which made the adventurer fail their current task, and take damage if clicked:
+
+<img src="../images/htn-planning/1.gif" width="100%" />
+
+Adding multiple adventurers was fine as long as they were spawned one after the other. A simple `Spawner` class fixed this. Soon I had multiple adventurers working together to distract a motionless Minotaur.
+
+In the below video, the following can be seen:
+
+- If damaged, another adventurer will assume the composite task of `ManageTreasure`.
+- After recovering from the `TakeDamage` task, adventurers will continue their failed task (in this case, of picking up the treasure and bringing it to spawn).
+
+<img src="../images/htn-planning/2.gif" width="100%" />
+
+I then added movement to the Minotaur capsule, and a particle effect that simulated its' radius of attack.
+
+<img src="../images/htn-planning/3.gif" width="100%" />
+
+You can see above that Unity's NavMeshAgent wasn't updating its' destination, and several adventurers reached a destination where there was no Minotaur. This was fixed by adding a constant update to the destination before it was reached.
+
+After this, I added some health bars to better visualize the scene. Here's my first working demo, where the adventurers successfully obtain the treasure:
+
+<img src="../images/htn-planning/4.gif" width="100%" />
+
+As well, here's a case where the adventurers fail their objective:
+
+<img src="../images/htn-planning/5.gif" width="100%" />
+
+Both of these clips shown were done after tuning severable variables that had to do with adventurer health, attack distances, and cooldown times. The variables tuned here were:
+
+| Health of Adventurers         |        |
+| :---------------------------- | -----: |
+| Far Range Adventurer Health   | 3 hits |
+| Close Range Adventurer Health | 7 hits |
+
+| Timed Events             |      |
+| :----------------------- | ---: |
+| DropTreasureTime         | 0.0s |
+| RecoverTime              | 1.0s |
+| CloseRangeAttackCooldown | 1.0s |
+| PickUpTreasureTime       | 1.0s |
+| MinotaurAttackCooldown   | 3.5s |
+
+| Attack Distance (arbitrary units) |      |
+| :-------------------------------- | ---: |
+| MinotaurDistanceToAttackTarget    |  1.5 |
+| MinotaurAttackRadius              |  2.0 |
+| CloseRangeDistanceToHitMinotaur   | 1.25 |
+| FarRangeDistanceToHitMinotaur     |  5.0 |
+
+Once I saw there was a fair ratio of wins to losses (1:2), I added some decorations to my characters,
+
+<img src="../images/htn-planning/6_1.png" width="100%" />
+
+and made it possible to move around the scene:
+
+<img src="../images/htn-planning/6_2.png" width="100%" />
+
+After adding fog and some background objects, here's the final scene (a success scenario):
+
+<img src="../images/htn-planning/6.gif" width="100%" />
+
+And a failure scenario:
+
+<img src="../images/htn-planning/7.gif" width="100%" />
+
+You can play the game [here](https://jerrylxia.itch.io/htn-planning-and-reactive-ai-demo) on itch.io. Thanks for reading!
