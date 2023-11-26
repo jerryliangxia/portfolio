@@ -90,28 +90,28 @@ function BlogPost() {
               h1: ({ node, ...props }) => (
                 <Text
                   as="h1"
-                  style={{ marginTop: 0, marginBottom: 0 }}
+                  style={{ marginTop: 0, marginBottom: "1em" }}
                   {...props}
                 />
               ),
               h2: ({ node, ...props }) => (
                 <Text
                   as="h2"
-                  style={{ marginTop: 0, marginBottom: 0 }}
+                  style={{ marginTop: 0, marginBottom: "1em" }}
                   {...props}
                 />
               ),
               h3: ({ node, ...props }) => (
                 <Text
                   as="h3"
-                  style={{ marginTop: 0, marginBottom: 0 }}
+                  style={{ marginTop: 0, marginBottom: "1em" }}
                   {...props}
                 />
               ),
               h4: ({ node, ...props }) => (
                 <Text
                   as="h4"
-                  style={{ marginTop: 0, marginBottom: 0 }}
+                  style={{ marginTop: 0, marginBottom: "1em" }}
                   {...props}
                 />
               ),

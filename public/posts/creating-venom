@@ -27,3 +27,33 @@ I later attended some tendrils to simulate the final act of the game.
 <img src="../images/creating-venom/tendrils.png" width="100%"/>
 
 You can see it all [here](https://jerryxia.com/game)!
+
+## Creating a full version
+
+A few days later I decided to tackle creating a full version of Venom, starting from the low-poly base. I took several reference images this time:
+
+<img src="../images/creating-venom/full0.gif" width="100%"/>
+
+After separating the logo and applying the same material to the eyes and body as my Symbiote mask (seen in my 3D section), I got the following:
+
+<img src="../images/creating-venom/full1.png" width="100%"/>
+
+Venom's spider logo, along with his eyes, needed some closer attention. Using the Paint tool, I was able to add some small details, such as black lines and a dark perimeter surrounding the eyes.
+
+<img src="../images/creating-venom/full2.png" width="100%"/>
+
+Then, using Blender's sculpt tool I added in more defined musculature - his abs, thigh and arm muscles, as well as his shoulders, hands and feet. Here's the result in Solid view:
+
+<img src="../images/creating-venom/full3.png" width="100%"/>
+
+And with materials:
+
+<img src="../images/creating-venom/full4.png" width="100%"/>
+
+After rigging with Mixamo and applying an idle animation, I got the following:
+
+<img src="../images/3d/venom/rotation/0.png" width="100%"/>
+
+Venom is shown in full detail on my [3D page](https://jerryxia.com/3d); feel free to check him out.
+
+Thanks for reading!
