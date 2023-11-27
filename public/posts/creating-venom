@@ -6,47 +6,49 @@ I started by using my original Spider-Man model, which I wrote about in my blog 
 
 <img src="../images/creating-venom/frogman.png" width="100%"/>
 
-To get the character proportions right, I used the Hot Toys' 1:1 model of Venom (seen in the bakcground above), and got the following:
+To get the character proportions right, I used the Hot Toys' 1:1 model of Venom (seen in the background above), and got the following:
 
 <img src="../images/creating-venom/maninsuit.gif" width="100%"/>
 
-However, he was too skinny. I needed a suit in a man, not a man in a suit! So I tried with several reference images -- finding details, reiterating, finding more details, and trying again.
+However, he was too skinny -- I needed a suit in a man, not a man in a suit. I continued with several reference images -- finding details, reiterating, finding more details, reiterating.
 
 <img src="../images/creating-venom/ref_venom.png" width="100%"/>
 
-Tweaking the size of his arms, chest, groin, buttocks and other large and slimy parts, I got this:
+After tweaking his various parts, I got this:
 
 <img src="../images/creating-venom/poses_venom.png" width="100%"/>
 
-Finally, I imported animations from Mixamo, and included it as a `.glb` file in my scene.
+Finally, I imported animations from Mixamo, and converted my `.blend` to a `.glb` for my scene.
 
 <img src="../images/creating-venom/suitinman.gif" width="100%"/>
 
-I later attended some tendrils to simulate the final act of the game.
+I then attended some tendrils to simulate the final act of the game.
 
 <img src="../images/creating-venom/tendrils.png" width="100%"/>
 
 You can see it all [here](https://jerryxia.com/game)!
 
-## Creating a full version
+## Creating a full model
 
-A few days later I decided to tackle creating a full version of Venom, starting from the low-poly base. I took several reference images this time:
+Shortly after I tackled creating a full version of Venom, starting from his low-poly base.
 
-<img src="../images/creating-venom/full0.gif" width="100%"/>
-
-After separating the logo and applying the same material to the eyes and body as my Symbiote mask (seen in my 3D section), I got the following:
+The first step was to remove the whites from his body, as well as his gums and tongue. I applied the same slimy material as my Symbiote mask (seen in my 3D section), and got the following:
 
 <img src="../images/creating-venom/full1.png" width="100%"/>
 
-Venom's spider logo, along with his eyes, needed some closer attention. Using the Paint tool, I was able to add some small details, such as black lines and a dark perimeter surrounding the eyes.
+Some obvious details were missing. Venom's arms looked like large blobs compared to what you see in-game. Also, his white spider and eyes lack the detail to be deemed realistic. To get the full definition of his build, I took several reference images from the game:
+
+<img src="../images/creating-venom/full0.gif" width="100%"/>
+
+Using the Paint tool, I was able to add some small details to his whites, such as black lines, scratches and a shadow on the edges of his eyes.
 
 <img src="../images/creating-venom/full2.png" width="100%"/>
 
-Then, using Blender's sculpt tool I added in more defined musculature - his abs, thigh and arm muscles, as well as his shoulders, hands and feet. Here's the result in Solid view:
+Then, using Blender's sculpt tool I added in more defined muscles - as well as more detail to his hands and feet. Here's the result in Solid view:
 
 <img src="../images/creating-venom/full3.png" width="100%"/>
 
-And with materials:
+And after applying materials:
 
 <img src="../images/creating-venom/full4.png" width="100%"/>
 
