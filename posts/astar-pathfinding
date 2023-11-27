@@ -1,20 +1,22 @@
-Today I made a project involving A\* pathfinding and dynamic obstacles. You can check out the demo [here](https://jerrylxia.itch.io/pathfinding-demo) on itch.io.
+Today I made a project involving A\* pathfinding and dynamic obstacles. You can check out the full demo [here](https://jerrylxia.itch.io/pathfinding-demo) on itch.io.
 
 <img src="../images/astar-pathfinding/final_init.png" width="100%"/>
 
-The general procedure of the algorithm is as follows:
+The procedure of my algorithm is as follows:
 
 - Disable colliders of the current object and the goal object, so the grid won’t detect them as obstacles.
 - Create a grid.
-- Compute A\* on this grid with Euclidean distance as your heuristic.
+- Compute A\* on this grid with a simple Euclidean distance heuristic.
 - Enable the colliders.
-- Move the current object.
+- Move the current object one step; repeat.
 
-As you can see, to handle dynamic obstacles the grid was computed at every step before a movement was made. This happened for every chair and human.
+The goal of this project was to assign humans (white capsules) to reach a goal and chairs (red capsules) to obstruct human movement.
 
-For humans (white capsules), the `target = goal`. For chairs (red capsules), the `target = closest human`. For every iteration, I'd update the position of the chairs once, and then the humans four times so that they could outmaneuver the chairs. Additionally, once the chairs were in a certain radius of a human, they would stop, so that the human could successfully move to the goal in most cases.
+For humans, the `target = green goal capsule`. For chairs, the `target = closest human`. For every iteration, I'd update the position of the chairs once, and then the humans four times so that they could outmaneuver the chairs. Additionally, once the chairs were in a certain radius of a human, they would stop, so that the human could successfully move to the goal in most cases.
 
-However, by choosing whichever human was closest, chairs tended to clump together in a large group:
+Once a human made contact with a chair, the goal capsule would spawn in a random location elsewhere to continue the cycle. Every object was spawned in a random location to start.
+
+After adjusting parameters such as speed and density, it was noticed that no matter the difference chairs tended to clump together in a group:
 
 <img src="../images/astar-pathfinding/findclosest.gif" width="100%"/>
 
@@ -48,15 +50,15 @@ To find the optimal difficulty for the humans and the performance, I tried chang
 
 <img src="../images/astar-pathfinding/graph.png" width="100%"/>
 
-As mentioned above, the chairs did move in a more strategic fashion, giving the results you see below:
+As mentioned above, the chairs did move more strategically, giving the results you see below:
 
 <img src="../images/astar-pathfinding/notfindclosest.gif" width="100%"/>
 
-After adding an isometric camera, I had the final scene below:
+After adding an isometric camera, I had this final scene:
 
 <img src="../images/astar-pathfinding/finalnotfindclosest.gif" width="100%"/>
 
-That's it! This was a fun exploration that helped me understand how paths work in games. Currently I'm working on a third-person shooter for a zombie game, and this type of pathfinding will make it possible to create more intelligent enemies.
+That's it! This was a fun exploration that helped me understand how pathfinding works in games. Currently I'm working on a third-person shooter for a zombie game, and this type of pathfinding will make it possible to create more intelligent enemies.
 
 Here's a sneak peek of what I have so far:
 

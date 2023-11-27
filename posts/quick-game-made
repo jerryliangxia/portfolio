@@ -4,7 +4,7 @@ publishedAt: "2023-09-20"
 summary: "Game made for COMP 521 - Modern Computer Games."
 ---
 
-Today I made a quick 3D game (~2h), which involves the player moving across four areas:
+Today I made a quick 3D game, which involves the player moving across four areas:
 
 - Starting area
 - Combat zone
@@ -13,7 +13,7 @@ Today I made a quick 3D game (~2h), which involves the player moving across four
 
 This was part of COMP 521: Modern Computer Games, and was the first assignment in the course.
 
-Following a brief altercation with Unity's Package Import 🙃 ([full problem on this forum here](https://forum.unity.com/threads/i-lost-all-of-my-scene-assets-after-scene-reload.978981/)) I lost all my progress at the end of the project. BUT I thought I'd take advantage of the situation and do a timelapse of the whole process!
+Following a brief altercation with Unity's Package Import ([check this forum](https://forum.unity.com/threads/i-lost-all-of-my-scene-assets-after-scene-reload.978981/)) I lost all my progress when I finished the project. However I thought I'd take advantage of the situation and do a timelapse of the whole process!
 
 <iframe width="100%" height="360" src="https://www.youtube.com/embed/ssFuIBbE0hQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -24,8 +24,9 @@ Following a brief altercation with Unity's Package Import 🙃 ([full problem on
 - [Torii Japanese gate low poly](https://sketchfab.com/3d-models/torii-japanese-gate-low-poly-45821eb666fb4b5088505fbe31ecd8df)
 - [Low poly mountain scene](https://sketchfab.com/3d-models/low-poly-mountain-scene-3c6a3e8c4d0a4c4aaa5dfbbd91107aa4)
 - [Plant pack small](https://sketchfab.com/3d-models/plant-pack-small-9f5f56e6f6e14c2f9f05a6b0af4ba605)
-  Tools:
+
+Tools:
 
 - [GLTF importer for Unity](https://github.com/atteneder/glTFast)
 
-You can play the game [here](https://jerrylxia.itch.io/a-nice-walk) on itch.io :) Thanks for reading!
+You can play the game [here](https://jerrylxia.itch.io/a-nice-walk) on itch.io. Thanks for reading!
