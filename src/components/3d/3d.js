@@ -34,6 +34,21 @@ function FullSuit() {
   );
 }
 
+function SymbioteSuit() {
+  return (
+    <>
+      <Divider />
+      <Text size="5">
+        Symbiote Suit <Look />
+      </Text>
+      <ImageRotation path="images/3d/symbiote_suit/rotation/" />
+      <DateLog date="December 5, 2023" />
+      <Documentation text={ThreeDInfo.symbioteSuit} />
+      <ImagePopup src="images/3d/symbiote_suit/dual_180.png" />
+    </>
+  );
+}
+
 function Venom() {
   return (
     <>
@@ -176,6 +191,7 @@ function ThreeD() {
         {ThreeDInfo.insomniac}
       </Text>
       <Venom />
+      <SymbioteSuit />
       <FullSuit />
       <Webshooter />
       <NormalMask />

@@ -50,6 +50,8 @@ export const ThreeD = {
     "My passion for gaming has led me to pursue a career in the industry, where my combination of gaming and software skills can be utilized in development support.",
   fullSuit:
     "Modeled after Insomniac Games' Spider-Man 2 (2023). A low-poly Spider-Man model was created in Blender (seen below) to form a basis. Web lines were traced onto the body and the magnet tool used to add webbing and seams to the base; adding a skin modifier created depth. Materials were UV generated. More on the material in the Mask section.",
+  symbioteSuit:
+    "To make this model, I referenced an article to ensure the creation of a model with appropriate topology. The initial step involved using the sculpt tool to carve out a rudimentary body shape. After applying the mirror modifier, distinctive patterns were sculpted onto the sides of the body. To get the sculpting of finer details, three subdivisions were created enhancing the precision and intricacy of the model.",
   venom:
     "(From Marvel's Spider-Man 2) This model was made from an original low-poly mesh like the full suit Spider-Man seen below. Venom doesn't have as many details as Spider-Man, so it was important to get the finer parts of him right. I used the sculpt tool to bring out his muscles and give more definition to his build.",
   webshooterInit: "Web shooter from Marvel's Spider-Man (2018).",
