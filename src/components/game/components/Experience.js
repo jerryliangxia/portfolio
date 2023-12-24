@@ -15,10 +15,24 @@ function Experience() {
         castShadow
         color={"#9e69da"}
       />
+      <pointLight position={[10, 5, -20]} intensity={100} color={"red"} />
+      <pointLight position={[15, 5, -20]} intensity={100} color={"red"} />
+
+      {/* BOTTOM LIGHTS */}
+      <pointLight position={[-5, -10, -50]} intensity={1000} color={"blue"} />
+      <pointLight position={[0, -10, -30]} intensity={1000} color={"green"} />
+      <pointLight position={[5, -10, -20]} intensity={1000} color={"blue"} />
+
+      {/* FAR BACK LIGHTS */}
+      <pointLight
+        position={[-5, -10, -100]}
+        intensity={1000}
+        color={"orange"}
+      />
 
       {/* BACKGROUND */}
       <group position-y={-1}>
-        <Model scale={3} />
+        <Model scale={3} castShadow />
         <RigidBody colliders={false} type="fixed" name="void">
           <mesh position={[0, -30, 0]} rotation={[-Math.PI / 2, 0, 0]}>
             <planeGeometry args={[50, 50]} />
@@ -137,9 +151,8 @@ function Experience() {
           />
         </RigidBody>
       </group>
-
       {/* CHARACTER */}
-      <CharacterController />
+      <CharacterController castShadow />
     </>
   );
 }
