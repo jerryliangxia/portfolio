@@ -41,7 +41,14 @@ function Home() {
           <ImagePopup
             src="images/about/venom-game.gif"
             isSubtle={true}
+            messageLink="Game"
             link="/game"
+          />
+          <ImagePopup
+            src="images/about/r3f-project.gif"
+            isSubtle={true}
+            messageLink="R3F Project"
+            link="https://r3f-project.vercel.app/"
           />
         </Flex>
       </section>

@@ -49,6 +49,7 @@ export function Model(props) {
         position={[-4.798, 0.007, 0.814]}
         rotation={[0, Math.PI / 2, 0]}
         scale={[0.149, 0.004, 0.104]}
+        castShadow
       >
         <mesh
           geometry={nodes.Cube084.geometry}

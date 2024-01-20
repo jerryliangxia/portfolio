@@ -3,7 +3,12 @@ import { Flex, Link, Text } from "@radix-ui/themes";
 import { Insomniac } from "../svg/Nav";
 import { Arrow } from "../svg/Button";
 
-function ImagePopup({ src, isSubtle = false, link = null }) {
+function ImagePopup({
+  src,
+  isSubtle = false,
+  messageLink = null,
+  link = null,
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [imgWidth, setImgWidth] = useState(0);
   const [imgHeight, setImgHeight] = useState(0);
@@ -61,7 +66,7 @@ function ImagePopup({ src, isSubtle = false, link = null }) {
             <Flex gap="1" direction="row" align="center">
               <Insomniac isWhite={false} isButton={true} />
               <Text style={{ color: "rgba(177,177,177,1)" }} as="p">
-                Game
+                {messageLink}
                 <Arrow />
               </Text>
             </Flex>

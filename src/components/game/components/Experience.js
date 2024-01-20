@@ -9,26 +9,15 @@ function Experience() {
     <>
       {/* LIGHTS */}
       <Environment preset="sunset" />
-      <directionalLight
-        position={[5, 5, 5]}
-        intensity={0.3}
-        castShadow
-        color={"#9e69da"}
-      />
-      <pointLight position={[10, 5, -20]} intensity={100} color={"red"} />
-      <pointLight position={[15, 5, -20]} intensity={100} color={"red"} />
+      <pointLight position={[10, 5, -20]} intensity={10} color={"red"} />
+      <pointLight position={[15, 5, -20]} intensity={10} color={"red"} />
 
       {/* BOTTOM LIGHTS */}
-      <pointLight position={[-5, -10, -50]} intensity={1000} color={"blue"} />
+      <pointLight position={[-5, -10, -50]} intensity={100} color={"blue"} />
       <pointLight position={[0, -10, -30]} intensity={1000} color={"green"} />
       <pointLight position={[5, -10, -20]} intensity={1000} color={"blue"} />
-
       {/* FAR BACK LIGHTS */}
-      <pointLight
-        position={[-5, -10, -100]}
-        intensity={1000}
-        color={"orange"}
-      />
+      <ambientLight position={[-5, -10, -100]} intensity={1} color={"orange"} />
 
       {/* BACKGROUND */}
       <group position-y={-1}>
@@ -152,7 +141,7 @@ function Experience() {
         </RigidBody>
       </group>
       {/* CHARACTER */}
-      <CharacterController castShadow />
+      <CharacterController />
     </>
   );
 }
