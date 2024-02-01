@@ -32,12 +32,12 @@ function Home() {
       </section>
       <section>
         <Flex gap="4" direction="column">
-          <div className="reel">
+          {/* <div className="reel">
             <ImagePopup src="images/3d/webshooter/sample.png" />
             <ImagePopup src="images/3d/unmasked/sample.png" />
             <ImagePopup src="images/3d/mask/mask.png" />
             <ImagePopup src="images/3d/venom/head.png" />
-          </div>
+          </div> */}
           <ImagePopup
             src="images/about/venom-game.gif"
             isSubtle={true}
@@ -49,6 +49,12 @@ function Home() {
             isSubtle={true}
             messageLink="R3F Project"
             link="https://r3f-project.vercel.app/"
+          />
+          <ImagePopup
+            src="images/about/fp-experience.gif"
+            isSubtle={true}
+            messageLink="First-person Project"
+            link="https://fp-experience.vercel.app/"
           />
         </Flex>
       </section>
