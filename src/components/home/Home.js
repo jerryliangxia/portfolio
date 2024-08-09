@@ -15,9 +15,9 @@ function Home() {
         <Flex gap="1" direction="column">
           <Text as="p">About</Text>
           <Text as="p" color="gray">
-            Hi! I'm a SWE student at McGill, passionate about games. Read about
-            my journey with Hierarchical Task Networks in my latest{" "}
-            <RadixLink href="https://jerryxia.com/blog">blog!</RadixLink>
+            Hi! I'm a recent SWE grad from McGill. I just finished a Three.js
+            game you can play{" "}
+            <RadixLink href="https://sb-129.com/">here!</RadixLink>
           </Text>
           <Flex
             direction="row"
@@ -55,6 +55,12 @@ function Home() {
             isSubtle={true}
             messageLink="Trappist-1"
             link="https://fp-experience.vercel.app/"
+          />
+          <ImagePopup
+            src="images/about/sb-129.gif"
+            isSubtle={true}
+            messageLink="SB-129"
+            link="https://sb-129.com/"
           />
         </Flex>
       </section>
