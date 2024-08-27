@@ -8,7 +8,7 @@ export const basicData = {
 
 export const jobExperience = {
   unity: {
-    leftText: "2022 - 2023",
+    leftText: "2022 - Present",
     rightTitle: "Software Engineer at Unity Technologies",
     rightSubtitle: "Montréal, QC",
     rightText:

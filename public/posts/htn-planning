@@ -1,18 +1,7 @@
-Today I finished a project on Hierarchical Task Network (HTN) Planning, a recent form of video game AI introduced by [Transformers: Fall of Cybertron](https://www.youtube.com/watch?v=kXm467TFTcY) in 2012. The
-prompt was to create a game with four adventurers, who attempt to steal treasure
-from an invincible Minotaur. The four adventurers used an HTN to work together, while the
-Minotaur was implemented with a simple reactive AI. In more detail:
-
-For the HTN;
-
-- If one adventurer drops the treasure another
-  will come get it.
-- Close-range combat adventurers grab treasure before
-  far-range combat adventurers.
-- All adventurers are aware of each other and the Minotaur, via the world state.
+This form of video game AI was first introduced by [Transformers: Fall of Cybertron](https://www.youtube.com/watch?v=kXm467TFTcY) in 2012. For this project, a minotaur guarded a treasure while four adventurers attempted to steal it.
 
 Using HTN's planning algorithm, the adventurers are
-able to consistently assign tasks to themselves with knowledge of their surroundings. They are also able to backtrack and re-plan if they fail their current task.
+able to consistently assign tasks to themselves with knowledge of their surroundings. They are also able to backtrack and re-plan if they fail their current task. (More can be found about HTN planning [here](https://www.gameaipro.com/GameAIPro/GameAIPro_Chapter12_Exploring_HTN_Planners_through_Example.pdf).)
 
 For the Minotaur, the reactive AI is quite straightforward. Its' order of priorities are:
 
@@ -23,8 +12,6 @@ For the Minotaur, the reactive AI is quite straightforward. Its' order of priori
 ## Hierarchical Task Network
 
 <img src="../images/htn-planning/0.png" width="100%" />
-
-> To get a thorough understanding of HTN, I recommend reading [this article](https://www.gameaipro.com/GameAIPro/GameAIPro_Chapter12_Exploring_HTN_Planners_through_Example.pdf) which references The Fall of Cybertron.
 
 In HTN, there is a `Plan()` function that processes the world state, and breaks down composite tasks to a list of simple tasks. In this project, these composite tasks are `TakeDamage`, `ManageTreasure` and `AttackMinotaur`.
 
@@ -120,11 +107,11 @@ Here, there are a few important things to note:
 - There is a `plan` stack that consists of all current plans. A replan is issued whenever this stack is empty, ensuring the adventurer always has something to do.
 - The `saveState` and `restoreSavedState` functions allow the adventurer to backtrack to their original task in the case they are interrupted, i.e. `TakeDamage` is triggered.
 
-To test backtracking, I implemented a `TakeDamageTest` class, which made the adventurer fail their current task whenever they were clieked. This is the sped-up footage (note the cursor):
+To test backtracking, a `TakeDamageTest` class was implemented, which made the adventurer fail their current task whenever they were clieked. This is the sped-up footage (note the cursor):
 
 <img src="../images/htn-planning/1.gif" width="100%" />
 
-Adding multiple adventurers was fine as long as they spawned one after the other. A simple `Spawner` class did the trick. Soon I had multiple adventurers working together to distract a (currently motionless) Minotaur.
+Adding multiple adventurers was fine as long as they spawned one after the other. A simple `Spawner` class did the trick. Soon there were multiple adventurers working together to distract a (currently motionless) Minotaur.
 
 In the next footage, the following can be seen:
 
@@ -133,17 +120,15 @@ In the next footage, the following can be seen:
 
 <img src="../images/htn-planning/2.gif" width="100%" />
 
-I then added movement to the Minotaur capsule, and a particle effect that simulated its "radius attack".
+Movement was added to the Minotaur, along with its "radius attack".
 
 <img src="../images/htn-planning/3.gif" width="100%" />
 
-> You can see a small bug here where adventurers only reach the original position of the Minotaur; this was fixed later.
-
-I added some health bars to better visualize the scene, along with adjusting the camera to a higher view. Here's my first working demo, where the adventurers successfully obtain the treasure:
+Health bars were added to better visualize the scene, along with adjusting the camera to a higher view. Here's a demo where the adventurers successfully obtain the treasure:
 
 <img src="../images/htn-planning/4.gif" width="100%" />
 
-Since I was tasked with ensuring adventurers do not always trivially succeed, here's a case where they fail their objective:
+And another where they fail their objective:
 
 <img src="../images/htn-planning/5.gif" width="100%" />
 
@@ -168,14 +153,6 @@ Both of these clips shown were done after tuning severable variables involved wi
 | MinotaurAttackRadius              |  2.0 |
 | CloseRangeDistanceToHitMinotaur   | 1.25 |
 | FarRangeDistanceToHitMinotaur     |  5.0 |
-
-Once I saw there was a fair ratio of wins to losses (1:2), I added some decorations to my characters;
-
-<img src="../images/htn-planning/6_1.png" width="100%" />
-
-and made it possible to move the camera around the scene:
-
-<img src="../images/htn-planning/6_2.png" width="100%" />
 
 After adding some simple fog and background objects, here's the final scene - a success scenario;
 

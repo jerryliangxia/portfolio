@@ -13,11 +13,10 @@ function Home() {
       <Heading>{basicData.name}</Heading>
       <section>
         <Flex gap="1" direction="column">
-          <Text as="p">About</Text>
           <Text as="p" color="gray">
-            Hi! I'm a recent SWE grad from McGill. I just finished a Three.js
-            game you can play{" "}
-            <RadixLink href="https://sb-129.com/">here!</RadixLink>
+            This site showcases work for Insomniac Games' 2023 internship
+            application. For a comprehensive look at my projects, check out my{" "}
+            <RadixLink href="https://jerryxia.com/">portfolio</RadixLink>.
           </Text>
           <Flex
             direction="row"
@@ -32,35 +31,11 @@ function Home() {
       </section>
       <section>
         <Flex gap="4" direction="column">
-          {/* <div className="reel">
-            <ImagePopup src="images/3d/webshooter/sample.png" />
-            <ImagePopup src="images/3d/unmasked/sample.png" />
-            <ImagePopup src="images/3d/mask/mask.png" />
-            <ImagePopup src="images/3d/venom/head.png" />
-          </div> */}
           <ImagePopup
             src="images/about/venom-game.gif"
             isSubtle={true}
-            messageLink="Game"
+            showTooltip={false}
             link="/game"
-          />
-          <ImagePopup
-            src="images/about/r3f-project.gif"
-            isSubtle={true}
-            messageLink="Insomniac Portfolio"
-            link="https://r3f-project.vercel.app/"
-          />
-          <ImagePopup
-            src="images/about/trappist-1.gif"
-            isSubtle={true}
-            messageLink="Trappist-1"
-            link="https://fp-experience.vercel.app/"
-          />
-          <ImagePopup
-            src="images/about/sb-129.gif"
-            isSubtle={true}
-            messageLink="SB-129"
-            link="https://sb-129.com/"
           />
         </Flex>
       </section>
@@ -125,7 +100,7 @@ function Home() {
           align="start"
           direction="column"
         >
-          <Text as="p">3D Tools I've used: </Text>
+          <Text as="p">3D Tools </Text>
           <Flex gap="4" align="start" direction="row">
             <img
               src="images/about/blender.png"

@@ -55,7 +55,7 @@ function ImagePopup({
             className={isSubtle ? "image-class-subtle" : "image-class"}
           />
         )}
-        {showTooltip && (
+        {messageLink && showTooltip && (
           <div
             style={{
               position: "fixed",
@@ -112,7 +112,7 @@ function ImagePopup({
           }}
           onClick={() => setIsOpen(false)}
         >
-          <img src={src} style={{ maxWidth: "90%", maxHeight: "90%" }} alt="" />
+          <img src={src} style={{ maxWidth: "95%", maxHeight: "95%" }} alt="" />
         </div>
       )}
     </>
